@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="989px" height="1900px" viewBox="0 0 989 1900" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0.5" y1="1" x2="0.5" y2="0" id="gradient_1">
+      <stop offset="0" stop-color="#9BE4FB" />
+      <stop offset="1" stop-color="#D3D3D3" />
+    </linearGradient>
+    <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_2">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#9BE4FB" />
+    </linearGradient>
+    <rect width="989" height="1900" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Artboard" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#000000" />
+    <path d="M50 0L939 0L939 1900L50 1900L50 0Z" id="RectMid" fill="url(#gradient_1)" fill-rule="evenodd" stroke="none" />
+    <path d="M0 0L25 0L25 1900L0 1900L0 0Z" id="RectLeft" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M964 0L989 0L989 1900L964 1900L964 0Z" id="RectRight" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M120 0L170 0L170 1900L120 1900L120 0Z" id="RectMidLeft" fill="url(#gradient_2)" fill-rule="evenodd" stroke="none" />
+    <path d="M819 0L869 0L869 1900L819 1900L819 0Z" id="RectMidRight" fill="url(#gradient_2)" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

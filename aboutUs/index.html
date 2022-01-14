@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./index.css" id="indexCSS">
+	<title>About Us - Phigros</title>
+</head>
+
+<body>
+	
+	<img src="../assets/images/Phigros.png" alt="Phigros" class="phigrosLogo">
+	<div class="tapToStart">touch to start</div>
+	<div id="main" class="hide">
+		
+	<div class="blackOverlay"></div>
+	<div class="clickToExitTag"></div>
+	<audio id="audioElement" src=""></audio>
+	<!-- <script src="./main.js"></script> -->
+	<pre class="fromGameDirector">
+		At First / 写在前面
+		我是憨憨 (HanHan233)
+		如你所见，这是一个利用网页端(HTML5)来实现复刻Phigros的项目。
+		首先，我在未书面获取Phigros游戏内贴图直接使用的行为先说一句“抱歉”。
+		也感谢Pigeon Games创造出Phigros这一如此好玩的游戏。
+		在这里特别感谢lchzh3473的Phigros模拟器，没有它，这个项目消耗的时间可能要长数倍。
+		我设计这个网页端的Phigros的目的是打造一个社区版的Phigros，此项目已经在GitHub开源，人人皆可贡献。
+		你可以在其中上传自己的谱面（粪谱就算了）或者把官方的谱面上传(我只有一个示例谱面)，改进代码，我十分欢迎这样做，大家共同进步。
+
+		祝你们在这里玩得愉快
+	</pre>
+	<pre class="fromGameDirector">
+		Original Director / 原作
+		Soullies (Liu Wen)
+		“
+		作为《Phigros》的作者，我将在此——
+		感谢Pigeon Games的所有成员，是大家无私的精诚合作造就了《Phigros》这一奇迹。
+		感谢所有给予过Pigeon Games帮助的组织与公司，我们非常荣幸能够得到你们的关心和支持。
+		感谢一直以来支持着《Phigros》的所有玩家，你们的每一次关注，每一个赞许，以及每一条意见，都深刻地
+		影响了这份企划。
+		更重要的是，感谢此时此刻正在看着这块屏幕的——
+		你。
+		As the author of Phigros, I would like to——
+		Appreciate all the members of PigeonGames. It is our selflessness, sincerity, and cooperation that has
+		created this miracle.
+		Appreciate all the organizations and companies that helped PigeonGames. We are very honored to
+		receive your attention and support.
+		Appreciate all the players who always have been supporting Phigros. Your attention, compliment, and
+		advice have profoundly influenced our project.
+		More importantly, appreciate the person who is staring at the screen unblinkingly at the moment
+		YOU.
+		”
+	</pre>
+	<pre class="credits">
+		Lead Programmer & Director / 主程序与策划
+		CN 115 (杜锐)
+		“愿这款游戏也能被留在你的记忆中。”
+
+		Director / 策划
+		阿爽 (周锐)
+		“Phigros将会随着鸽游成员的成长而一起成长。希望有朝一日，Phigros
+		能成为音游中的一股清流，更或是一款神作。”
+
+
+		Leaders / 部门负责人
+
+		Programming / 程序组
+		CN 115 (杜锐)
+		月下樱 (李天勤)
+		“我们在Phigros中使用了一些有趣的技术，也在各种细节上做出了大胆的尝试，希望能给各位玩家带来更好
+		的体验。同时我们也会不断优化，让Phigros变得更好!”
+		
+		Chart Design / 谱师组
+		阿爽
+		“希望大家可以喜欢我们的脑洞(划掉) ! ”
+
+		Illustration / 美术组
+		喵n葵 (刘贝瑜)
+		“虽然是鸽游美术组，却是最不咕咕的组。一直感谢各位组员的爆肝(？)付出！我们会继续绘制精美的曲绘
+		的！”
+
+		Music/音乐组，
+		姜米條 (青杰)
+		“我是姜米條，是Pigeon Games的曲师组长，感谢大家支持
+		Phigros，同时也希望大家喜欢我们游戏的原创音乐。我们会在之后的更新里添加我们制作的音乐！”
+
+		Plots Design /剧情组
+		DeathMark (赵莞华)
+		“只要有你们在，名为phigros的奇迹就是不可磨灭的，未来种种，山河表里，大浪凌空，险阻艰难，锦绣衰
+		隆，我们一起度过。”
+
+		Customer Service / 客服组
+		喵n葵(刘贝瑜)
+		“我们随时欢迎您们的反馈!我将带领另外两位客服及时反馈您们遇到的问题给制作组”
+
+		Advertising / 宣传组
+		SparkFred_17 (周泓怿)
+		“愿鸽游给大家创造无限快乐，在未来我们一起努力、共同进步，成为每个人心中多彩的世界！”
+
+		UI/UI组
+		CN_115 (杜锐)
+		EndlessZero (郭旭)
+		Nico
+		SparkFred_17 (周泓怿)
+		佑木L或办(TNiK) (梁倬玮)
+		V17AMax (马煜)
+		汉堡
+		喵n葵 (刘贝瑜)
+		小鹏 (周怡鹏)
+		覃瀚钰
+
+		Chart Design / 谱师组
+		Catcats (王子恒)
+		Ctymax
+		Gausbon
+		JKy
+		StupiGGy
+		Uvernight
+		Snorkel
+		阿爽 (周锐)
+		Rikko
+		晨
+		鲲
+		小鹏 (周怡鹏)
+		百九十八 (袁率)
+		月下樱
+		CN_115
+		亚樹見希子
+		Eaimo
+		Sillyp
+		TangScend
+		Barbarinerman 
+		NerSAN
+		Harakuma
+		TimiTini
+		XMT小咩兔
+		J.R
+		Jeitie
+		陈天宇
+		钱汉铭
+		官忠鑫
+		骆新程
+		
+		Ilustration /美术组
+		CH
+		Cycats
+		DoublePian 
+		IvyTowers
+		Jeffery
+		Karyon
+		knife美工刀
+		KToyo
+		L-sp4
+		NEKO
+		SparkFred_17 (周泓怿)
+		佑木いずみ(TNiK) (梁倬玮)
+		xperz
+		艾是Abby
+		坂东
+		笔记RE
+		赤芽
+		雏凉
+		翠冷兮
+		鸫鸫
+		诡异童话
+		海产
+		何呵
+		混乱の艾若拉
+		Ctymax
+		老张
+		林语
+		喵n葵(刘贝瑜)
+		塔塔
+		无良灬无惑
+		昔璃
+		英英英
+		御坂果子
+		冰绘
+		青鸟
+		幽灵星
+		Rallxkurara
+		天天
+		犀牛坨动画工坊
+		NerSAN
+		谭清心
+		高倩茹
+		陈天宇
+
+		Music / 音乐组
+		BelieverlnYou
+		Ctymax
+		Rinth_Live
+		佑木いずみ(TNiK) (梁倬玮)
+		ElousΛ.-FZ
+		姜米條 (青杰)
+		A-39
+		NceS
+		陈天宇
+
+		Plots Design / 剧情组
+		DeathMark (赵芫华)
+		关若文
+
+		Customer Service / 客服组
+		CN_115
+		Ctymax
+		joiec
+		Sparkfred_17 (周泓怿)
+		Mai (Tan Chin Wan)
+		Jizici
+		阿爽
+		喵n葵 (刘贝瑜)
+		月下樱
+		陈天宇
+
+		Advertising / 宣传组
+		Ctymax
+		EndlessZero (郭旭)
+		Findstr
+		SparkFred_17 (周泓怿)
+		佑木いずみ(TNiK) (梁倬玮)
+		V17AMax (马煜)
+		东方不buy菌
+		华莱士
+		七奏
+		Sagilio
+		小菊花
+		小鹏 (周怡鹏)
+		312321432
+		陈天宇
+
+		Localization / 翻译组
+		312321432 (吳安仁)
+		hwanyeom
+		jack
+		Kitty
+		Nice Player
+		Saimu桜夢 (徐泽城)
+		Sakuyou 
+		Mai (Tan Chin Wan)
+		TurretOmega
+		ViscerΔ
+		Yurim 
+		はなちゃん/はなまる
+		徊奏
+		鲲
+		亘川锌酸猫
+		梓澄
+		漆伊澄
+
+		External Communications / 外部联络
+		Ctymax
+		
+		Beta tester / 测试组
+		98F
+		C爆
+		Likey
+		Nxnfly
+		Soul小东东
+		UraniumW
+		冰淇淋
+		打火机D.H.Jack
+		困锁Lockeder
+		葉之Leviz
+		Attack_cat
+		比我还帅的地球人
+		Caiyv
+		赤赤菌
+		垂星
+		Excaive
+		fanIST
+		FrozenX
+		晴岚
+		Hikari
+		哈拿捏口
+		坚果
+		Kirina 
+		切切
+		Ska
+		散唳
+		石皮幼鸟
+		三色绘本°
+		Supa7onyz
+		ThirdQuadrant
+		VOII
+		我爱吃肉wacr
+		汐
+		晓风竹林
+		CYMiC
+		Y1cat
+		ZxyD218
+		温柔的小狮子
+		Phoenix `palsar
+		于铠歌
+		肖斌文
+		
+		And all participants from Taptap's beta program!
+
+	</pre>
+	<img src="./snr.png" alt="SOUL NOTES RECORDS">
+	<pre class="musicCredits">
+		Sound Design / 音效设计
+		姜米條(青杰)
+
+		Music Credits / 音乐
+		<div class="mainContent">
+			<pre class="leftSide">
+Glaciaxion - SunsetRay
+llustrator: 艾若拉
+Level EZ Designer: Barbarianerman
+Level HD Designer: 阿爽
+Level IN Designer: Barbarianerman、NerSAN
+
+Eradication Catastrophe - NceS
+Illustrator: 海产
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、Ctymax
+
+Credits - Frums
+llustrator: Ctymax
+Level EZ Designer: Ctymax
+Level HD Designer: Ctymax
+Level IN Designer: Ctymax
+
+Dlyrotz - Likey
+Illustr ator: DoublePian
+Level EZ Designer: 晨
+Level HD Designer: 晨
+Level IN Designer: 晨、Barbarianerman
+
+Engine x Start! (melody mix) - CrossingSound
+llustrator: 赤芽
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽
+
+光-姜米條
+Illustrator: winder
+Level EZ Designer: Catcats
+Level HD Designer: Catcats
+Level IN Designer: Catcats、百九十八
+
+Winter↑cube↓- Cfymax feat. NceS 
+Illustrator: 翠冷兮
+Level Ez Designer: 小鹏、Barbarianerman
+Level HD Designer: 小鹏、Barbarianerman
+Level IN Designer: 百九十八
+Level SP Designer: 小鹏
+
+Cipher : /26//<|0 - Tetr ajectory feat.Ctymax 
+Illustrator: IvyTowers
+Level EZ Designer: Gausbon
+Level HD Designer: Gausbon
+Level IN Designer: Gausbon
+
+混乱-Confusion - OnlyMyBlackScore 
+Illustrator: L.sp4 
+Level EZ Designer: 月下橙、CN 115
+Level HD Designer: 月下樱、CN 115
+Level IN Designer: XMT小咩兔
+
+FULi AUTO SHOOTER - MYUKKE.
+llustrator: ViscerA G Psycholine
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、Ctymax
+
+HumaN - SOTUI
+Illustrator: CH
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: CN 115、TangScend 
+
+[PRAW] - Bluewind
+Illustrator: 老张
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 晨、阿爽
+
+Pixel Rebelz - Normal1zer
+llustrator: 艾是Abby
+Level EZ Designer: 阿爽I
+Level HD Designer: 阿夹
+Level IN Designer: Ner SAN
+
+Cereris - SunsetRay/NceS
+Illustrator: IvyTowers
+Level Ez Designer: StupiGGy
+Level HD Designer: StupiGGy
+Level IN Designer: StupiGGy
+
+Non-Melodic Ragez (MUG Edit) - Normal1zer
+Illustrator: cycats
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、Barbarianerman
+
+Sultan Rage - MonstDeath
+llustrator: 笔记RE
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+Class Memories - Antistar feat. Ctymax 
+Illustrator: xperz
+Level EZ Designer: JKy
+Level HD Designer: JKy
+Level IN Designer: JKy
+
+-SURREALISM- - Itsuki
+Illustr ator: 喵n葵
+Level EZ Designer: StupiGGy
+Level HD Designer: StupiGGy
+Level IN Designer: StupiGGy
+
+Bonus Time - Megalo PaleWhite 
+llustrator: 笔记RE
+Level EZ Designer: Uvernight、Barbarianerman
+Level HD Designer: Uvernight、Barbarianerman
+Level IN Designer: Uvernight
+
+ENERGY SYNERGY MATRIX - Tanchiky
+llustrator: Karameru
+Level EZ Designer: Ctymax、阿爽
+Level HD Designer: Ctymax、阿爽
+Level IN Designer: Barbarianerman
+
+NYA!! - FLUoRiTe/姜米條
+Illustrator: NEKOE海产
+Level EZ Designer: Catcats
+Level HD Designer: Catcats
+Level IN Designer: Catcats
+
+JunXion Between Life And Death(VIP Mix) - 1N6Fs
+Illustrator: IvyTowers
+Level EZ Designer: 鲲、百九十八
+Level HD Designer: 鲲、百九十八
+Level IN Designer: 鯤、百九十八
+
+cryout-Ju E
+llustrator: Haight 
+Level EZ Designer: Ctymax
+Level HD Designer: Ctymax
+Level IN Designer: Ctymax
+
+Reimei -影虎。
+llustrator: 英英英
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+尊師~The Guru~ - rider
+Illustrator: 1B
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽
+
+Spasmodic - 姜米條
+llustrator: 昔瑞
+Level EZ Designer: Catcats
+Level HD Designer: Catcats 
+Level IN Designer: Catcats
+Level AT Designer: Catcats
+
+Leave All Behind - rider
+Illustrator: 笔记RE
+Level EZ Designer: 亚树见希子、百九十八
+Level HD Designer: 亚树见希子、百九十八
+Level IN Designer: 亚树见希子、百九十八
+
+Colorful Days - - P4koo feat.口沙D花鈴
+Illustr ator: Doro-nyong E Ratif
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽I
+Level IN Designer: 阿爽
+
+micro.wav - dandeless
+Illustrator: snake.ribs
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+重生 - 姜米條
+Illustrator: 昔璃&佑木L岁为(TNiK)
+Level EZ Designer: Barbarianerman
+Level HD Designer: Barbarianerman
+Level IN Designer: Barbarianerman
+
+NO ONE YES MAN - MYUKKE.
+llustrator: 青鸟
+Level EZ Designer: Ctymax 
+Level HD Designer: 晨
+Level IN Designer: Ctymax、晨
+
+望影の方舟Six - Se-U-Ra
+Illustrator: 鲸弑I
+Level EZ Designer: TangScend
+Level HD Designer: TangScend
+Level IN Designer: TangScend
+
+Igallta - Se-U-Ra 
+Illustrator: Se-U-Ra
+Level EZ Designer: Barbarianerman、Ctymax
+Level HD Designer: Barbarianerman、Ctymax
+Level IN Designer: StupiGGy
+Level AT Designer: Catcats、Gausbon、 阿爽
+
+Clock Paradox - WyvernP
+llustrator: IvyTowers
+Level EZ Designer: Barbarianerman
+Level HD Designer: Barbarianerman
+Level IN Designer: Barbarianerman
+
+Chronologika - Hundotte 
+Illustrator: 幽灵星
+Level EZ Designer: Timitini
+Level HD Designer: XMT小咩兔
+Level IN Designer: Barbarianerman、Ctymax
+
+Nick of Time - P4k0o
+Illustrator: 青鸟
+Level EZ Designer: XMT小咩兔、晨
+Level HD Designer: XMT小咩兔、晨
+Level IN Designer: NerSAN
+
+Chronomia - Lime
+Illustrator: inukoro
+Level EZ Designer: Pcat
+Level HD Designer: Rikko
+Level IN Designer: 百九十八、亚树见希子
+
+Chronos Collapse - La Campanella - SunsetRay
+llustrator: 老张
+Level EZ Designer: Pcat
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、NerSAN
+
+Rrhar'il - Team Grimoire
+Illustrator: 犀牛坨动画工坊
+Level EZ Designer: 鲲
+Level HD Designer: 阿爽
+Level IN Designer: 晨、NerSAN、 Sillyp
+Level AT Designer: TangScend、Barbarianerman
+
+NooEt&wv - 112 vs. Star*
+llustrator: 老张
+Level EZ Designer: JKy
+Level HD Designer: JKy
+Level IN Designer: JKy、Barbarianerman
+
+WATER - A-39/沙包P
+llustrator: knife美工刀
+Level EZ Designer: JKy
+Level HD Designer: StupiGGy
+Level IN Designer: JKy、Barbarianerman、 StupiGGy 
+
+Miracle Forest (VIP Mix) - Rinth live
+llustrator: L sp4
+Level EZ Designer: 亚树见希子
+Level HD Designer: 亚树见希子
+Level IN Designer: 亚树见希子、Barbarianerman
+
+MOBILYS- Dachs
+Illustrator: 力口小源
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八、StupiGGy、 Barbarianerman
+
+Lyrith迷宫U又--IXE K
+llustrator: 何呵
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、Barbarianerman
+Level AT Designer: CN 115
+
+Doppelganger - Leaf
+llustrator: 海产
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: Gausbon
+
+专人专心 - LeaF
+Illustrator: cycat
+Level EZ Designer: 阿爽、Barbarianerman
+Level HD Designer: 阿爽、Barbarianerman
+Level IN Designer: 阿爽
+Level AT Designer: 阿爽
+Level SP Designer: 阿爽
+
+MARENOL - Leaf
+Illustrator: 喵n葵
+Level EZ Designer: Catcats、Barbarianerman
+Level HD Designer: Catcats、Barbarianerman 
+Level IN Designer: 百九十八
+
+萤火虫D怨.闫东炜
+llustrator: L-sp4
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、百九十八
+
+万吨匿名信-闫东炜
+Illustrator: IvyTowers
+Level EZ Designer: Catcats
+Level HD Designer: Catcats
+Level IN Designer: Catcats、百九十八
+
+风屿-闫东炜
+llustrator: cycats
+Level EZ Designer: Catcats、阿爽
+Level HD Designer: Catcats、阿爽
+Level IN Designer: Catcats、阿爽、百九十八
+
+dB doll - YUE.STEVEN/uen
+Illustrator: 何呵
+Level Ez Designer: 阿爽、Barbarianerman
+Level HD Designer: 阿爽、Barbarianerman
+Level IN Designer: 阿爽
+Level AT Designer: NerSAN、百九十八
+
+Dash”小红Akane,李祥晖
+llustrator: 艾是Abby
+Level EZ Designer: 阿爽、Barbarianerman
+Level HD Designer: 阿爽、Barbarianerman
+Level IN Designer: JKy 
+
+云女孩-符白牙/SiYFics
+llustrator: 御坂果子
+Level EZ Designer: Catcats
+Level HD Designer: Catcats 
+Level IN Designer: JKy
+
+Drop It - Asuka
+llustrator: 佑木LY列(TNiK)
+Level EZ Designer: Catcats
+Level HD Designer: Caicats
+Level IN Designer: NerSAN、百九十八
+
+RIPPER - Friedwav
+Illustrator: 何呵
+Level EZ Designer: Catcats
+Level HD Designer: Catcats
+Level IN Designer: 晨、Barbarianerman
+
+Aphasia -闫东炜
+llustrator: 笔记RE
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+开心病 - 闫东炜
+Illustrator: 喵n葵
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: Barbarianerman、晨
+
+華灯爱 - 闫东炜
+llustrator: IvyTowers
+Level EZ Designer: Gausbon
+Level HD Designer: Gausbon
+Level IN Designer: Barbarianerman
+
+Find_ Me - K-forest
+Illustrator: YuKiMuMa 
+Level EZ Designer: Ctymax
+Level HD Designer: Ctymax
+Level IN Designer: Ctymax
+			</pre>
+			<pre class="rightSide">
+Sein -朔(Apo11o program vs.打月古未交響曲ft - kuroaX荒卷
+Illustrator: hideo
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、晨
+
+狂喜蘭舞 - Leaf
+Illustrator: DoublePian 
+Level EZ Designer: Catcats、晨
+Level HD Designer: Catcats、Pcat
+Level IN Designer: Catcats、晨
+Level AT Designer: Catcats、晨、Barbarianerman
+
+Sparkle New Life”rider
+llustrator: 1B
+Level EZ Designer: Ctymax
+Level HD Designer: Ctymax
+Level IN Designer: Ctymax
+
+Khronostasis Katharsis - Halv
+llustr ator: utosao
+Level EZ Designer: StupiGGy
+Level HD Designer: StupiGGy
+Level IN Designer: 百九十八
+
+Snow Desert - WyvernP
+llustrator: knife美工刀
+Level EZ Designer: CN 115
+Level HD Designer: CN 115
+Level IN Designer: CN 115
+
+Burn - NceS 
+llustrator: knife美工刀
+Level EZ Designer: Ctymax
+Level HD Designer: Catcats
+Level IN Designer: Catcats、Ctymax
+
+Aleph-O - Leaf
+Illustrator: Optie
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽
+
+Next Time - SaMZing
+llustrator: 叶藤
+Level EZ Designer: Gausbon
+Level HD Designer: Gausbon
+Level IN Designer: Gausbon 
+
+Rubbish Sorting - Ctymax Vs - NceS
+llustrator: knife美工刀
+Level EZ Designer: 阿爽、Ctymax
+Level HD Designer: 阿爽、Ctymax
+Level IN Designer: 阿爽、Ctymax
+Level SP Designer: Gausbon
+
+Another Me - Neutr al Moon
+llustrator: IvyTowers
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: NerSAN
+Ilustrator: IvyTowers
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: NerSAN
+
+mechanted - rar eguy
+llustrator: IvyTowers
+Level EZ Designer: Ctymax
+Level HD Designer: Ctymax
+Level IN Designer: Ctymax
+
+life flashes before weeb eyes - BilliumMoto
+Ilustrator: 百九十八
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+Break Through The Barrier - lixound
+llustrator: Xquid
+Level EZ Designer: Catcats
+Level HD Designer: Catcats 
+Level IN Designer: 百九十八
+
+Chronostasis - 黑皇帝
+Illustrator: Sand
+Level EZ Designer: Gausbon
+Level HD Designer: Gausbon
+Level IN Designer: Gausbon
+
+Dead Soul - Sound Souler
+Illustrator: Photonskyto
+Level EZ Designer: Ctymax
+Level HD Designer: StupiGgy
+Level IN Designer: 小鹏
+Level SP Designer: 阿爽
+
+Infinity Heaven - HyuN
+Illustrator: DoublePian
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 晨、阿夹
+
+Disorder - HyuN feat - YURI
+llustrator: Nabom
+Level EZ Designer: Gausbon
+Level HD Designer: Gausbon
+Level IN Designer: Gausbon
+
+CROSS t SOUL - HyuN feat - Syepias
+llustrator: knife美工刀
+Level EZ Designer: Catcats
+Level HD Designer: Catcats、Rikko
+Level IN Designer: Catcats 
+
+Speed Up! - Dar Tokki
+Illustrator: 佑木U寸对(TNiK)
+Level EZ Designer: Ctymax、百九十八
+Level HD Designer: Ctymax、百九十八
+Level IN Designer: Ctymax、百九十八
+
+Magenta Potion - EmoCo.
+llustrator: NOISER
+Level EZ Designer: Ctymax、晨
+Level HD Designer: Ctymax、晨
+Level IN Designer: Ctymax、晨
+
+Get Back - CAP3
+Illustrator: 佑木U寸F(TNiK)
+Level EZ Designer: JKy
+Level HD Designer: JKy
+Level IN Designer: JKy
+
+Palescreen - WyvernP feat - Madol
+llustrator: GAMEBAKA
+Level EZ Designer: Jeitie
+Level HD Designer: Jeitie
+Level IN Designer: Jeitie
+
+GOODTEK - EBIMAYO
+llustrator: Ctymax feat - EBIMAYO
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+GOODBOUNCE - EBIMAYO
+Illustrator: EBIMAYO 
+Level Ez Designer: Gausbon、晨
+Level HD Designer: Gausbon
+Level IN Designer: Ctymax、Gausbon 
+
+GOODWORLD - EBIMAYO 
+Illustrator: EBIMAYO
+Level EZ Designer: 阿爽
+Level HD Designer: StupiGGy 
+Level IN Designer: 阿爽、StupiGGy
+
+GOODFORTUNE - EBIMAYO 
+llustrator: Ctymax 
+Level EZ Designer: 晨
+Level HD Designer: 晨
+Level IN Designer: 晨
+
+GOODRAGE - EBIMAYO
+Illustr ator: Ctymax feat - EBIMAYO
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽
+Level IN Designer: 阿爽、Ctymax
+
+The Mountain Eater - Paul Bazooka
+llustrator: START SEED
+Level Ez Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+Orthodox - tokiwa 
+Illustr ator: cycats
+Level EZ Designer: Uvernight
+Level HD Designer: Uvernight
+Level IN Designer: Uvernight
+
+End Me - ZxNX as "Delaina"
+llustrator: 何呵
+Level EZ Designer: 鲲
+Level HD Designer: 鲲
+Level IN Designer: 鲤、百九十八
+
+Parallel Retrogression(Game Ver.) ”Tetr ajectory
+llustrator: 青鸟
+Level EZ Designer: Harakuma
+Level HD Designer: Har akuma
+Level IN Designer: Harakuma
+
+Star duster - Quree
+llustrator: IvyTowers
+Level EZ Designer: NerSAN
+Level HD Designer: Ner SAN
+Level IN Designer: NerSAN
+
+Electron - ElousA.-FZ
+Illustrator: DoublePian
+Level EZ Designer: 百九十八
+Level HD Designer: 百九十八
+Level IN Designer: 百九十八
+
+SIGMA - Kry.exe
+llustrator: 塔塔
+Level EZ Designer: Barbarianerman
+Level HD Designer: Barbarianerman
+Level IN Designer: Barbarianerman
+
+Hardcore Kwaya - EnFr
+llustrator: EnFr
+Level EZ Designer: Ctymax
+Level HD Designer: Barbarianerman
+Level IN Designer: Ctymax、晨
+
+Aventyr - Grand Thaw I Rigel Theatre
+llustrator: Grand Thaw / Rigel Theatre
+Level EZ Designer: Barbarianerman
+Level HD Designer: Snorkel
+Level IN Designer: Barbarianerman、Snorkel
+
+Tr ane - MALVA.
+Illustrator: L元万
+Level EZ Designer: Barbarianerman
+Level HD Designer: Barbarianerman 
+Level IN Designer: Barbarianerman
+
+雪降D、XU久-A-39
+llustrator: 犀牛坨动画工坊
+Level EZ Designer: 阿爽
+Level HD Designer: 阿爽、Ctymax
+Level IN Designer: NerSAN
+
+Cervelle Connexion - SCTL
+llustrator: SCTL
+Level Ez Designer: TangScend
+Level HD Designer: TangScend
+Level IN Designer: TangScend
+
+modulus - PTB1O
+llustrator: geralt
+Level EZ Designer: Ctymax
+Level HD Designer: Ctymax
+Level IN Designer: Ctymax
+
+Shadow - 姜米條GSumaiLight
+llustrator: 御坂果子
+Level EZ Designer: 晨
+Level HD Designer: 晨
+Level IN Designer: 晨、Sillyp
+
+Wavetapper - Frums
+llustrator: 百九十八
+Level EZ Designer: Sillyp
+Level HD Designer: Sillyp
+Level IN Designer: 百九十八、Barbarianerman
+Level SP Designer: 百九十八、NerSAN
+
+大和撫子.Wild Dances- - adaptor vs DRIVE.
+Ilustrator: D中55
+Level EZ Designer: Eaimo、NerSAN
+Level HD Designer: Eaimo、NerSAN 
+Level IN Designer: Eaimo、Ctymax、 NerSAN
+
+Eltaw - FIOOt
+llustrator: xperz
+Level EZ Designer: JKy
+Level HD Designer: Jky
+Level IN Designer: Jky、NerSAN、 Barbarianerman
+
+Initialize - iF
+llustrator: 荡打打/A-ZERO, morph
+Level EZ Designer: 阿爽
+Level HD Designer: Ner SAN
+Level IN Designer: NerSAN、阿爽
+
+桉樹街道 - kozato snow
+Ilustrator: 扬打打/A-ZERO, morph
+Level EZ Designer: Barbarianer man
+Level HD Designer: Barbarianerman
+Level IN Designer: 百九十八
+
+Get Ready! - iF
+llustrator: 万打/A-ZERO, morph
+Level EZ Designer: StupiGGy
+Level HD Designer: StupiGGy
+Level IN Designer: StupiGGy
+
+volcanic - DETRO a.k.a.儿世
+llustrator: 与书/A-ZERO, morph
+Level Ez Designer: Barbarianerman
+Level HD Designer: Rikko 
+Level IN Designer: Ctymax
+Level AT Designer: Barbarianerman
+
+Better Graphic Animation -儿乜
+llustrator: A-Zero Project
+Level EZ Designer: NerSAN
+Level HD Designer: Ner SAN
+Level IN Designer: Catcats
+
+XING”ginkiha
+llustrator: 打留打人(青鸟modified)
+Level Ez Designer: StupiGGy
+Level HD Designer: StupiGGy
+Level IN Designer: Sillyp、阿爽
+
+Final Step! - Lime
+llustrator: 谷地(青 鸟modified)
+Level EZ Designer: Barbarianerman
+Level HD Designer: Barbarianerman 
+Level IN Designer: Barbarianerman、Uvernight
+
+Cthugha”USAO
+llustrator: 谷地(青鸟modified) 
+Level EZ Designer: Barbarianerman
+Level HD Designer: Barbarianerman
+Level IN Designer: Gausbon
+Level AT Designer: 百九十八、NerSAN
+
+With You - Cashew 
+Illustrator: ADZUKI
+Level EZ Designer: Uvernight
+Level HD Designer: Uvernight
+Level IN Designer: Uvernight
+
+Unorthodox Thoughts - Joulez
+llustrator: ASXX
+Level EZ Designer: Barbarianerman
+Level HD Designer: Har akuma
+Level IN Designer: Barbarianerman、Harakuma
+
+Apocalyptic Z ClaxX ESumaiLight
+llustrator: 佑木U孙8 Ctymax
+Level EZ Designer: 阿爽
+Level HD Designer: NerSAN 
+Level IN Designer: NerSAN、阿爽
+
+游园地 - 椒盐菠萝
+llustrator: CEM I
+Level EZ Designer: Barbarianerman
+Level HD Designer: Barbarianerman
+Level IN Designer: NerSAN
+
+energy trixxx - KAH
+llustrator: 手鞠鈴E自動車原付
+Level EZ Designer: NerSAN
+Level HD Designer: Ner SAN
+Level IN Designer: NerSAN
+
+Nhelv - Silentroom
+llustrator: 駿
+Level Ez Designer: Barbarianerman
+Level HD Designer: StupiGGy
+Level IN Designer: TangScend、百九十八
+
+			</pre>
+		</div>
+	</pre>
+	<div class="thanksAllHelpers">
+		感谢所有为Phigros提供帮助的个人或团体
+	</div>
+	<div class="thankYou">
+		And <br>
+		You. <br>
+	</div>
+	</div>
+	<script>
+		document.body.addEventListener("click", () => {
+			// console.log("Clicked! Redirecting to MainPage");
+			// document.body.classList.add('fadeOut');
+			document.querySelector('link#indexCSS').href='./main.css';
+			document.querySelector('img.phigrosLogo').remove();
+			document.querySelector('div.tapToStart').remove();
+			document.querySelector('div#main.hide').classList.remove('hide');
+			const script=document.createElement('script');
+			script.src='./main.js';
+			document.body.appendChild(script);
+			script.onload=()=>{autoScroll();}
+			// setTimeout(()=>{
+			// 	location.href='./main.html';
+			// },300);
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+@import url(../assets/fonts/fonts.css);
+html{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../assets/images/InitialBackground.png) center center no-repeat;
+	background-size: cover;
+	backdrop-filter: blur(100px) brightness(.6);
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+	transition: all .3s linear;
+}
+canvas.canvas#canvas{
+	height: 100%;
+	width: calc(100vh * 1.778);
+	background-color: transparent;
+}
+embed.loadingEmbedFrame{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	object-fit: cover;
+}
+div.tapToStartFrame{
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #FFF;
+}
+div.tapToStartFrame>div.songName{
+	font-size: 2.5rem;
+}
+div.tapToStartFrame>div.judgeLine{
+	height: 0.7%;
+	width: 100%;
+	margin: 75px 0;
+	background-color: #fff;
+}
+div.tapToStartFrame>div.detail{
+	font-size: 1.2rem;
+	text-align: center;
+}
+.hide{
+	display: none;
+}
+div.pauseOverlay{
+	display: none;
+}
+div.pauseOverlay.visable{
+	height: 100vh;
+	width: 100vw;
+	z-index: 999;
+	/* filter: contrast(.6)brightness(.6); */
+	backdrop-filter: contrast(.6)brightness(.6);
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	/* filter: blur(75px); */
+	backdrop-filter: blur(75px);
+	font-size: 3rem;
+	color: #FFF;
+}
+div#backBtn{
+	background: url(./assets/Back7918.png) center center no-repeat;
+	background-size: 85%;
+}
+div#restartBtn{
+	background: url(./assets/Retry.png) center center no-repeat;
+	background-size: 85%;
+}
+div#resumeBtn{
+	background: url(./assets/Resume.png) center center no-repeat;
+	background-size: 85%;
+}
+div#backBtn,
+div#restartBtn,
+div#resumeBtn{
+	height: 50px;
+	width: 50px;
+	margin: 25px;
+	/* background-color: #000; */
+}
+
+img.flick,
+img.tap,
+img.drag{
+	width: 100px;
+	height: 20px;
+	border-radius: 999px;
+}
+.key2HL{
+	box-shadow: 
+		0 0 7.5px 3px #f0ed69,
+		inset 0 0 20px 5px #f0ed69;
+}
+img.hitState{
+	border-right: 20px solid transparent;
+	height: 100px;
+	width: 100px;
+	object-fit: cover;
+	object-position: center 0px;
+	animation: splash 1s linear;
+}
+@keyframes splash {
+	0%{
+		object-position: center 0px;
+	}
+	25%{
+		object-position: center 256px;
+	}
+	75%{
+		object-position: center 512px;
+	}
+	100%{
+		/* object-position: center 0px; */
+	}
+}
+img.hitState.perfect{
+	filter: drop-shadow(#f0ed69 1px 1px);
+}
+img.hitState.good{
+	filter: drop-shadow(#0ac3ff 1px 1px);
+}
+/*
+div.judgeLine{
+	position: absolute;
+	height: 5px;
+	width: 1500px;
+	background-color: #fff;
+	animation: testAnim 5s linear infinite;
+}
+@keyframes testAnim {
+	0%{
+		transform: rotate(0deg);
+	}
+	0%{
+		transform: rotate(360deg);
+	}
+} */

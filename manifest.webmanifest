@@ -1,0 +1,15 @@
+{
+	"background_color": "#ada5dc",
+	"description": "A Web edition of Phigros",
+	"display": "fullscreen",
+	"icons": [
+	  {
+		"src": "assets//images/app_icon.png",
+		"sizes": "192x192",
+		"type": "image/png"
+	  }
+	],
+	"name": "Phigros",
+	"short_name": "Phigros",
+	"start_url": "/tapToStart/index.html"
+  }

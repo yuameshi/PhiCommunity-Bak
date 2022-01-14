@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Loading... - Phigros</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<div class="mainContent">
+		<div class="textInfo">
+			<div class="songInfoFrame">
+				<div class="basicInfo">
+					<div class="songName" id="songNameElem"></div>
+					<div class="artist" id="artistElem"></div>
+				</div>
+				<div class="level hd" data-level="10" id="levelInfoElem">
+					<!-- 10 -->
+				</div>
+			</div>
+			<div class="chartDesigner" id="chartDesignerElem"></div>
+			<div class="illustrator" id="illustratorElem"></div>
+		</div>
+		<div class="songImage">
+			<img src="" id="songImgElem" class="illustration" />
+		</div>
+	</div>
+	<div class="tip" id="tipConteiner">Lorem ipsum dolor sit amet.</div>
+	<div class="loadingBar">
+		<div class="loadingBarTxT">Loading...</div>
+		<div class="loadingBarBG"></div>
+	</div>
+	<script src="../loadingScreen/index.js"></script>
+	<script>
+		const urlParams = new URL(location.href).search;
+		const parsedURLParams = new URLSearchParams(urlParams)
+		const chart = parsedURLParams.get('play');
+		const level = parseInt(parsedURLParams.get('l'));
+		let songInfoXHR = new XMLHttpRequest();
+		songInfoXHR.open('GET', '../charts/' + chart + '/meta.json', false);
+		songInfoXHR.send();
+		songInfoObj = JSON.parse(songInfoXHR.responseText);
+		document.querySelector('#songNameElem').innerText = songInfoObj.name;
+		document.querySelector('#artistElem').innerText = songInfoObj.artist;
+		document.querySelector('#chartDesignerElem').innerText = songInfoObj.chartDesigner;
+		document.querySelector('#illustratorElem').innerText = songInfoObj.illustrator;
+		document.querySelector('#songImgElem').setAttribute('src', '../charts/' + chart + '/' + songInfoObj.illustration);
+		document.body.setAttribute('style', 'background: url(' + '../charts/' + chart + '/' + songInfoObj.illustration + ') center center no-repeat fixed;')
+		switch (level) {
+			case 0: //EZ(1-7)
+				document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj.ezRanking));
+				document.querySelector('#levelInfoElem').classList.add('ez');
+				break;
+
+			case 1:	//HD(3-12)
+				document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj.hdRanking));
+				document.querySelector('#levelInfoElem').classList.add('hd');
+				break;
+
+			case 2:	//IN(6-15)
+				document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj.inRanking));
+				document.querySelector('#levelInfoElem').classList.add('in');
+				break;
+
+			case 3:	//AT(13-16)
+				document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj.atRanking));
+				document.querySelector('#levelInfoElem').classList.add('at');
+				break;
+
+			default:
+				break;
+		}
+	</script>
+	<!-- <script src="../assets/autoScale.js"></script> -->
+</body>
+
+</html>

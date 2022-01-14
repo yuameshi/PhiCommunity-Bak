@@ -1,0 +1,58 @@
+@import url(../assets/fonts/fonts.css);
+html{
+	background: #000;
+	background-size: cover;
+	box-sizing: content-box;
+	height: 100%;
+	backdrop-filter: blur(15px);
+	overflow: hidden;
+}
+.fadeOut{
+	opacity: 0 !important;
+	animation: fadeOut .3s linear;
+}
+.hide{
+	display: none;
+}
+@keyframes fadeOut {
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+body{
+	display: flex;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 0;
+}
+img.phigrosLogo{
+	height: 20%;
+	width: auto;
+	max-width: 80%;
+	object-fit: scale-down;
+}
+div.tapToStart{
+	margin: 30px;
+	color: #fff;
+	letter-spacing: 1.1em;
+	animation: letterSpacingStretchAnim 6s linear infinite;
+}
+@keyframes letterSpacingStretchAnim {
+	0%{
+		letter-spacing: 1.1em;
+	}
+	50%{
+		letter-spacing: 1.2em;
+	}
+	100%{
+		letter-spacing: 1.1em;
+	}
+}

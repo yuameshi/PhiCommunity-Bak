@@ -1,0 +1,82 @@
+@import url(../assets/fonts/fonts.css);
+body,
+div#main{
+	height: 100%;
+	width: 100%;
+	background: #000;
+	color: #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-sizing: border-box;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+	scrollbar-width: none;
+	top: 100vh;
+	/* margin-top: -1000px; */
+}
+div#main{
+	margin: 0 !important;
+	top: 0 !important;
+}
+::-webkit-scrollbar{
+	display: none;
+}
+
+pre{
+	text-align: center;
+	line-height: 1.5em;
+}
+pre.fromGameDirector{
+	text-align: center;
+	line-height: 2.2em;
+}
+div.clickToExitTag{
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 15px;
+	opacity: 0;
+	transition: all .3s ease-in-out;
+}
+div.blackOverlay{
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: all .3s ease-in-out;
+}
+pre.musicCredits{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+pre.musicCredits>div.mainContent{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+pre.leftSide,
+pre.rightSide{
+	margin: 30px;
+}
+pre.leftSide{
+	text-align: right;
+}
+pre.rightSide{
+	margin-top: 60px;
+	text-align: left;
+}
+div.thanksAllHelpers,
+div.thankYou{
+	margin-top: 25%;
+	margin-bottom: 25%;
+}
