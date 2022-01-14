@@ -1,0 +1,81 @@
+@import url(../assets/fonts/fonts.css);
+html{
+	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed ;
+	background-size: cover;
+	box-sizing: content-box;
+	height: 100%;
+	backdrop-filter: blur(15px);
+	overflow: hidden;
+}
+div.fadeIn{
+	height: 100vh;
+	width: 100vw;
+	background-color: #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	animation: fadeIn .6s ease-out;
+}
+@keyframes fadeIn {
+	0%{
+		opacity: 0;
+	}
+}
+body{
+	display: flex;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+	z-index: 0;
+}
+img.phigrosLogo{
+	height: 20%;
+	width: auto;
+	max-width: 80%;
+	object-fit: scale-down;
+}
+div.tapToStart{
+	margin: 30px;
+	color: #fff;
+}
+div.bubbles{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	content: '';
+	background-color: rgb(255 255 255 / 85%);
+	height: 15px;
+	width: 15px;
+	position: fixed;
+	border-radius: 50%;
+	box-shadow: 0px 0px 15px 1px #fff;
+	animation: float 12s linear;
+}
+
+@keyframes float {
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: .8;
+	}
+	50%{
+		opacity: 1;
+	}
+	75%{
+		opacity: .6;
+	}
+	95%{
+		opacity: 0;
+	}
+	100%{
+		bottom: 100%;
+	}
+}

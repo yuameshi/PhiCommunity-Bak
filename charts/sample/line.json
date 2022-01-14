@@ -1,0 +1,34 @@
+[
+    {
+        "Chart": "SpasmodicSP.json",
+        "LineId": "20",
+        "Image": "0.png",
+        "Vert": "1",
+        "Horz": "1",
+        "IsDark": "0"
+    },
+    {
+        "Chart": "SpasmodicSP.json",
+        "LineId": "21",
+        "Image": "1.png",
+        "Vert": "-0.55",
+        "Horz": "1",
+        "IsDark": "0"
+    },
+    {
+        "Chart": "SpasmodicSP.json",
+        "LineId": "22",
+        "Image": "2.png",
+        "Vert": "-1",
+        "Horz": "1",
+        "IsDark": "1"
+    },
+    {
+        "Chart": "SpasmodicSP.json",
+        "LineId": "23",
+        "Image": "3.png",
+        "Vert": "-1",
+        "Horz": "1",
+        "IsDark": "1"
+    }
+]

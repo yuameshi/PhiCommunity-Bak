@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="989px" height="200px" viewBox="0 0 989 200" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <rect width="989" height="200" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Artboard" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#000000" fill-opacity="0" />
+    <path d="M473 -0.5L557 50L557 100.5L515.5 75L515.5 200L433.5 150.5L433.5 100.5L473 125L473 -0.5Z" id="Rectangle" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M73.5 50L461 50L461 103L421 77.5L421 150L73.5 150L48.5 100.5L73.5 50Z" id="heptagonLeft" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M914 150L527 150L527 96L569 121.5L569 50L914 50L939 100L914 150Z" id="heptagonRight" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M26 50L49 50L25 100L49 150L26 150L0 100L26 50Z" id="hexagonLeft" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M963 50L940 50L964 100L940 150L963 150L989 100L963 50Z" id="hexagonRight" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M92.2329 77L394 77L394 123L92.2329 123L80 100L92.2329 77Z" id="innerPentagonLeft" fill="#FE4365" fill-rule="evenodd" stroke="none" />
+    <path d="M898.5 77L596 77L596 123L898.5 123L910 100L898.5 77Z" id="innerPentagonRight" fill="#FE4365" fill-rule="evenodd" stroke="none" />
+    <path d="M496.056 39.8234L517 52.5C517 52.5 509.645 53.0486 504.5 55.5C499.355 57.9514 496.056 63 496.056 63L496.056 39.8234Z" id="triangleUpper" fill="#FE4365" fill-rule="evenodd" stroke="none" />
+    <path d="M491.944 159.677L471 147C471 147 478.355 146.451 483.5 144C488.645 141.549 491.944 136.5 491.944 136.5L491.944 159.677Z" id="triangleLower" fill="#FE4365" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

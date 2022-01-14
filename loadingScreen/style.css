@@ -1,0 +1,54 @@
+@import url(../assets/fonts/fonts.css);
+body{
+    background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
+    background-size: cover;
+}
+div.tip::before{
+    content: 'Tip: ';
+}
+div.tip{
+    color: #fff;
+    position: fixed;
+    left: 2%;
+    bottom: 5%;
+}
+div.loadingBar{
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    overflow: hidden;
+}
+div.loadingBarTxT{
+    color: #000;
+    z-index: 999;
+    animation: loadingBarTXTAnim 1s ease-in-out infinite;
+}
+div.loadingBarBG{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: #fff;
+    animation: loadingBarBGAnim 1s ease-in-out infinite;
+}
+@keyframes loadingBarBGAnim {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 200%;
+    }
+}
+@keyframes loadingBarTXTAnim {
+    0%{
+        color: #fff;
+    }
+    50%{
+        color: #000;
+    }
+    100%{
+        color: #fff;
+    }
+}

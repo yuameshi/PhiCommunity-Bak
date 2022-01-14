@@ -1,0 +1,21 @@
+{
+	"name":"Spasmodic(Haocore Mix)(JSON File Sample Chart)",
+	"codename":"sample",
+	"artist":"HanHan233",
+	"musicFile":"SpasmodicSP.ogg",
+	"ezRanking":1,
+	"hdRanking":11,
+	"inRanking":21,
+	"atRanking":31,
+	"lineTexture":"line.json",
+	"chartEZ":"SpasmodicSP.json",
+	"chartHD":"SpasmodicSP.json",
+	"chartIN":"SpasmodicSP.json",
+	"chartAT":"SpasmodicSP.json",
+	"chartLegacy":"SpasmodicSP.json",
+	"illustration":"SpasmodicSP.png",
+	"chartDesigner":"Phigros Spasming Team \"無極病院\"",
+	"illustrator":"笔记RE",
+	"sliceAudioStart":"10",
+	"sliceAudioDuration":"3"
+}

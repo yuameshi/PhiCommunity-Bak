@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="989px" height="100px" viewBox="0 0 989 100" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <rect width="989" height="100" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Artboard" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#000000" fill-opacity="0" />
+    <path d="M915 1.52588e-05L74 1.52588e-05L51 50L74 100L915 100L940.5 50L915 1.52588e-05Z" id="hexagonMiddleOuter" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M26 0L49 0L25 50L49 100L26 100L0 50L26 0Z" id="hexagonLeft" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M963 0L940 0L964 50L940 100L963 100L989 50L963 0Z" id="hexagonRight" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <path d="M890 25L99.4997 25L86.9999 50L99.4997 75L890 75L901.5 50L890 25Z" id="hexagonMiddleInner" fill="#0AC3FF" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>
