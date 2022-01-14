@@ -260,8 +260,8 @@ document.getElementById('btn-play').addEventListener("click", async function () 
 		duration = 0;
 		this.value = "播放";
 	}
-	window.LevelOverTimeOut=
-		setTimeout(()=>{
-			// location.href=`../levelOver/index.html?play=sample&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.perfect}&g=${stat.good}&b=${stat.bad}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}`;
-		},(Renderer.bgMusic.duration-actx.currentTime)*1000+3500);
+	// window.LevelOverTimeOut=
+	// 	setTimeout(()=>{
+	// 		// location.href=`../levelOver/index.html?play=sample&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.perfect}&g=${stat.good}&b=${stat.bad}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}`;
+	// 	},(Renderer.bgMusic.duration-actx.currentTime)*1000+3500);
 });
