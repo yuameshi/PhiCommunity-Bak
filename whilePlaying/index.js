@@ -160,9 +160,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 		if (key=='phi') {
 			continue;
 		}
+		if (key.match('eruda')) {
+			continue;
+		}
 		console.log('Applying settings:',key,value);
 		const elem=document.querySelector('#'+key);
-		console.log(elem.type)
+		// console.log(elem.type);
 		if (elem.type=='checkbox') {
 			if (value=='true') {
 				elem.setAttribute('checked',value);
