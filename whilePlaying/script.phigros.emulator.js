@@ -1285,11 +1285,7 @@ btnPause.addEventListener("click", function () {
 			isPaused = false;
 			if (isInEnd && !isOutStart) playBgm(Renderer.bgMusic, timeBgm);
 			this.value = "暂停";
-			document.querySelector('div#pauseOverlay.pauseOverlay').innerHTML=`\n\t\t<audio src="../assets/audio/Tap2.wav" id="tap2" __idm_id__="318562305"></audio>\n\t\t<div id="backBtn" onclick="document.querySelector('#tap2').play();setTimeout(() => {history.back(-1);}, 500);"></div>\n\t\t<div id="restartBtn" onclick="location.reload()"></div>\n\t\t<div id="resumeBtn" onclick="btnPause.click()"></div>\n\t`;
-			// window.LevelOverTimeOut=
-			// 	setTimeout(()=>{
-			// 		location.href=`../levelOver/index.html?play=sample&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.perfect}&g=${stat.good}&b=${stat.bad}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}`;
-			// 	},Math.abs((Renderer.bgMusic.duration-actx.currentTime)*1000)+3500);
+			document.querySelector('div#pauseOverlay.pauseOverlay').innerHTML=`\n\t\t<audio src="../assets/audio/Tap2.wav" id="tap2"></audio>\n\t\t<div id="backBtn" onclick="document.querySelector('#tap2').play();setTimeout(() => {history.back(-1);}, 500);"></div>\n\t\t<div id="restartBtn" onclick="location.reload()"></div>\n\t\t<div id="resumeBtn" onclick="btnPause.click()"></div>\n\t`;
 		},3000);
 	}
 });
@@ -1634,7 +1630,6 @@ function qwqdraw2() {
 }
 
 function qwqdraw3(statData) {
-	// location.href=`../levelOver/index.html?play=sample&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.perfect}&g=${stat.good}&b=${stat.bad}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}`;
 	ctxos.resetTransform();
 	ctxos.globalCompositeOperation = "source-over";
 	ctxos.clearRect(0, 0, canvasos.width, canvasos.height);
