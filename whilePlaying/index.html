@@ -21,7 +21,7 @@
 	<input id="btn-play" class="hide" type="button" value="播放">
 	<div class="pauseOverlay" id="pauseOverlay">
 		<audio src="../assets/audio/Tap2.wav" id="tap2"></audio>
-		<div id="backBtn" onclick="document.querySelector('#tap2').play();setTimeout(() => {history.back(-1);}, 500);"></div>
+		<div id="backBtn" id="backBtn"></div>
 		<div id="restartBtn" onclick="location.reload()"></div>
 		<div id="resumeBtn" onclick="btnPause.click()"></div>
 	</div>
