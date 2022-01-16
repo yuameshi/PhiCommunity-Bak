@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	const play  = new URLSearchParams(new URL(location.href).search).get('play');
 	var level  = parseInt(new URLSearchParams(new URL(location.href).search).get('l'));
 	//	添加加载页面覆盖层
-	let loadingEmbedFrame=document.createElement('embed');
+	let loadingEmbedFrame=document.createElement('iframe');
 	loadingEmbedFrame.src="../loadingChartScreen/index.html?c="+play+"&l="+level;
 	loadingEmbedFrame.classList.add('loadingEmbedFrame');
 	document.body.appendChild(loadingEmbedFrame);

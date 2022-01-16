@@ -13,7 +13,7 @@ line.json			可选-判定线贴图	 (名称可变更)
 illustration.jpg 	必须-曲绘		 (名称可变更)
 ```
 在`meta.json`内填入歌曲元信息（见下），注意要删除注释
-```json
+```javascript
 {
 	"name":"Spasmodic(Haocore Mix)",	//曲名
 	"codename":"sample",				//你的文件夹名称
