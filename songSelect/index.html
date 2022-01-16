@@ -1,105 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>歌曲选择 - Phigros</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<audio src="" id="slicedAudioElement"></audio>
-	<div class="darkOverlay"></div>
-	<div class="backBtn" onclick="history.back(-1)"></div>
-	<div class="readyToLoadOverlay" id="readyToLoadOverlay"></div>
-	<div class="leftArea">
-		<div class="topLeftBar">
-			<div class="sortMode">
-				默认
-			</div>
-			<div class="settingBtn" onclick="location.href='../settings/index.html'">设置</div>
-		</div>
-		<!-- style="--historyGrade:url(../assets/images/A15A.png);" -->
-		<div class="songList" id="songList">
-			<!-- 
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/Φ.png);" data-level="1"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Chiper: /2&//<|0</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/S15S.png);" data-level="2"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="FFASFA" data-codename="sample">Fuli Auto Shooter</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/A15A.png);" data-level="3"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="AFASF/NceS" data-codename="sample">HumaN</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/B15B.png);" data-level="4"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="astaeg/NceS" data-codename="sample">[PRAW]</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/C15C.png);" data-level="5"></div>
-			</div>
-			<div class="songItemContainer choosed">
-				<div class="songItem choosed" data-artist="SunsetRay/NceS" data-codename="sample">Cereris</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/B15B.png);" data-level="6"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="afheheh/NceS" data-codename="sample">Pixel Rebelz</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/V15V.png);" data-level="7"></div>
-			</div>
-			<div class="songItemContainer">
-				<div class="songItem" data-artist="afywege/NceS" data-codename="sample">Non-Melodic Ragez(MUG Edit)</div>
-				<div class="level ez" style="--historyGrade:url(../assets/images/V15FC.png);" data-level="10"></div>
-			</div>
-			 -->
-		</div>
-	</div>
-	<div class="rightArea" id="rightArea">
-		<div class="illustrationContainer">
-			<img src="../assets/images/InitialBackground.png" alt="" class="illustration" id="illustration">
-		</div>
-		<div class="detailBar unplayed">
-			<div class="levelChooser">
-				<div class="levelItem ez choosed" data-level="1" onclick="changeLevel()"></div>
-				<div class="levelItem hd " data-level="2" onclick="changeLevel()"></div>
-				<div class="levelItem in " data-level="3" onclick="changeLevel()"></div>
-				<div class="levelItem at " data-level="4" onclick="changeLevel()"></div>
-			</div>
-			<div class="score unplayed" data-acc="00.00%">0000000</div>
-		</div>
-	</div>
-	<div class="playBtn" onclick="readyToLoadTrigger()"></div>
-	<script src="./index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>歌曲选择 - Phigros</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio src="" id="slicedAudioElement"></audio>
+    <div class="darkOverlay"></div>
+    <div class="backBtn" onclick="history.back(-1)"></div>
+    <div class="readyToLoadOverlay" id="readyToLoadOverlay"></div>
+    <div class="leftArea">
+      <div class="topLeftBar">
+        <div class="sortMode">默认</div>
+        <div
+          class="settingBtn"
+          onclick="location.href='../settings/index.html'"
+        >
+          设置
+        </div>
+      </div>
+      <!-- style="--historyGrade:url(../assets/images/A15A.png);" -->
+    </div>
+    <div class="rightArea" id="rightArea">
+      <div class="illustrationContainer">
+        <img
+          src="../assets/images/InitialBackground.png"
+          alt=""
+          class="illustration"
+          id="illustration"
+        />
+      </div>
+      <div class="detailBar unplayed">
+        <div class="levelChooser">
+          <div class="levelItem ez selected" data-level="1"></div>
+          <div class="levelItem hd" data-level="2"></div>
+          <div class="levelItem in" data-level="3"></div>
+          <div class="levelItem at" data-level="4"></div>
+        </div>
+        <div class="score unplayed" data-acc="00.00%">0000000</div>
+      </div>
+    </div>
+    <div class="playBtn" onclick="readyToLoadTrigger()"></div>
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>
