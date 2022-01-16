@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	const late=good-early;
 	var grade;
 	document.getElementById('retryBtn').addEventListener('click',()=>{
-		location.href='../whilePlaying/index.html?play='+play+'&l='+playLevel;
+		location.href='../whilePlaying/index.html?play='+play+'&l='+playLevel+'&c='+parsedURLParams.get('c');
 	});
 	document.getElementById('backBtn').addEventListener('click',()=>{
 		location.href='../songSelect/index.html?c='+parsedURLParams.get('c');
