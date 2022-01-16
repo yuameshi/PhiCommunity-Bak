@@ -1,6 +1,7 @@
 @import url(../assets/fonts/fonts.css);
 body{
 	height: 100%;
+	min-width: 100%;
 	position: absolute;
 	top: -10px;
 	left: var(--left);
@@ -13,6 +14,8 @@ body{
 	transition: .1s all ease-in-out;
 	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed ;
 	background-size: cover;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
 	padding-left: 100px;
 }
 html::before{
@@ -24,6 +27,7 @@ html::before{
 	height: 100%;
 	width: 100%;
 	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
 	z-index: -1;
 }
 div.chapterContainer{
@@ -70,7 +74,7 @@ div.chapterContainer::after{
 	bottom: 0;
 	margin: 2.5% 5%;
 	z-index: 1;
-	font-size: 1.5em;
+	font-size: 1.3rem;
 	transform: translateX(18%) skew(15deg);
 	width: 45%;
 	height: 15%;
