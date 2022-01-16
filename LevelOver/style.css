@@ -119,13 +119,19 @@ div.miss,
 div.moreDetail{
 	transform: skew(15deg);
 }
-img.songImg{
+div.songImgContainer{
 	height: 100%;
 	width: 60%;
-	/* width: 520px; */
+	transform: skew(-15deg);
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+img.songImg{
+	height: 100%;
+	width: 150%;
 	object-fit: cover;
-	margin-right: -50px;
-    clip-path: polygon(75px 0, 100% 0, 400px 100%, 0 100%);
 }
 div.scoreOuterContainer{
 	display: flex;
