@@ -37,6 +37,7 @@ embed.loadingEmbedFrame{
 	left: 0;
 	top: 0;
 	object-fit: cover;
+	z-index: 999999999;
 }
 div.tapToStartFrame{
 	position: fixed;

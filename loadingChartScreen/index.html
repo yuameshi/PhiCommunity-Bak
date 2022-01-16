@@ -17,7 +17,7 @@
 					<div class="songName" id="songNameElem"></div>
 					<div class="artist" id="artistElem"></div>
 				</div>
-				<div class="level hd" data-level="10" id="levelInfoElem">
+				<div class="level" data-level="10" id="levelInfoElem">
 					<!-- 10 -->
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 	<script>
 		const urlParams = new URL(location.href).search;
 		const parsedURLParams = new URLSearchParams(urlParams)
-		const chart = parsedURLParams.get('play');
+		const chart = parsedURLParams.get('c');
 		const level = parseInt(parsedURLParams.get('l'));
 		let songInfoXHR = new XMLHttpRequest();
 		songInfoXHR.open('GET', '../charts/' + chart + '/meta.json', false);

@@ -95,9 +95,15 @@ div.songInfoFrame{
     margin: 25px;
 }
 div.songInfoFrame>*{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     transform: skew(15deg);
 }
 div.songName{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-size: 32px;
 }
 div.level::before{
@@ -110,6 +116,7 @@ div.level::before{
 div.level{
     height: calc(100% + 35px);
     width: 90px;
+    min-width: 90px;
     background-color: #fff;
     transform: skew(0deg);
     margin: 0;
