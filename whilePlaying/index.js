@@ -15,6 +15,12 @@ Renderer = { //存放谱面
 qwq=[];
 var chartLine,chartLineData;
 window.addEventListener('DOMContentLoaded',()=>{
+	document.getElementById('backBtn').addEventListener('click',()=>{
+		document.querySelector('#tap2').play();
+		setTimeout(() => {
+			location.href=`../songSelect/index.html?c=${new URLSearchParams(new URL(location.href).search).get('c')}`
+		}, 500);
+	});
 	// var script = document.createElement('script'); 
 	// script.src="//cdn.jsdelivr.net/npm/eruda"; 
 	// document.body.appendChild(script); 
