@@ -34,7 +34,19 @@ window.addEventListener('DOMContentLoaded',()=>{
 	loadingEmbedFrame.src="../loadingChartScreen/index.html?c="+play+"&l="+level;
 	loadingEmbedFrame.classList.add('loadingEmbedFrame');
 	document.body.appendChild(loadingEmbedFrame);
-	
+	//	不断检测直到加载完成
+	var loadCompleteDetectInterval=setInterval(()=>{
+		var LoadCompleteItems=0;
+		for ( i in Renderer){
+			if(Renderer[i]!=undefined){
+				LoadCompleteItems++;
+			}
+		}
+		if (LoadCompleteItems==12&&window.ResourcesLoad==200) {
+			loadingEmbedFrame.remove();
+			clearInterval(loadCompleteDetectInterval);
+		}
+	});
 	//	定义难度
 	level == 0 ?level="EZ":undefined;
 	level == 1 ?level="HD":undefined;
@@ -132,7 +144,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 			});
 		});
 	});
-	loadingEmbedFrame.remove();
 	var tapToStartFrame=document.createElement('div');
 	tapToStartFrame.classList.add('tapToStartFrame');
 	tapToStartFrame.innerHTML=`
