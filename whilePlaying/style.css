@@ -30,7 +30,7 @@ canvas.canvas#canvas{
 	width: calc(100vh * 1.778);
 	background-color: transparent;
 }
-embed.loadingEmbedFrame{
+.loadingEmbedFrame{
 	position: fixed;
 	height: 100%;
 	width: 100%;
@@ -38,6 +38,7 @@ embed.loadingEmbedFrame{
 	top: 0;
 	object-fit: cover;
 	z-index: 999999999;
+	background: #999;
 }
 div.tapToStartFrame{
 	position: fixed;
