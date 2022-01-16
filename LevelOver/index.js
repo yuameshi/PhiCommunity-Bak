@@ -98,74 +98,15 @@ window.addEventListener('DOMContentLoaded',()=>{
 	document.querySelector("#miss").innerHTML=miss;
 	document.querySelector("#early").innerHTML=early;
 	document.querySelector("#late").innerHTML=late;
-});
-window.onload=()=>{
 	// 加载歌曲元信息（计算RKS等）
 	var deltaRKS,deltaData;
+	// rks=((Y*100-55)/45)²*X
+	playLevel == 0 ?level="EZ":undefined;
+	playLevel == 1 ?level="HD":undefined;
+	playLevel == 2 ?level="IN":undefined;
+	playLevel == 3 ?level="AT":undefined;
 	if(playResult.accuracy>=70){
-	switch (playResult.playLevel) {
-		case 0: //EZ(1-7)
-			deltaRKS=((100*playResult.accuracy-55)/45)^2*playResult.songInfo.ezRanking;
-			// if (playResult.songInfo.ezRanking<=6) {
-			// 	//定数低于1-6
-			// 	console.log('Song Ranking:',playResult.songInfo.ezRanking);
-			// 	deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 128;
-			// }else{
-			// 	//定数7
-			// 	console.log('Song Ranking:',playResult.songInfo.ezRanking);
-			// 	deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 256;
-			// }
-			break;
-
-		case 1:	//HD(3-12)
-			deltaRKS=((100*playResult.accuracy-55)/45)^2*playResult.songInfo.hdRanking;
-			// if (playResult.songInfo.hdRanking<=6) {
-			// 	//定数低于6
-			// 	console.log('Song Ranking:',playResult.songInfo.hdRanking);
-			// 	deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 128;
-			// }else{
-			// 	if (playResult.songInfo.hdRanking<=9) {
-			// 		//定数7-9
-			// 		console.log('Song Ranking:',playResult.songInfo.hdRanking);
-			// 		deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 256;
-			// 	} else {
-			// 		//定数10-12
-			// 		console.log('Song Ranking:',playResult.songInfo.hdRanking);
-			// 		deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 384;
-			// 	}
-			// }
-			break;
-		
-		case 2:	//IN(6-15)
-			deltaRKS=((100*playResult.accuracy-55)/45)^2*playResult.songInfo.inRanking;
-			// if (playResult.songInfo.inRanking==6){
-			// 	//定数6
-			// 	deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 128;
-			// }else{
-			// 	if (playResult.songInfo.inRanking<=9) {
-			// 		//定数7-9
-			// 		deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 256;
-			// 	} else {
-			// 		if (playResult.songInfo.inRanking<=12) {
-			// 			//定数10-12
-			// 			deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 384;
-			// 		} else {
-			// 			//定数13+
-			// 			deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 384 + 32 * (playResult.songInfo.inRanking-13);
-			// 		}
-			// 	}
-			// }
-			break;
-			
-		case 3:	//AT(13-16)
-			deltaRKS=((100*playResult.accuracy-55)/45)^2*playResult.songInfo.atRanking;
-			// deltaData=( (10/3) * (playResult.score/1000000) - (7/3) ) * 384 + 32 * (playResult.songInfo.atRanking-13);
-			break;
-	
-		default:
-			deltaRKS=0;
-			break;
-	}
+		deltaRKS= (Math.pow(((playResult.accuracy-55)/45),2)*playResult.songInfo[level.toLowerCase()+'Ranking']).toFixed(2);
 	}else{
 		deltaRKS=0
 	}
@@ -175,7 +116,7 @@ window.onload=()=>{
 	document.querySelector("#rks").innerHTML=deltaRKS;
 	console.log('ΔRKS:',deltaRKS);
 	console.log('ΔData(KB):',deltaData);
-}
+});
 window.onresize=function(){
 	//	自动缩放
 	document.body.children[0].style.transform="scale("+window.outerHeight/480+")";
