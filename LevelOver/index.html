@@ -12,7 +12,7 @@
 			http://127.0.0.1:7750/LevelOver/?play=sample&l=2&score=883736&mc=238&p=528&g=67&b=8&m=8&e=17
 		 -->
 		
-		<div class="retryBtn" onclick="history.back()"></div>
+		<div class="retryBtn" id="retryBtn"></div>
 		<div class="mainContent">
 			<div class="songImgContainer">
 				<img
@@ -48,7 +48,7 @@
 				本曲最终RKS:<span id="rks">0</span>
 			</div>
 		</div>
-		<div class="backBtn" onclick="history.go(-2)"></div>
+		<div class="backBtn" id="backBtn"></div>
 		<audio id="levelOverAudio" src="" loop></audio>
 		<script src="./index.js"></script>
 	</body>

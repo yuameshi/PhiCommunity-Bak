@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		location.href='../settings/index.html';
 	});
 	//	获取歌曲列表并生成元素
-	const chapterName=new URLSearchParams(new URL(location.href).search).get('c')
+	window.chapterName=new URLSearchParams(new URL(location.href).search).get('c')
 	var songListXHR=new XMLHttpRequest();
 	songListXHR.open("GET",'../charts/'+chapterName+'.json',false)
 	songListXHR.send();
@@ -197,6 +197,6 @@ function readyToLoadTrigger() {
 	playClickedSound.src='../assets/audio/Tap7.wav';
 	playClickedSound.play();
 	setTimeout(()=>{
-		location.href="../whilePlaying/index.html?play="+document.querySelector('div.songItem.choosed').getAttribute('data-codename')+"&l="+window.levelChoosed;
+		location.href="../whilePlaying/index.html?play="+document.querySelector('div.songItem.choosed').getAttribute('data-codename')+"&l="+window.levelChoosed+'&c='+chapterName;
 	},2000);
 }

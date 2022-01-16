@@ -17,6 +17,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 	const accuracy=Math.round((parseInt(perFect)+parseInt(good)*0.65)/(parseInt(perFect)+parseInt(good)+parseInt(bad)+parseInt(miss)+0)*10000)/100;
 	const late=good-early;
 	var grade;
+	document.getElementById('retryBtn').addEventListener('click',()=>{
+		location.href='../whilePlaying/index.html?play='+play+'&l='+playLevel;
+	});
+	document.getElementById('backBtn').addEventListener('click',()=>{
+		location.href='../songSelect/index.html?c='+parsedURLParams.get('c');
+	})
 	//	判断等级（范围来自萌娘百科）
 	if (score<699999) {
 		console.log('Grade: False');
