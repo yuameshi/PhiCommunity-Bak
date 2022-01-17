@@ -164,6 +164,7 @@ document
   .querySelectorAll("div.levelItem")
   .forEach((element) => element.addEventListener("click", changeLevel));
 
+document.querySelector("div.playBtn").addEventListener("click",()=>{readyToLoadTrigger();});
 function readyToLoadTrigger() {
   document.querySelector("#readyToLoadOverlay").classList.add("go");
   const playClickedSound = document.createElement("audio");
