@@ -1,10 +1,9 @@
 @import url(../assets/fonts/fonts.css);
 html{
-	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed ;
+	background: url(./favicon.png) center center no-repeat fixed ;
 	background-size: cover;
 	box-sizing: content-box;
 	height: 100%;
-	backdrop-filter: blur(15px);
 	overflow: hidden;
 }
 div.fadeIn{
