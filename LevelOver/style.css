@@ -1,7 +1,7 @@
 @import url(../assets/fonts/fonts.css);
 *{
 	/* border: 1px #000 solid; */
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 html{
 	height: 100%;
@@ -13,7 +13,7 @@ body{
 	width: 100%;
 	margin: 0;
 	padding: 0;
-    box-sizing: border-box;
+	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -92,7 +92,7 @@ div.mainContent{
 	flex-direction: row;
 	height: 300px;
 	width: 800px;
-    animation: slideIn .5s linear,
+	animation: slideIn .5s linear,
 		slide .5s ease-out;
 }
 @keyframes slide {
@@ -149,10 +149,10 @@ div.scoreFrame{
 	height: 50%;
 	width: 100%;
 	padding: 5% 20% 5% 10%;
-    /* margin-left: 25px; */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* clip-path: polygon(40px 0, 100% 0, 350px 100%, 0 100%); */
-    animation: slideIn .8s linear,
+	/* margin-left: 25px; */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* clip-path: polygon(40px 0, 100% 0, 350px 100%, 0 100%); */
+	animation: slideIn .8s linear,
 	slide .7s ease-out;
 }
 div.score{
@@ -187,9 +187,9 @@ div.atAGlance{
 	padding-left: 7.5%;
 	padding-right: 7.5%;
 	background-color: rgba(0,0,0,.40);
-    /* margin-left: 5px; */
+	/* margin-left: 5px; */
 	/* clip-path: polygon(12px 0, 100% 0, 355px 100%, 0 100%); */
-    animation: slideIn 1s linear ,
+	animation: slideIn 1s linear ,
 	slide .8s ease-out;
 }
 

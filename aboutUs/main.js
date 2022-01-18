@@ -6,7 +6,7 @@ function autoScroll() {
 	audioElem=document.getElementById('audioElement');
 	audioElem.src='./AboutUs0.mp3';
 	audioElem.play();
-    audioElem.addEventListener('ended', ()=> {  
+	audioElem.addEventListener('ended', ()=> {  
 		audioElem.pause();
 		if (audioElem.getAttribute('src')=='./AboutUs0.mp3') {
 			audioElem.src='./AboutUs1.mp3';
@@ -14,7 +14,7 @@ function autoScroll() {
 			audioElem.src='./AboutUs0.mp3';
 		}
 		audioElem.play();
-    });
+	});
 	document.body.scrollTo(0,0);
 	document.body.style.marginTop='0px';
 	var topSize=0;
