@@ -1,6 +1,6 @@
 @import url(../assets/fonts/fonts.css);
 html{
-	background: url(./favicon.png) center center no-repeat fixed ;
+	background: url(../assets/images/WelcomeBackground.png) center center no-repeat fixed ;
 	background-size: cover;
 	box-sizing: content-box;
 	height: 100%;
