@@ -1,3 +1,6 @@
+
+import { gameLevels } from "../constants.js";
+
 window.addEventListener('DOMContentLoaded',()=>{
 	document.body.children[0].style.transform="scale("+window.innerHeight/480/window.devicePixelRatio+")";
 	console.log('Resize:',document.body.children[0].style.transform);
@@ -5,7 +8,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 	const parsedURLParams=new URLSearchParams(urlParams)
 	//	获取各种数据
 	const play=parsedURLParams.get('play');
-	const playLevel=parseInt(parsedURLParams.get('l'));
+	const playLevel=gameLevels[parsedURLParams.get('l')];
+	const playLevelString=parsedURLParams.get('l');
 	const score=parseInt(parsedURLParams.get('score'));
 	// const score=
 	const maxCombo=parsedURLParams.get('mc');
@@ -80,7 +84,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 		"bad":bad,
 		"miss":miss,
 		"early":early,
-		"late":late
+		"late":late,
+		"playLevelString": playLevelString
 	}
 	console.log(playResult);
 	//	操作DOM修改可见部分数据
@@ -88,32 +93,29 @@ window.addEventListener('DOMContentLoaded',()=>{
 	document.querySelector("#levelOverAudio").play();
 	document.body.setAttribute('style',`background:url(../charts/${playResult.play}/${playResult.songInfo.illustration}) center center no-repeat;`);
 	document.querySelector("#songImg").setAttribute("src","../charts/"+play+"/"+playResult.songInfo.illustration.replaceAll('#',"%23"));
-	document.querySelector("#score").innerHTML=score.toString().padStart(7,'0');;
+	document.querySelector("#score").innerText=score.toString().padStart(7,'0');;
 	document.querySelector('#gradeImage').src='../assets/images/'+grade+'.png';
-	document.querySelector("#maxCombo").innerHTML=maxCombo;
-	document.querySelector("#accuracy").innerHTML=accuracy+"%";
-	document.querySelector("#perfect").innerHTML=perFect;
-	document.querySelector("#good").innerHTML=good;
-	document.querySelector("#bad").innerHTML=bad;
-	document.querySelector("#miss").innerHTML=miss;
-	document.querySelector("#early").innerHTML=early;
-	document.querySelector("#late").innerHTML=late;
+	document.querySelector("#maxCombo").innerText=maxCombo;
+	document.querySelector("#accuracy").innerText=accuracy+"%";
+	document.querySelector("#perfect").innerText=perFect;
+	document.querySelector("#good").innerText=good;
+	document.querySelector("#bad").innerText=bad;
+	document.querySelector("#miss").innerText=miss;
+	document.querySelector("#early").innerText=early;
+	document.querySelector("#late").innerText=late;
+	document.querySelector('div.songName#songName').innerText=playResult.songInfo.name;
+	document.querySelector('div.levelString#levelString').innerText=playResult.playLevelString.toUpperCase()+' Lv.'+Math.floor(playResult.songInfo[playResult.playLevelString.toLowerCase()+'Ranking']);
 	// 加载歌曲元信息（计算RKS等）
 	var deltaRKS,deltaData;
-	// rks=((Y*100-55)/45)²*X
-	playLevel == 0 ?level="EZ":undefined;
-	playLevel == 1 ?level="HD":undefined;
-	playLevel == 2 ?level="IN":undefined;
-	playLevel == 3 ?level="AT":undefined;
 	if(playResult.accuracy>=70){
-		deltaRKS= (Math.pow(((playResult.accuracy-55)/45),2)*playResult.songInfo[level.toLowerCase()+'Ranking']).toFixed(2);
+		deltaRKS= (Math.pow(((playResult.accuracy-55)/45),2)*playResult.songInfo[playResult.playLevelString.toLowerCase()+'Ranking']).toFixed(2);
 	}else{
 		deltaRKS=0
 	}
 	if (playResult.score<880000) {
 		deltaData=0
 	}
-	document.querySelector("#rks").innerHTML=deltaRKS;
+	document.querySelector("#rks").innerText=deltaRKS;
 	console.log('ΔRKS:',deltaRKS);
 	console.log('ΔData(KB):',deltaData);
 });
