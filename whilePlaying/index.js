@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	chartMetaXHR.send();
 	window.chartMetadata=JSON.parse(chartMetaXHR.responseText);
 	document.getElementById("input-name").value=chartMetadata.name;	//歌名
-	document.getElementById("input-level").value=level+" Lv."+chartMetadata[ level.toLowerCase()+'Ranking'];	//难度
+	document.getElementById("input-level").value=level.toUpperCase()+" Lv."+chartMetadata[ level.toLowerCase()+'Ranking'];	//难度
 	document.getElementById("input-designer").value=chartMetadata.chartDesigner;	//普师
 	document.getElementById("input-illustrator").value=chartMetadata.illustrator;	//曲绘
 

@@ -20,7 +20,7 @@ body{
 	overflow: hidden;
 	color: #fff;
 	background: url(../assets/images/InitialBackground.png) center center no-repeat;
-	background-size: cover;
+	background-size: cover !important;
 	backdrop-filter: blur(100px);
 }
 div.retryBtn{
@@ -119,7 +119,7 @@ div.miss,
 div.moreDetail{
 	transform: skew(15deg);
 }
-div.songImgContainer{
+div.leftPart{
 	height: 100%;
 	width: 60%;
 	transform: skew(-15deg);
@@ -127,11 +127,44 @@ div.songImgContainer{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	box-shadow: 0 0 0 0 #000;
+}
+div.leftPart::after{
+	content: '';
+	position: absolute;
+	height: 20%;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background: linear-gradient(0deg, #000, transparent);
+	z-index: 0;
 }
 img.songImg{
 	height: 100%;
-	width: 150%;
+	/* width: 200%; */
+	transform: skew(15deg);
 	object-fit: cover;
+}
+div.leftPart>div.songName{
+	position: absolute;
+	height: calc(1.5rem + 10px);
+	width: calc(100% - 100px);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	left: 15px;
+	bottom: 10px;
+	font-size: 1.5rem;
+	transform: skew(15deg);
+	z-index: 1;
+}
+div.leftPart>div.levelString{
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
+	font-size: 0.8rem;
+	transform: skew(15deg);
+	z-index: 1;
 }
 div.scoreOuterContainer{
 	display: flex;

@@ -14,13 +14,15 @@
 		
 		<div class="retryBtn" id="retryBtn"></div>
 		<div class="mainContent">
-			<div class="songImgContainer">
+			<div class="leftPart">
 				<img
 					src="../assets/images/InitialBackground.png"
 					level="HD Lv.10"
 					class="songImg"
 					id="songImg"
 				/>
+				<div class="songName" id="songName"></div>
+				<div class="levelString" id="levelString"></div>
 			</div>
 			<div class="scoreOuterContainer">
 				<div class="scoreFrame">
@@ -50,6 +52,6 @@
 		</div>
 		<div class="backBtn" id="backBtn"></div>
 		<audio id="levelOverAudio" src="" loop></audio>
-		<script src="./index.js"></script>
+		<script type="module" src="./index.js"></script>
 	</body>
 </html>

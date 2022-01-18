@@ -19,6 +19,18 @@ body {
 	-webkit-backdrop-filter: blur(15px);
 	padding-left: 100px;
 }
+html::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
+}
 html::before {
 	content: "";
 	display: block;
@@ -87,88 +99,39 @@ div.chapterContainer::after {
 	margin: 0 15px 0 0;
 	cursor: pointer;
 }
-/* 
-div.chapterContainer{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	color: #fff;
-	height: 80%;
-	width: 100vh;
-	flex-shrink: 0;
-	margin: unset -10px unset -10px;
-	clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
-	background: url(../assets/images/InitialBackground.png) center center no-repeat;
-	background-size: cover;
-}
-div.chapterName{
-	align-self: flex-end;
-	justify-content: center;
-	align-items: center;
-	margin: 0.5rem 0.95rem;
-	font-size: 20px;
-}
-div.chapterBottom{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	height: 13%;
-	width: 83%;
-	margin-left: 15px;
-}
-div.statistic{
-	display: flex;
-	flex-direction: row;
-	align-content: stretch;
+button.settingBtn{
+	border: none;
+	position: fixed;
+	left: calc(100% - 75px);
+	bottom: 15px;
 	width: 100px;
+	height: 50px;
+	z-index: 1;
+}
+button.settingBtn::before{
+	content: '';
+	position: absolute;
+	left: -15px;
+	top: 0;
 	height: 100%;
+	width: 100%;
+	background: #000;
+	z-index: 1;
+	transform: skew(-15deg);
+	filter: drop-shadow(#fff -5px 0);
 }
-div.all,
-div.clear,
-div.fullCombo,
-div.phi{
-	width: 35px;
-	white-space:nowrap;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-size: 0.8rem;
-}
-div.all::after,
-div.clear::after,
-div.fullCombo::after,
-div.phi::after{
-	transform: scale(0.4);
-	transform-origin: center;
-}
-div.all::after{
-	content: 'All';
-}
-div.clear::after{
-	content: 'Clear';
-}
-div.fullCombo::after{
-	content: 'Full Combo';
-}
-div.phi::after{
-	content: 'Phi';
-}
-.play{
-	color: #000;
-	width: 35%;
+button.settingBtn::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
 	height: 100%;
-	font-size: 1.1rem;
-	font-weight: bold;
-	display: flex;
-	margin: 0 15px 0 0;
-	justify-content: center;
-	align-items: center;
-	background-color: #fff;
-	
-		clip-path: polygon(9% 0, 100% 0, 91% 100%, 0 100%);
-} 
-*/
+	width: 100%;
+	background: url(../assets/images/setting.png) no-repeat left center;
+	background-size: contain;
+	transform: scale(.5);
+	z-index: 5;
+}
 div.darkOverlay {
 	position: fixed;
 	top: 0;

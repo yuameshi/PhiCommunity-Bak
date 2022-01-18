@@ -2,7 +2,7 @@
 html {
 	background: url(../assets/images/InitialBackground.png) center center
 		no-repeat fixed;
-	background-size: cover;
+	background-size: cover !important;
 	box-sizing: border-box;
 	transition: all 0.3s ease-in-out;
 }
@@ -12,7 +12,7 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	backdrop-filter: blur(100px);
+	backdrop-filter: blur(10px);
 	box-sizing: border-box;
 	overflow: hidden;
 }
@@ -268,9 +268,10 @@ div.rightArea {
 	justify-content: center;
 	align-items: center;
 	transform: skew(-15deg);
+	overflow: hidden;
 }
 div.illustrationContainer {
-	width: 100%;
+	width: 150%;
 	height: 245px;
 	overflow: hidden;
 	display: flex;
@@ -282,8 +283,8 @@ div.illustrationContainer {
 	margin-bottom: 15px;
 }
 img.illustration {
-	/* height: 100%; */
-	width: 150%;
+	height: 100%;
+	width: 100%;
 	object-fit: cover;
 	margin-right: -50px;
 	transform: skew(15deg);
