@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 	//	获取游玩谱面和难度信息
 	const play  = new URLSearchParams(new URL(location.href).search).get('play');
-	var level  = parseInt(new URLSearchParams(new URL(location.href).search).get('l'));
+	var level  = new URLSearchParams(new URL(location.href).search).get('l');
 	//	添加加载页面覆盖层
 	let loadingEmbedFrame=document.createElement('iframe');
 	loadingEmbedFrame.src="../loadingChartScreen/index.html?c="+play+"&l="+level;
@@ -47,11 +47,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			clearInterval(loadCompleteDetectInterval);
 		}
 	});
-	//	定义难度
-	level == 0 ?level="EZ":undefined;
-	level == 1 ?level="HD":undefined;
-	level == 2 ?level="IN":undefined;
-	level == 3 ?level="AT":undefined;
+	
 	//	获取元数据
 	console.log('Fetching MetaData:',play);
 	var chartMetaXHR=new XMLHttpRequest();
@@ -62,10 +58,11 @@ window.addEventListener('DOMContentLoaded',()=>{
 	document.getElementById("input-level").value=level+" Lv."+chartMetadata[ level.toLowerCase()+'Ranking'];	//难度
 	document.getElementById("input-designer").value=chartMetadata.chartDesigner;	//普师
 	document.getElementById("input-illustrator").value=chartMetadata.illustrator;	//曲绘
+
 	//	获取谱面
 	console.log('Fetching Chart:',play);
 	var chartXHR=new XMLHttpRequest();
-	chartXHR.open('GET','../charts/'+play+"/"+chartMetadata["chart"+level],true);
+	chartXHR.open('GET','../charts/'+play+"/"+chartMetadata["chart"+level.toUpperCase()],true);
 	chartXHR.send();
 	chartXHR.addEventListener('load',()=>{
 		try {
@@ -95,6 +92,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	window.chartLine=[];
 	window.chartLineData=[];
 	window.chartLineTextureDecoded = new Array(window.chartLine.length);
+
 	if (chartMetadata.lineTexture) {
 		console.log("Line Texture Detected");
 		var chartLineDataXHR = new XMLHttpRequest();
