@@ -46,6 +46,7 @@ div.backBtn {
   height: 50px;
   transform: skew(-15deg);
   z-index: 1;
+  cursor: pointer;
 }
 div.backBtn::before {
   content: "";
@@ -107,6 +108,7 @@ div.sortMode {
   padding-left: 5px;
   object-position: center center;
   object-fit: contain;
+  cursor: pointer;
 }
 div.settingBtn::after,
 div.sortMode::after {
@@ -139,6 +141,7 @@ div.songItemContainer {
   padding: 0 20px 0 20px;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 div.songItemContainer > div.songItem {
   text-overflow: ellipsis;
@@ -317,6 +320,7 @@ div.levelChooser > div.levelItem {
   align-items: center;
   height: 100%;
   margin: 0 5px 0 5px;
+  cursor: pointer;
 }
 div.levelChooser > div.levelItem.ez {
   margin-left: 0;
@@ -419,6 +423,7 @@ div.playBtn {
   z-index: 1;
   background: url(./play.png) no-repeat center center;
   background-size: cover;
+  cursor: pointer;
 }
 
 div.readyToLoadOverlay {
