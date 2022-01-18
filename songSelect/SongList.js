@@ -37,15 +37,6 @@ function SongList(defaultLevel = "ez") {
     console.log("Song", id, "Selected");
     const { songMeta, codename } = items[id];
 
-    /*     document.children[0].setAttribute(
-          "style",
-          `background: url(../charts/${codename}/${songMeta["illustration"]}) center center no-repeat fixed;
-          background-size: cover;
-        `
-        ); */
-    /*     document.querySelector("img.illustration").src =
-          "../charts/" + codename + "/" + songMeta.illustration;
-     */
     fetch(`../charts/${codename}/${songMeta['illustration']}`).then((response) => response.blob()).then((blob) => {
       console.log(blob);
       const imgUrl = URL.createObjectURL(blob);
