@@ -1,91 +1,91 @@
 @import url(../assets/fonts/fonts.css);
 body {
-  height: 100%;
-  min-width: 100%;
-  position: absolute;
-  top: -10px;
-  left: var(--left);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  transition: 0.1s all ease-in-out;
-  background: url(../assets/images/InitialBackground.png) center center
-    no-repeat fixed;
-  background-size: cover;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding-left: 100px;
+	height: 100%;
+	min-width: 100%;
+	position: absolute;
+	top: -10px;
+	left: var(--left);
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	transition: 0.1s all ease-in-out;
+	background: url(../assets/images/InitialBackground.png) center center
+		no-repeat fixed;
+	background-size: cover;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	padding-left: 100px;
 }
 html::before {
-  content: "";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  z-index: -1;
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	z-index: -1;
 }
 div.chapterContainer {
-  display: flex;
-  position: relative;
-  margin-left: 25px;
-  flex-direction: column;
-  justify-content: center;
-  color: #fff;
-  max-height: 450px;
-  height: 80%;
-  width: 85vh;
-  /* border: 3px #6cf solid; */
-  overflow: hidden;
-  flex-shrink: 0;
-  /* margin: 25px; */
-  transform: skew(-15deg);
-  box-shadow: #000 0 0 10px 0;
+	display: flex;
+	position: relative;
+	margin-left: 25px;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+	max-height: 450px;
+	height: 80%;
+	width: 85vh;
+	/* border: 3px #6cf solid; */
+	overflow: hidden;
+	flex-shrink: 0;
+	/* margin: 25px; */
+	transform: skew(-15deg);
+	box-shadow: #000 0 0 10px 0;
 }
 img.chapterImage {
-  height: 100%;
-  width: 150%;
-  object-fit: cover;
-  object-position: center center;
-  transform: skew(15deg) translateX(-20%);
+	height: 100%;
+	width: 150%;
+	object-fit: cover;
+	object-position: center center;
+	transform: skew(15deg) translateX(-20%);
 }
 div.chapterContainer::before {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 2.5% 5%;
-  content: attr(data-name);
-  z-index: 1;
-  font-size: 1.2em;
-  transform: skew(15deg);
-  text-shadow: 0 0 5px #000;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 2.5% 5%;
+	content: attr(data-name);
+	z-index: 1;
+	font-size: 1.2em;
+	transform: skew(15deg);
+	text-shadow: 0 0 5px #000;
 }
 div.chapterContainer::after {
-  content: "▷  P L A Y";
-  position: absolute;
-  color: #000;
-  background: linear-gradient(105deg, #00000000 15%, #fff 11%, #fff) no-repeat
-    center center;
-  right: 0;
-  bottom: 0;
-  margin: 2.5% 5%;
-  z-index: 1;
-  font-size: 1.3rem;
-  transform: translateX(18%) skew(15deg);
-  width: 45%;
-  height: 15%;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 15px 0 0;
-  cursor: pointer;
+	content: "▷  P L A Y";
+	position: absolute;
+	color: #000;
+	background: linear-gradient(105deg, #00000000 15%, #fff 11%, #fff) no-repeat
+		center center;
+	right: 0;
+	bottom: 0;
+	margin: 2.5% 5%;
+	z-index: 1;
+	font-size: 1.3rem;
+	transform: translateX(18%) skew(15deg);
+	width: 45%;
+	height: 15%;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 15px 0 0;
+	cursor: pointer;
 }
 /* 
 div.chapterContainer{
@@ -166,40 +166,40 @@ div.phi::after{
 	align-items: center;
 	background-color: #fff;
 	
-    clip-path: polygon(9% 0, 100% 0, 91% 100%, 0 100%);
+		clip-path: polygon(9% 0, 100% 0, 91% 100%, 0 100%);
 } 
 */
 div.darkOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  z-index: 0;
-  animation: fadeOut 1s ease-out;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	z-index: 0;
+	animation: fadeOut 1s ease-out;
 }
 div.darkOverlay.fadeIn {
-  animation: fadeIn 0.5s ease-out !important;
+	animation: fadeIn 0.5s ease-out !important;
 }
 @keyframes fadeIn {
-  0% {
-    z-index: 999;
-    opacity: 0;
-  }
-  100% {
-    z-index: 999;
-    opacity: 1;
-  }
+	0% {
+		z-index: 999;
+		opacity: 0;
+	}
+	100% {
+		z-index: 999;
+		opacity: 1;
+	}
 }
 @keyframes fadeOut {
-  0% {
-    z-index: 999;
-    opacity: 1;
-  }
-  100% {
-    z-index: 999;
-    opacity: 0;
-  }
+	0% {
+		z-index: 999;
+		opacity: 1;
+	}
+	100% {
+		z-index: 999;
+		opacity: 0;
+	}
 }
