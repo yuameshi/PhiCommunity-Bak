@@ -1597,7 +1597,7 @@ function qwqdraw1(now) {
 //	结束处理 
 function qwqdraw2() {
 	//	直接跳转到LevelOver
-	location.href=`../LevelOver/index.html?play=${new URLSearchParams(new URL(location.href).search).get('play')}&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.perfect}&g=${stat.good}&b=${stat.bad}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}&c=${new URLSearchParams(new URL(location.href).search).get('c')}`;
+	location.href=`../LevelOver/index.html?play=${new URLSearchParams(new URL(location.href).search).get('play')}&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.noteRank[5]+stat.noteRank[4]+stat.noteRank[1]}&g=${stat.noteRank[7]+stat.noteRank[3]}&b=${stat.noteRank[6]}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}&c=${new URLSearchParams(new URL(location.href).search).get('c')}`;
 	fucktemp = true;
 	btnPause.click(); //isPaused = true;
 	while (stopPlaying.length) stopPlaying.shift()();
