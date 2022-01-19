@@ -162,7 +162,9 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 		if (LoadCompleteItems==12&&window.ResourcesLoad==200) {
 			tapToStartFrame.remove();
-			full.toggle();
+			if (localStorage.autoFullscreen=='true') {
+				full.toggle();	
+			}
 			document.getElementById('btn-play').click();	
 		}else{
 			console.log("LoadNotComplete");
@@ -180,32 +182,36 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 		console.log('Applying settings:',key,value);
 		const elem=document.querySelector('#'+key);
-		// console.log(elem.type);
-		if (elem.type=='checkbox') {
-			if (value=='true') {
-				elem.setAttribute('checked',value);
-			}else{
-				elem.removeAttribute('checked')
-			}
-			continue;
-		}
-		if (elem.type=='text'||elem.type=='number') {
-			elem.setAttribute('value',value);
-			continue
-		}
-		if (elem.type='select-one') {
-			for (let j = 0; j < elem.children.length; j++) {
-				// console.log(elem.children[j].getAttribute("selected"))
-				// 先遍历删掉原来的选项
-				if (elem.children[j].getAttribute("selected")!=null) {
-					elem.children[j].removeAttribute("selected")
+		try {
+			// console.log(elem.type);
+			if (elem.type=='checkbox') {
+				if (value=='true') {
+					elem.setAttribute('checked',value);
+				}else{
+					elem.removeAttribute('checked')
 				}
-				
+				continue;
 			}
-			// console.log(elem)
-			// console.log(elem.children[parseFloat(value)-1])
-			elem.children[parseFloat(value)-1].setAttribute('selected','true');
-			continue;
+			if (elem.type=='text'||elem.type=='number') {
+				elem.setAttribute('value',value);
+				continue
+			}
+			if (elem.type='select-one') {
+				for (let j = 0; j < elem.children.length; j++) {
+					// console.log(elem.children[j].getAttribute("selected"))
+					// 先遍历删掉原来的选项
+					if (elem.children[j].getAttribute("selected")!=null) {
+						elem.children[j].removeAttribute("selected")
+					}
+					
+				}
+				// console.log(elem)
+				// console.log(elem.children[parseFloat(value)-1])
+				elem.children[parseFloat(value)-1].setAttribute('selected','true');
+				continue;
+			}
+		} catch (error) {
+			console.warn('Error occured when applying settings:\n',error)
 		}
 	}
 	document.body.appendChild(tapToStartFrame);
