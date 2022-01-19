@@ -7,7 +7,7 @@ html{
 }
 body{
 	background: url(../assets/images/InitialBackground.png) center center no-repeat;
-	background-size: cover;
+	background-size: cover !important;
 	backdrop-filter: blur(100px) brightness(.6);
 	height: 100%;
 	width: 100%;
