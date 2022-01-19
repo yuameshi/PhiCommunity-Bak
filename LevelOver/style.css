@@ -141,7 +141,8 @@ div.leftPart::after{
 }
 img.songImg{
 	height: 100%;
-	/* width: 200%; */
+	width: 200%;
+    margin: -10%;
 	transform: skew(15deg);
 	object-fit: cover;
 }
