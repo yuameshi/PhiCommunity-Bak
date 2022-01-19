@@ -65,6 +65,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	chartXHR.open('GET','../charts/'+play+"/"+chartMetadata["chart"+level.toUpperCase()],true);
 	chartXHR.send();
 	chartXHR.addEventListener('load',()=>{
+		window.chartString=chartXHR.responseText;
 		try {
 			window.Renderer.chart=JSON.parse(chartXHR.responseText);
 		} catch (error) {
