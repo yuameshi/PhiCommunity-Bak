@@ -22,13 +22,17 @@ window.addEventListener('DOMContentLoaded',()=>{
 	const late=good-early;
 	var grade;
 	document.getElementById('retryBtn').addEventListener('click',()=>{
-		location.href='../whilePlaying/index.html?play='+play+'&l='+playLevel+'&c='+parsedURLParams.get('c');
+		location.href='../whilePlaying/index.html?play='+play+'&l='+playLevelString+'&c='+parsedURLParams.get('c');
 	});
 	document.getElementById('backBtn').addEventListener('click',()=>{
 		location.href='../songSelect/index.html?c='+parsedURLParams.get('c');
 	})
 	//	判断等级（范围来自萌娘百科）
-	if (score<699999) {
+	if (score==0) {
+		console.log('No grade');
+		grade='';
+	}
+	if (score<699999&&score!=0) {
 		console.log('Grade: False');
 		grade='F15F';
 	}
