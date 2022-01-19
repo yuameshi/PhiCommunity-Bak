@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="manifest" href="./manifest.webmanifest">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="manifest" href="manifest.webmanifest">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Redirecting...</title>
 	<!-- <meta http-equiv="refresh" content="0; url=./tapToStart/index.html"> -->
@@ -12,35 +12,7 @@
 	<a href="../tapToStart/index.html">点击进入网页版Phigros(由于浏览器限制，我们无法在用户无操作的情况下自动播放音乐)</a><br>
 	在开始前，请先调整好设备音量，下方是一段测试音频，点击左侧的三角形以开始播放。<br>
 	<audio src="../tapToStart/TouchToStart0.mp3" controls></audio>
-	<!-- <button class="add-button">添加Phigros Web Edition到桌面</button>
-	<script>
-			let deferredPrompt;
-			const addBtn = document.querySelector('.add-button');
-			// addBtn.style.display = 'none';
-			window.addEventListener('beforeinstallprompt', (e) => {
-				// 防止 Chrome 67 及更早版本自动显示安装提示
-				e.preventDefault();
-				// 稍后再触发此事件
-				deferredPrompt = e;
-				// 更新 UI 以提醒用户可以将 App 安装到桌面
-				addBtn.style.display = 'block';
-
-				addBtn.addEventListener('click', (e) => {
-					// 隐藏显示 A2HS 按钮的界面
-					addBtn.style.display = 'none';
-					// 显示安装提示
-					deferredPrompt.prompt();
-					// 等待用户反馈
-					deferredPrompt.userChoice.then((choiceResult) => {
-						if (choiceResult.outcome === 'accepted') {
-							console.log('User accepted the A2HS prompt');
-						} else {
-							console.log('User dismissed the A2HS prompt');
-						}
-						deferredPrompt = null;
-					});
-				});
-			});
-	</script> -->
+	<button class="add-button">添加Phigros Web Edition到桌面</button>
+	<script src="./manifest.js"></script>
 </body>
 </html>

@@ -4,12 +4,17 @@
 	"display": "fullscreen",
 	"icons": [
 	  {
-		"src": "assets//images/app_icon.png",
+		"src": "assets/images/app_icon.png",
 		"sizes": "192x192",
 		"type": "image/png"
+	  },
+	  {
+		  "src": "assets/images/app_icon_576x576.png",
+		  "sizes": "512x512",
+		  "type": "image/png"
 	  }
 	],
-	"name": "Phigros",
+	"name": "Phigros HTML5 Edition",
 	"short_name": "Phigros",
 	"start_url": "/tapToStart/index.html"
   }
