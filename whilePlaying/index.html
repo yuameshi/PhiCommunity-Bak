@@ -22,7 +22,7 @@
 		<div class="pauseOverlay" id="pauseOverlay">
 			<audio src="../assets/audio/Tap2.wav" id="tap2"></audio>
 			<div id="backBtn" id="backBtn"></div>
-			<div id="restartBtn" onclick="location.reload()"></div>
+			<div id="restartBtn" onclick="btnPlay.click();btnPlay.click();document.querySelector('#pauseOverlay').classList.remove('visable')"></div>
 			<div id="resumeBtn" onclick="btnPause.click()"></div>
 		</div>
 		<!-- <div class="tapToStartFrame">

@@ -16,5 +16,6 @@
 	],
 	"name": "Phigros HTML5 Edition",
 	"short_name": "Phigros",
-	"start_url": "/tapToStart/index.html"
+	"start_url": "/tapToStart/index.html",
+	"orientation": "landscape"
   }

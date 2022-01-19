@@ -215,12 +215,10 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 	document.body.appendChild(tapToStartFrame);
-	document.querySelector('div#backBtn',()=>{history.back(-1);})
-	document.querySelector('div#restartBtn',()=>{location.reload();})
 });
 document.getElementById('btn-play').addEventListener("click", async function () {
 	Renderer=window.Renderer;
-	// btnPause.value = "暂停";
+	btnPause.value = "暂停";
 	if (this.value == "播放") {
 		stopPlaying.push(playSound(res["mute"], true, false, 0)); //播放空音频(防止音画不同步)
 		("lines,notes,taps,drags,flicks,holds,reverseholds,tapholds").split(",").map(i => Renderer[i] = []);
