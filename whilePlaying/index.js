@@ -217,6 +217,19 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 	document.body.appendChild(tapToStartFrame);
 });
+
+function replay() {
+	document
+		.querySelector("div#pauseOverlay.pauseOverlay")
+		.classList.remove("visable");
+	btnPlay.click();
+	try {
+		window.Renderer.chart = chart123(
+			chartp23(window.chartString, undefined)
+		);
+	} catch (e) {}
+	btnPlay.click();
+}
 document.getElementById('btn-play').addEventListener("click", async function () {
 	Renderer=window.Renderer;
 	btnPause.value = "暂停";

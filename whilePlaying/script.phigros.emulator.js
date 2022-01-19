@@ -288,8 +288,7 @@ const specialClick = {
 	func: [() => {
 		btnPause.click();
 	}, () => {
-		btnPlay.click();
-		btnPlay.click();
+		replay()
 	}, () => void 0, () => {
 		full.toggle(canvas);
 	}],
@@ -1289,7 +1288,7 @@ btnPause.addEventListener("click", function () {
 			`
 			<audio src="../assets/audio/Tap2.wav" id="tap2"></audio>
 			<div id="backBtn" id="backBtn"></div>
-			<div id="restartBtn" onclick="document.querySelector('div#pauseOverlay.pauseOverlay').classList.remove('visable');btnPlay.click();try {window.Renderer.chart=chart123(chartp23(window.chartString, undefined));} catch (e) {} btnPlay.click();"></div>
+			<div id="restartBtn" onclick="replay()"></div>
 			<div id="resumeBtn" onclick="btnPause.click()"></div>
 			`;
 		},3000);
