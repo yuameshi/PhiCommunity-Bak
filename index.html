@@ -11,8 +11,44 @@
 <body>
 	<a href="../tapToStart/index.html">点击进入网页版Phigros(由于浏览器限制，我们无法在用户无操作的情况下自动播放音乐)</a><br>
 	在开始前，请先调整好设备音量，下方是一段测试音频，点击左侧的三角形以开始播放。<br>
+	顺带一提，由于本项目变更较为频繁，所以可能在某些时候可能需要您清除浏览器缓存来修复一些错误。<br>
 	<audio src="../tapToStart/TouchToStart0.mp3" controls></audio>
 	<button class="add-button">添加Phigros Web Edition到桌面</button>
+	<pre>
+更改日志（仅展示较为重要的更改）：
+<a href="https://github.com/HanHan233/phigros-html5/commits/main" target="_blank" rel="noopener noreferrer">点击此处查看所有提交</a>
+
+2022/01/19
+802a831aa2ec28c3c54afc24369e4ed81c6457a5	修复重开Bug
+c3b953d49c22d5d07f6ef1a5c789a391b71bbe21	
+0fff1ff7d75846e07eb35a168acd9cef7316d55b
+18bb8dc6d012fc4f3277afd528f6f10364db6a45	给一堆页面加了禁止缩放
+934b2d7a682a175a1d30071db3c89c6cd53d1f9c	修复：部分背景展示问题
+466e155f33263bc021317e23b31e667c829bcc3f	添加设置项：“游玩不自动全屏”
+bc1fb629d0b7d4ff0236308eba1a605b752d25c8	添加A2HS
+25aa2b43f72a9a6483ecd55c8e7ff194baf611cd	添加曲目《Terrasphere》
+0c6931b7894ca0b4a7a91d41a299f3c1ce23a1d4	修复：谱面加载动画
+
+2022/01/18
+bd8287f433a7de4af1d647b026614dbbaad024a4	在章节选择页面加了设置按钮，修复rks计算，修复结算页面背景未全屏，改进歌曲选择界面返回按钮逻辑，修复章节选择，点按开始界面背景模糊
+a40c40d7cebf59e82d63d3770b82b8f9082d0179	合并Pull Requests：为按钮添加cursor样式/使用fetch以缓存图片/修复了谱面无法打开的bug
+
+2022/01/17
+678e464415b27332ea43bfd7c55d3c93bc673f1e	合并Pull Requests：componentize the code;fix bug: 歌曲列表可无限上划
+
+2022/01/16
+3100d8c1464803217d63438686018f7e8b815f74	修复RKS计算
+e4c9ed3810f7c955708b22c9b7eee90537e62fc0	添加了加载动画
+c06d571e404f2a1e0cb098daad55cbff3e7fbc8a	修改了部分文字
+7ff3edbbd9aa6e7f6899a990bf11f5437f35d002	修复 结束页面点击返回黑屏，完善了谱面贡献教程
+6b3e88568497f6d5e7c52e5d02673c98caaa5e14	添加曲目《ouroVoros》
+beab5968351814a8967132bae6bf574d9c34b1e0	删除了 “展示过渡动画” 设置项
+b99f56870f733a83e62707878d230118c896b2e6	删除了除了“单曲 精选集”以外的所有章节
+
+2022/01/14
+da9bb6684ae1dffb12e5aa08d1b86f59ef36fbe6	修复结算页面路径
+13572f4e210dc968a8b48adec63bad761f8dde21	首次提交
+	</pre>
 	<script src="./manifest.js"></script>
 </body>
 </html>
