@@ -9,7 +9,7 @@ body{
 }
 body{
 	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
-	background-size: cover;
+	background-size: cover !important;
 	backdrop-filter: blur(100px);
 	display: flex;
 	justify-content: center;
