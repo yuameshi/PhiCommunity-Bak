@@ -1285,7 +1285,13 @@ btnPause.addEventListener("click", function () {
 			isPaused = false;
 			if (isInEnd && !isOutStart) playBgm(Renderer.bgMusic, timeBgm);
 			this.value = "暂停";
-			document.querySelector('div#pauseOverlay.pauseOverlay').innerHTML=`\n\t\t<audio src="../assets/audio/Tap2.wav" id="tap2"></audio>\n\t\t<div id="backBtn" onclick="document.querySelector('#tap2').play();setTimeout(() => {history.back(-1);}, 500);"></div>\n\t\t<div id="restartBtn" onclick="location.reload()"></div>\n\t\t<div id="resumeBtn" onclick="btnPause.click()"></div>\n\t`;
+			document.querySelector('div#pauseOverlay.pauseOverlay').innerHTML=
+			`
+			<audio src="../assets/audio/Tap2.wav" id="tap2"></audio>
+			<div id="backBtn" id="backBtn"></div>
+			<div id="restartBtn" onclick="btnPlay.click();btnPlay.click();document.querySelector('#pauseOverlay').classList.remove('visable')"></div>
+			<div id="resumeBtn" onclick="btnPause.click()"></div>
+			`;
 		},3000);
 	}
 });
