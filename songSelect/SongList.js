@@ -51,11 +51,14 @@ function SongList(defaultLevel = "ez") {
 		document.querySelector("audio#slicedAudioElement").src =
 			"../charts/" + codename + "/" + songMeta["musicFile"];
 		clearInterval(window.sliceAudioInterval);
+		document.querySelector("audio#slicedAudioElement").currentTime =
+			songMeta["sliceAudioStart"];
+		document.querySelector("audio#slicedAudioElement").play();
 		window.sliceAudioInterval = setInterval(() => {
 			document.querySelector("audio#slicedAudioElement").currentTime =
 				songMeta["sliceAudioStart"];
 			document.querySelector("audio#slicedAudioElement").play();
-		}, songMeta["sliceAudioDuration"] * 1000);
+		}, 15000);
 
 		selected = id;
 	}
