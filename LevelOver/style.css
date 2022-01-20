@@ -184,7 +184,7 @@ div.scoreFrame{
 	width: 100%;
 	padding: 5% 20% 5% 10%;
 	/* margin-left: 25px; */
-	background-color: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.4);
 	/* clip-path: polygon(40px 0, 100% 0, 350px 100%, 0 100%); */
 	animation: slideIn .8s linear,
 	slide .7s ease-out;
@@ -220,7 +220,7 @@ div.atAGlance{
 	justify-content: space-between;
 	padding-left: 7.5%;
 	padding-right: 7.5%;
-	background-color: rgba(0,0,0,.40);
+	background: rgba(0,0,0,.40);
 	/* margin-left: 5px; */
 	/* clip-path: polygon(12px 0, 100% 0, 355px 100%, 0 100%); */
 	animation: slideIn 1s linear ,
@@ -259,7 +259,7 @@ div.detailFrame{
 	justify-content: space-between;
 	padding-left: 7.5%;
 	padding-right: 7.5%;
-	background-color: rgba(0,0,0,.40);
+	background: rgba(0,0,0,.40);
 	/* margin-left: -15px; */
 	/* clip-path: polygon(12px 0, 100% 0, 355px 100%, 0 100%); */
 	animation: slideIn 1.4s linear,
@@ -313,7 +313,7 @@ div.extraInfo{
 	width: 200px;
 	padding: 10px 20px 10px 20px;
 	bottom: 30px;
-	background-color: rgba(0,0,0,.40);
+	background: rgba(0,0,0,.40);
 	border-right: 2.5px #FFF solid;
 	border-left: 2.5px #FFF solid;
 	transform: skew(-15deg);
