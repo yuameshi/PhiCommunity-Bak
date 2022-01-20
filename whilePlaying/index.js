@@ -212,7 +212,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 				continue;
 			}
 		} catch (error) {
-			console.warn('Error occured when applying settings:\n',error)
+			console.warn('Error occured when applying settings \''+key+'\':\n',error)
 		}
 	}
 	document.body.appendChild(tapToStartFrame);
