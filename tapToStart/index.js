@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('DOMContentLoaded',() => {
 	var bubbleNum = 0;
 	var clearedBubble = 0;
 	document.querySelector('#audio').play();
@@ -41,4 +41,4 @@ window.onload = () => {
 			}
 		},510);
 	});
-};
+});
