@@ -45,10 +45,10 @@ document.querySelector("#add-cache-button").addEventListener("click", () => {
 			"/charts/samplePec/temp.jpg",
 			"/charts/samplePec/temp.mp3",
 			"/charts/samplePec/Tempestissimo.pec",
-			"/charts/terrasphere/meta.json",
-			"/charts/terrasphere/Terrasphere.jpg",
-			"/charts/terrasphere/Terrasphere.mp3",
-			"/charts/terrasphere/Terrasphere.pec",
+			// "/charts/terrasphere/meta.json",
+			// "/charts/terrasphere/Terrasphere.jpg",
+			// "/charts/terrasphere/Terrasphere.mp3",
+			// "/charts/terrasphere/Terrasphere.pec",
 		]);
 	});
 });
