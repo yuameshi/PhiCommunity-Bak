@@ -46,14 +46,14 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 	let currentValue;
 	const total = range[1] - range[0];
 
-	const element = document.createElement("div");
-	element.className = "slider";
+	const container = document.createElement("div");
+	container.className = "slider";
 	const slideBlock = document.createElement("div");
 	slideBlock.className = "slideBlock";
-	element.appendChild(slideBlock);
+	container.appendChild(slideBlock);
 
-	element.addEventListener("click", (e) => {
-		if (e.offsetX > e.target.offsetWidth - 35) {
+	container.addEventListener("click", (e) => {
+		if (e.offsetX > container.offsetWidth - 35) {
 			add(offset);
 		}
 		if (e.offsetX < 35) {
@@ -61,9 +61,31 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 		}
 	});
 
+	//拖曳滚动条
+	const onDrag = (e) => {
+		set(
+			Math.round(
+				range[0] +
+					((e.offsetX - 35) /
+						(container.clientWidth-70)) *
+						total
+			)
+		);
+	};
+	let isMouseDown = false;
+	slideBlock.addEventListener("mousedown", () => {
+		isMouseDown = true;
+		window.addEventListener("mousemove", onDrag);
+	});
+	window.addEventListener("mouseup", () => {
+		if (!isMouseDown) return;
+		isMouseDown = false;
+		window.removeEventListener("mousemove", onDrag);
+	});
+
 	set(defaultValue);
 
-	return { element, set, add };
+	return { element: container, set, add };
 
 	/**
 	 * @param {number} value
