@@ -11,70 +11,9 @@
 
 <body>
 	<div class="backBtn" onclick="saveSettings();location.href='../chapterSelect/index.html'"></div>
-	<script src="./index.js"></script>
+	<script type="module" src="./index.js"></script>
 	<div class="leftArea" id="leftArea">
 		<div class="setttingItems" id="settingItems">
-			<div class="item">
-				<div class="title" data-name="谱面延时(MS)" data-value="0" data-codename="input-offset"></div>
-				<div class="slider">
-					<div class="slideBlock" data-value="600%" data-total="1000"></div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="按键缩放" data-value="3" data-codename="select-scale-ratio"></div>
-				<div class="slider">
-					<div class="slideBlock" data-total="5"></div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="背景亮度" data-value="3" data-codename="select-global-alpha"></div>
-				<div class="slider">
-					<div class="slideBlock" data-value="60%" data-total="5"></div>
-				</div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="开启打击音效" data-codename="hitSong"></div>
-				<div class="toggle checked"></div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="开启多押辅助" data-codename="highLight"></div>
-				<div class="toggle checked"></div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="游玩时自动全屏" data-codename="autoFullscreen"></div>
-				<div class="toggle checked"></div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="开启FC/AP指示器" data-codename="lineColor"></div>
-				<div class="toggle"></div>
-			</div>
-			<!-- 下面就是模拟器其他的功能了 -->
-			<div class="item">
-				<div class="title" data-name="开启HyperMode" data-codename="hyperMode"></div>
-				<div class="toggle"></div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="背景模糊显示" data-codename="imageBlur"></div>
-				<div class="toggle checked"></div>
-			</div>
-			<!-- <div class="item">
-				<div class="title" data-name="显示过渡动画" data-codename="showTransition"></div>
-				<div class="toggle checked"></div>
-			</div> -->
-			<div class="item">
-				<div class="title" data-name="开启触摸反馈" data-codename="feedback"></div>
-				<div class="toggle"></div>
-			</div>
-			<div class="item">
-				<div class="title" data-name="显示定位点" data-codename="showPoint"></div>
-				<div class="toggle"></div>
-			</div>
-			<div class="item">
-				<button class="button" onclick="location.href='../aboutUs/index.html'">关于我们</button>
-			</div>
-			<div class="item">
-				<button class="button" onclick="window.localStorage.clear();location.href='../index.html'">清除全部数据</button>
-			</div>
 		</div>
 	</div>
 </body>
