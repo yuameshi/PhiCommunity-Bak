@@ -107,19 +107,17 @@ div.slideBlock{
 	background-color: #fff;
 	font-size: 1.4em;
 	text-transform: skew(15deg);
+	cursor: pointer;
 }
 div.slider::before{
 	content: '-';
-	cursor: pointer;
 }
 div.slider::after{
 	content: '+';
-	cursor: pointer;
 }
 div.slideBlock::before{
 	content: '';
 	display: block;
-	cursor: pointer;
 }
 div.slideBlock{
 	position: relative;
