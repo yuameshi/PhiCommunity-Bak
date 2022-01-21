@@ -27,6 +27,10 @@ div.leftArea{
 	padding-top: 100px;
 }
 
+#settingItems {
+	margin-left: 5%;
+  }
+
 div.backBtn{
 	position: fixed;
 	left: -15px;
@@ -106,14 +110,16 @@ div.slideBlock{
 }
 div.slider::before{
 	content: '-';
+	cursor: pointer;
 }
 div.slider::after{
 	content: '+';
+	cursor: pointer;
 }
 div.slideBlock::before{
 	content: '';
 	display: block;
-	margin-left: attr(data-value);
+	cursor: pointer;
 }
 div.slideBlock{
 	position: relative;
@@ -134,6 +140,7 @@ div.toggle{
 	background-color: #000;
 	margin-right: 25px;
 	align-self: flex-end;
+	cursor: pointer;
 }
 
 div.toggle.checked{
@@ -174,4 +181,5 @@ button.button{
 	border: 2px #FFF solid;
 	background: transparent;
 	transform: skew(15deg);
+	cursor: pointer;
 }
