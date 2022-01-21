@@ -12,7 +12,8 @@ export function ToggleItem({ title, codename, defaultValue = false }) {
 	titleElement.dataset["name"] = title;
 
 	const toggleElement = document.createElement("div");
-	toggleElement.classList.add("toggle", isChecked ? "checked" : undefined);
+	toggleElement.classList.add("toggle");
+	if (isChecked) toggleElement.classList.add("checked");
 
 	container.appendChild(titleElement);
 	container.appendChild(toggleElement);
