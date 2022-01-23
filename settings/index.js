@@ -5,11 +5,11 @@ import { SliderItem, ToggleItem, ButtonItem} from './components/index.js';
 //	全局初始化鼠标滚轮/移动端滑动坐标
 var yCoord=0,previousTouchYCoord=0;
 window.addEventListener('DOMContentLoaded',()=>{
-	loadSettings();
+	// loadSettings();
 	//	添加桌面端鼠标滚轮滚动
 	document.body.addEventListener("wheel", (e) => {
 		console.log("Scrolling", e.wheelDeltaY);
-		let newYCoord = yCoord + e.wheelDeltaY / 5;
+		let newYCoord = yCoord + e.wheelDeltaY / 3;
 		// 到顶不可再向上滚动
 		if (newYCoord <= 0 || e.wheelDeltaY < 0) {
 			document
@@ -46,33 +46,24 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 	//创建设置条目
 	settings.forEach((setting) => {
-		setting.defaultValue =
-			parseFloat(window.localStorage.getItem(setting.codename)) ||
-			setting.defaultValue;
-		const { element } =
-			setting.type === "slide"
-				? SliderItem(setting)
-				: setting.type === "toggle"
-				? ToggleItem(setting)
-				: setting.type === "button"
-				? ButtonItem(setting)
-				: {};
-		document.getElementById("settingItems").appendChild(element);
+		let item;
+		switch (setting.type) {
+			case "slide":
+				setting.defaultValue = parseFloat(window.localStorage.getItem(setting.codename))||setting.defaultValue
+				item = SliderItem(setting)
+				break;
+			case "toggle":
+				setting.defaultValue = parseFloat(window.localStorage.getItem(setting.codename))||setting.defaultValue
+				item = ToggleItem(setting)
+				break;
+			case "button":
+				item = ButtonItem(setting)
+				break;
+			default:
+				throw new Error("Unknown setting: " + setting);
+		}
+		document.getElementById("settingItems").appendChild(item.element);
 	});
-
-	/* 	const toggles=document.querySelectorAll('div.toggle');
-	for (let i = 0; i < toggles.length; i++) {
-		toggles[i].addEventListener('click',(e)=>{
-			window.e=e;
-			if (e.target.classList.toString().match('checked')) {
-				e.target.classList.remove('checked');
-				window.localStorage.setItem(e.target.parentElement.children[0].getAttribute('data-codename'),false);
-			}else{
-				e.target.classList.add('checked');
-				window.localStorage.setItem(e.target.parentElement.children[0].getAttribute('data-codename'),true);
-			}
-		});
-	} */
 });
 function loadSettings() {
 	const settingItems=document.querySelector("#settingItems").children;

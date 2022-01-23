@@ -28,7 +28,7 @@ div.leftArea{
 }
 
 #settingItems {
-	margin-left: 5%;
+	margin-left: 15%;
   }
 
 div.backBtn{
@@ -101,6 +101,7 @@ div.slideBlock{
 	display: block;
 	height: 120%;
 	width: 35px;
+	max-width: calc(10% - 15px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -111,9 +112,11 @@ div.slideBlock{
 }
 div.slider::before{
 	content: '-';
+	margin-right: 10px;
 }
 div.slider::after{
 	content: '+';
+	margin-left: 10px;
 }
 div.slideBlock::before{
 	content: '';

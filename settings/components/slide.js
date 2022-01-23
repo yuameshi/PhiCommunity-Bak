@@ -48,6 +48,7 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 
 	const container = document.createElement("div");
 	container.className = "slider";
+
 	const slideBlock = document.createElement("div");
 	slideBlock.className = "slideBlock";
 	container.appendChild(slideBlock);
@@ -62,25 +63,55 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 	});
 
 	//拖曳滚动条
-	const onDrag = (e) => {
+	let isDragStart = false;
+
+	/**
+	 * 电脑端
+	 * @param {MouseEvent} e
+	 */
+	const onMouseDrag = (e) => {
 		set(
 			Math.round(
 				range[0] +
-					((e.offsetX - 35) /
-						(container.clientWidth-70)) *
-						total
+					((e.offsetX - 50) / (container.clientWidth - 100)) * total
 			)
 		);
 	};
-	let isMouseDown = false;
 	slideBlock.addEventListener("mousedown", () => {
-		isMouseDown = true;
-		window.addEventListener("mousemove", onDrag);
+		isDragStart = true;
+		window.addEventListener("mousemove", onMouseDrag);
 	});
 	window.addEventListener("mouseup", () => {
-		if (!isMouseDown) return;
-		isMouseDown = false;
-		window.removeEventListener("mousemove", onDrag);
+		if (!isDragStart) return;
+		isDragStart = false;
+		window.removeEventListener("mousemove", onMouseDrag);
+	});
+
+	/** 
+	 * 移动端
+	 * @param {TouchEvent} e
+	 */
+	const onTouchDrag = (e) => {
+		set(
+			Math.round(
+				range[0] +
+					((e.targetTouches[0].pageX - container.clientLeft - 150) /
+						(container.clientWidth - 100)) *
+						total
+			)
+		);
+
+	};
+
+	slideBlock.addEventListener("touchstart", (e) => {
+		isDragStart = true;
+		window.addEventListener("touchmove", onTouchDrag);
+	});
+
+	window.addEventListener("touchend", () => {
+		if (!isDragStart) return;
+		isDragStart = false;
+		window.removeEventListener("touchmove", onTouchDrag);
 	});
 
 	set(defaultValue);
