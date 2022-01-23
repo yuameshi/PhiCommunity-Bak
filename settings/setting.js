@@ -18,14 +18,15 @@
  * 	title: string,
  * 	onClick: (this: GlobalEventHandlers, ev: MouseEvent) => any
  * }} ButtonSetting
+ * 
  */
 
 /**
  * @type {Array <
  * (SlideSetting & {type: 'slide'})|
  * (ToggleSetting & {type: 'toggle'}|
- * (ButtonSetting & {type: 'button'})
- * })>}
+ * (ButtonSetting & {type: 'button'})>
+ * }
  */
 export const settings = [
 	{
