@@ -79,11 +79,6 @@ export const settings = [
 	},
 	{
 		type: "toggle",
-		title: "开启触摸反馈",
-		codename: "feedback",
-	},
-	{
-		type: "toggle",
 		title: "背景模糊显示",
 		codename: "imageBlur",
 		defaultValue: true,
