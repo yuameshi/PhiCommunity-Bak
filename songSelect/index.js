@@ -11,6 +11,21 @@ window.addEventListener("DOMContentLoaded", () => {
 	document.querySelector("div.settingBtn").addEventListener("click", () => {
 		location.href = "../settings/index.html";
 	});
+	document.querySelector('#avatarBar').addEventListener("click",(e)=>{
+		var _element=e.target;
+		if (_element.classList.toString().match('avatarBar')==null) {
+			_element=e.target.parentElement;
+		}
+		if (_element.classList.toString().match('expand')) {
+			_element.classList.remove('expand');
+		} else {
+			_element.classList.add('expand');
+		}
+	});
+	if (window.localStorage.getItem('playerName')!=null) {
+		console.log('Setting player name: ', window.localStorage.getItem('playerName'));
+		document.querySelector('div#avatarBar').setAttribute('data-name',window.localStorage.getItem('playerName'));
+	}
 	//	获取歌曲列表并生成元素
 	window.chapterName = new URLSearchParams(new URL(location.href).search).get(
 		"c"
