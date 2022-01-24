@@ -1,81 +1,69 @@
+import { settings } from './setting.js';
+import { SliderItem, ToggleItem, ButtonItem} from './components/index.js';
+
+
 //	全局初始化鼠标滚轮/移动端滑动坐标
 var yCoord=0,previousTouchYCoord=0;
 window.addEventListener('DOMContentLoaded',()=>{
-	loadSettings();
+	// loadSettings();
 	//	添加桌面端鼠标滚轮滚动
-	document.body.addEventListener('wheel',(e)=>{
-		console.log('Scrolling',e.wheelDeltaY);
-		yCoord+=e.wheelDeltaY/8;
-		document.querySelector("#settingItems").setAttribute('style','margin-top:'+yCoord+'px')
+	document.body.addEventListener("wheel", (e) => {
+		console.log("Scrolling", e.wheelDeltaY);
+		let newYCoord = yCoord + e.wheelDeltaY / 3;
+		// 到顶不可再向上滚动
+		if (newYCoord <= 0 || e.wheelDeltaY < 0) {
+			document
+				.querySelector("#settingItems")
+				.setAttribute("style", "margin-top:" + newYCoord + "px");
+			yCoord = newYCoord;
+		}
 	});
 	//	添加移动端触屏滑动
-	document.body.addEventListener('touchstart',(e)=>{
+	document.body.addEventListener("touchstart", (e) => {
 		//	console.log(1);
-		var touchYCoord=e.changedTouches["0"].clientY;
-		previousTouchYCoord=touchYCoord;
+		var touchYCoord = e.changedTouches["0"].clientY;
+		previousTouchYCoord = touchYCoord;
 		//	console.log('prev',previousTouchYCoord);
 	});
-	document.body.addEventListener('touchmove',(e)=>{
+	document.body.addEventListener("touchmove", (e) => {
 		//	console.log(2)
-		var touchYCoord=e.changedTouches["0"].clientY;
-		window.touchYCoord=e.changedTouches["0"].clientY;
+		var touchYCoord = e.changedTouches["0"].clientY;
+		window.touchYCoord = e.changedTouches["0"].clientY;
 		//	console.log((previousTouchYCoord- touchYCoord)*10);
 		//	console.log(yCoord)
-		yCoord=-0.1*(previousTouchYCoord- touchYCoord)+parseFloat(yCoord);
 		//	console.log((previousTouchYCoord- touchYCoord)*10+parseFloat(yCoord))
 		//	console.log(previousTouchYCoord- touchYCoord);
-		document.querySelector("#settingItems").setAttribute('style','margin-top:'+yCoord+'px')
+		let newYCoord =
+			-0.1 * (previousTouchYCoord - touchYCoord) + parseFloat(yCoord);
+		// 到顶不可再向上滚动
+		if (newYCoord <= 0 || e.wheelDeltaY < 0) {
+			document
+				.querySelector("#settingItems")
+				.setAttribute("style", "margin-top:" + newYCoord + "px");
+			yCoord = newYCoord;
+		}
 	});
-	const sliders=document.querySelectorAll('div.slider');
-	for (let i = 0; i < sliders.length; i++) {
-		sliders[i].addEventListener('click',(e)=>{
-			var offset=0;
-			// console.log(e)
-			if (e.offsetX > (e.target.offsetWidth - 35)) {	//	若鼠标点击相对坐标大于宽度-加号长度则算点击右侧按钮
-				// console.log('right')
-				offset=1;
-			}
-			if (e.offsetX < 35) {	//同上
-				// console.log('left')
-				offset=-1;
-			}
-			// window.e=e;
-			if (e.target.children[0]) {
-				prevValue=parseFloat(e.target.children[0].style.marginLeft);
-				if (isNaN(prevValue)) {
-					prevValue=0;
-				}
-				if ((prevValue>=80&&offset==1)||(prevValue<=-80&&offset==-1)) {
-					console.log('Reached frontier, action blocked.');
-					return;
-				}
-				total=parseFloat(e.target.children[0].getAttribute('data-total'));
-				e.target.children[0].style.marginLeft=parseFloat(prevValue)+(offset/total)*200+"%";
-				prevValueDisplayed=parseFloat(e.target.parentElement.children[0].getAttribute('data-value'));
-				if (isNaN(prevValueDisplayed)) {
-					prevValueDisplayed=0;
-				}
-				console.log(prevValueDisplayed)
-				prevValueDisplayed+=offset;
-				window.localStorage.setItem(e.target.parentElement.children[0].getAttribute('data-codename'),prevValueDisplayed);
-				e.target.parentElement.children[0].setAttribute('data-value',prevValueDisplayed);
-			}
-		});
-		
-	}
-	const toggles=document.querySelectorAll('div.toggle');
-	for (let i = 0; i < toggles.length; i++) {
-		toggles[i].addEventListener('click',(e)=>{
-			window.e=e;
-			if (e.target.classList.toString().match('checked')) {
-				e.target.classList.remove('checked');
-				window.localStorage.setItem(e.target.parentElement.children[0].getAttribute('data-codename'),false);
-			}else{
-				e.target.classList.add('checked');
-				window.localStorage.setItem(e.target.parentElement.children[0].getAttribute('data-codename'),true);
-			}
-		});
-	}
+
+	//创建设置条目
+	settings.forEach((setting) => {
+		let item;
+		switch (setting.type) {
+			case "slide":
+				setting.defaultValue = parseFloat(window.localStorage.getItem(setting.codename))||setting.defaultValue
+				item = SliderItem(setting)
+				break;
+			case "toggle":
+				setting.defaultValue = window.localStorage.getItem(setting.codename)||setting.defaultValue
+				item = ToggleItem(setting)
+				break;
+			case "button":
+				item = ButtonItem(setting)
+				break;
+			default:
+				throw new Error("Unknown setting: " + setting);
+		}
+		document.getElementById("settingItems").appendChild(item.element);
+	});
 });
 function loadSettings() {
 	const settingItems=document.querySelector("#settingItems").children;
