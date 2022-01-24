@@ -2,8 +2,23 @@
 import { gameLevels } from "../constants.js";
 
 window.addEventListener('DOMContentLoaded',()=>{
-	document.body.children[0].style.transform="scale("+window.innerHeight/480/window.devicePixelRatio+")";
-	console.log('Resize:',document.body.children[0].style.transform);
+	document.querySelector('div#avatarBar').addEventListener('click',(e)=>{
+		var _element=e.target;
+		if (_element.classList.toString().match('avatarBar')==null) {
+			_element=e.target.parentElement;
+		}
+		if (_element.classList.toString().match('expand')) {
+			_element.classList.remove('expand');
+		} else {
+			_element.classList.add('expand');
+		}
+	});
+	if (window.localStorage.getItem('playerName')!=null) {
+		console.log('Setting player name: ', window.localStorage.getItem('playerName'));
+		document.querySelector('div#avatarBar').setAttribute('data-name',window.localStorage.getItem('playerName'));
+	}
+	// document.body.children[0].style.transform="scale("+window.innerHeight/480/window.devicePixelRatio+")";
+	// console.log('Resize:',document.body.children[0].style.transform);
 	const urlParams=new URL(location.href).search;
 	const parsedURLParams=new URLSearchParams(urlParams)
 	//	获取各种数据
@@ -123,8 +138,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 	console.log('ΔRKS:',deltaRKS);
 	console.log('ΔData(KB):',deltaData);
 });
-window.onresize=function(){
-	//	自动缩放
-	document.body.children[0].style.transform="scale("+window.outerHeight/480+")";
-	console.log('Resize:',document.body.children[0].style.transform);
-}
+// window.onresize=function(){
+// 	//	自动缩放
+// 	document.body.children[0].style.transform="scale("+window.outerHeight/480+")";
+// 	console.log('Resize:',document.body.children[0].style.transform);
+// }
