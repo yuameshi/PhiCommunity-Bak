@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 				item = SliderItem(setting)
 				break;
 			case "toggle":
-				setting.defaultValue = window.localStorage.getItem(setting.codename)||setting.defaultValue
+				setting.defaultValue = window.localStorage.getItem(setting.codename)=='true' ? true : false||setting.defaultValue
 				item = ToggleItem(setting)
 				break;
 			case "button":
