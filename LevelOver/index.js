@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	// gradeImage
 	//	获取歌曲信息
 	var songInfoXHR=new XMLHttpRequest();
-	songInfoXHR.open('GET',"../charts/"+play+"/meta.json",false);
+	songInfoXHR.open('GET',"https://charts.pgr.han-han.xyz/"+play+"/meta.json",false);
 	songInfoXHR.send();
 	window.playResult={
 		"score":score,
@@ -95,8 +95,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 	//	操作DOM修改可见部分数据
 	document.querySelector("#levelOverAudio").setAttribute('src',"../assets/audio/LevelOver"+playLevel+".wav");
 	document.querySelector("#levelOverAudio").play();
-	document.body.setAttribute('style',`background:url(../charts/${playResult.play}/${playResult.songInfo.illustration}) center center no-repeat;`);
-	document.querySelector("#songImg").setAttribute("src","../charts/"+play+"/"+playResult.songInfo.illustration.replaceAll('#',"%23"));
+	document.body.setAttribute('style',`background:url(https://charts.pgr.han-han.xyz/${playResult.play}/${playResult.songInfo.illustration}) center center no-repeat;`);
+	document.querySelector("#songImg").setAttribute("src","https://charts.pgr.han-han.xyz/"+play+"/"+playResult.songInfo.illustration.replaceAll('#',"%23"));
 	document.querySelector("#score").innerText=score.toString().padStart(7,'0');;
 	document.querySelector('#gradeImage').src='../assets/images/'+grade+'.png';
 	document.querySelector("#maxCombo").innerText=maxCombo;

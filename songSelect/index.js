@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		"c"
 	);
 	var songListXHR = new XMLHttpRequest();
-	songListXHR.open("GET", "../charts/" + chapterName + ".json", false);
+	songListXHR.open("GET", "https://charts.pgr.han-han.xyz/" + chapterName + ".json", false);
 	songListXHR.send();
 	window.songCodeNameList = JSON.parse(songListXHR.responseText);
 	window.songMetaList = new Array();
@@ -126,7 +126,7 @@ window.onresize = function () {
 
 function getSongMeta(songCodeName) {
 	var getSongMetaXHR = new XMLHttpRequest();
-	getSongMetaXHR.open("GET", "../charts/" + songCodeName + "/meta.json", false);
+	getSongMetaXHR.open("GET", "https://charts.pgr.han-han.xyz/" + songCodeName + "/meta.json", false);
 	getSongMetaXHR.send();
 	return JSON.parse(getSongMetaXHR.responseText);
 }
