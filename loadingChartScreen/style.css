@@ -178,7 +178,8 @@ div.illustrator{
 }
 div.songImage{
 	transform: skew(-15deg);
-	height: 100%;
+	height: 80%;
+	width: 50%;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
@@ -186,8 +187,9 @@ div.songImage{
 	object-fit: cover;
 }
 img.illustration{
-	/* height: 100%; */
+	height: 100%;
 	width: 150%;
+	margin: -15%;
 	object-fit: cover;
 	margin-right: -50px;
 	transform: skew(15deg);
