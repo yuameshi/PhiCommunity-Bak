@@ -37,7 +37,7 @@ function SongList(defaultLevel = "ez") {
 		console.log("Song", id, "Selected");
 		const { songMeta, codename } = items[id];
 
-		fetch(`../charts/${codename}/${songMeta['illustration']}`).then((response) => response.blob()).then((blob) => {
+		fetch(`https://charts.pgr.han-han.xyz/${codename}/${songMeta['illustration']}`).then((response) => response.blob()).then((blob) => {
 			console.log(blob);
 			const imgUrl = URL.createObjectURL(blob);
 			document.children[0].setAttribute(
@@ -49,7 +49,7 @@ function SongList(defaultLevel = "ez") {
 			document.querySelector("img.illustration").src = imgUrl;
 		})
 		document.querySelector("audio#slicedAudioElement").src =
-			"../charts/" + codename + "/" + songMeta["musicFile"];
+			"https://charts.pgr.han-han.xyz/" + codename + "/" + songMeta["musicFile"];
 		clearInterval(window.sliceAudioInterval);
 		document.querySelector("audio#slicedAudioElement").currentTime =
 			songMeta["sliceAudioStart"];

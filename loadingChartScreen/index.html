@@ -40,15 +40,15 @@
 		const chart = parsedURLParams.get('c');
 		const level = parsedURLParams.get('l').toLowerCase();
 		let songInfoXHR = new XMLHttpRequest();
-		songInfoXHR.open('GET', '../charts/' + chart + '/meta.json', false);
+		songInfoXHR.open('GET', 'https://charts.pgr.han-han.xyz/' + chart + '/meta.json', false);
 		songInfoXHR.send();
 		const songInfoObj = JSON.parse(songInfoXHR.responseText);
 		document.querySelector('#songNameElem').innerText = songInfoObj.name;
 		document.querySelector('#artistElem').innerText = songInfoObj.artist;
 		document.querySelector('#chartDesignerElem').innerText = songInfoObj.chartDesigner;
 		document.querySelector('#illustratorElem').innerText = songInfoObj.illustrator;
-		document.querySelector('#songImgElem').setAttribute('src', '../charts/' + chart + '/' + songInfoObj.illustration);
-		document.body.setAttribute('style', 'background: url(' + '../charts/' + chart + '/' + songInfoObj.illustration + ') center center no-repeat fixed;')
+		document.querySelector('#songImgElem').setAttribute('src', 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration);
+		document.body.setAttribute('style', 'background: url(' + 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration + ') center center no-repeat fixed;')
 		document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj[level+"Ranking"]));
 		document.querySelector('#levelInfoElem').classList.add(level);
 	</script>
