@@ -55,16 +55,19 @@ export const settings = [
 		type: "toggle",
 		title: "开启多押辅助",
 		codename: "highLight",
+		defaultValue: true,
 	},
 	{
 		type: "toggle",
 		title: "开启打击音效",
 		codename: "hitSong",
+		defaultValue: true,
 	},
 	{
 		type: "toggle",
 		title: "游玩时自动全屏",
 		codename: "autoFullscreen",
+		defaultValue: true,
 	},
 	{
 		type: "toggle",
