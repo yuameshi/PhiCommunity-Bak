@@ -182,6 +182,7 @@ document
 document.querySelector("div.playBtn").addEventListener("click",()=>{readyToLoadTrigger();});
 function readyToLoadTrigger() {
 	document.querySelector('#slicedAudioElement').pause();
+	clearInterval(window.sliceAudioInterval);
 	document.querySelector("#readyToLoadOverlay").classList.add("go");
 	const playClickedSound = document.createElement("audio");
 	playClickedSound.src = "../assets/audio/Tap7.wav";
