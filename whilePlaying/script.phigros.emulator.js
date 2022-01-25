@@ -706,12 +706,7 @@ const res = {}; //存放资源
 window.onload = function () {
 	//加载资源
 	(async function () {
-		let loadedNum = 0;
-		await Promise.all((obj => {
-			const arr = [];
-			for (const i in obj) arr.push([i, obj[i]]);
-			return arr;
-		})({
+		const loadItems={
 			JudgeLine: "assets/JudgeLine.png",
 			ProgressBar: "assets/ProgressBar.png",
 			SongsNameBar: "assets/SongsNameBar.png",
@@ -739,7 +734,30 @@ window.onload = function () {
 			HitSong0: "assets/HitSong0.ogg",
 			HitSong1: "assets/HitSong1.ogg",
 			HitSong2: "assets/HitSong2.ogg"
-		}).map(([name, src], _i, arr) => {
+		};
+		if (localStorage.getItem('useOldUI')=='true') {
+			document.body.setAttribute('style','background: #000 !important;');
+			document.querySelector("#select-global-alpha").children[0].selected=true;
+			loadItems.clickRaw="assets/oldui/clickRaw.png";
+			loadItems.Drag="assets/oldui/Drag.png";
+			loadItems.DragHL="assets/oldui/Drag2HL.png";
+			loadItems.Flick="assets/oldui/Flick.png";
+			loadItems.FlickHL="assets/oldui/Flick2HL.png";
+			loadItems.Hold="assets/oldui/HoldBody.png";
+			loadItems.HoldHL="assets/oldui/HoldBody.png";
+			loadItems.HoldHead="assets/oldui/Tap.png";
+			loadItems.HoldHeadHL="assets/oldui/Tap2HL.png";
+			loadItems.HoldEnd="assets/oldui/HoldEnd.png";
+			loadItems.Tap="assets/oldui/Tap.png";
+			loadItems.Tap2="assets/oldui/Tap2.png";
+			loadItems.TapHL="assets/oldui/Tap2HL.png";
+		}
+		let loadedNum = 0;
+		await Promise.all((obj => {
+			const arr = [];
+			for (const i in obj) arr.push([i, obj[i]]);
+			return arr;
+		})(loadItems).map(([name, src], _i, arr) => {
 			const xhr = new XMLHttpRequest();
 			xhr.open("get", src, true);
 			xhr.responseType = 'arraybuffer';
@@ -1446,9 +1464,12 @@ function qwqdraw1(now) {
 		ctxos.fillStyle = i.color;
 		ctxos.globalAlpha = 1 - tick; //不透明度
 		const r3 = 30 * (((0.2078 * tick - 1.6524) * tick + 1.6399) * tick + 0.4988); //方块大小
-		for (const j of i.rand) {
-			const ds = j[0] * (9 * tick / (8 * tick + 1)); //打击点距离
-			ctxos.fillRect(ds * Math.cos(j[1]) - r3 / 2, ds * Math.sin(j[1]) - r3 / 2, r3, r3);
+		if (window.localStorage.getItem('useOldUI'=='true')) {
+			//	溅射效果
+			for (const j of i.rand) {
+				const ds = j[0] * (9 * tick / (8 * tick + 1)); //打击点距离
+				ctxos.fillRect(ds * Math.cos(j[1]) - r3 / 2, ds * Math.sin(j[1]) - r3 / 2, r3, r3);
+			}
 		}
 	}
 	if (document.getElementById("feedback").checked) {

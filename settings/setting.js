@@ -82,6 +82,11 @@ export const settings = [
 	},
 	{
 		type: "toggle",
+		title: "启用旧版本打歌界面UI",
+		codename: "useOldUI",
+	},
+	{
+		type: "toggle",
 		title: "背景模糊显示",
 		codename: "imageBlur",
 		defaultValue: true,
