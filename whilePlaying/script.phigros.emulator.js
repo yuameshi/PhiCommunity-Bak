@@ -1550,7 +1550,7 @@ function qwqdraw1(now) {
 		ctxos.fillText(stat.combo, wlen, lineScale * 1.375);
 		ctxos.globalAlpha = qwqIn.second < 0.67 ? tween[2](qwqIn.second * 1.5) : (1 - tween[2](qwqOut.second * 1.5));
 		ctxos.font = `${lineScale * 0.66}px Mina`;
-		ctxos.fillText(autoplay.checked ? "Autoplay" : "combo", wlen, lineScale * 2.05);
+		ctxos.fillText(autoplay.checked ? "Autoplay" : "COMBO", wlen, lineScale * 2.05);
 	}
 	//绘制歌名和等级
 	ctxos.globalAlpha = 1;
