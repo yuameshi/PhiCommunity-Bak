@@ -1258,7 +1258,6 @@ const qwqEnd = new Timer();
 btnPause.addEventListener("click", function () {
 	if (this.classList.contains("disabled") || btnPlay.value == "播放") return;
 	if (this.value == "暂停") {
-		clearInterval(window.LevelOverTimeOut);
 		var pauseAudio=document.createElement('audio');
 		pauseAudio.src="../assets/audio/Tap6.wav";
 		pauseAudio.play();
@@ -1271,6 +1270,7 @@ btnPause.addEventListener("click", function () {
 		while (stopPlaying.length) stopPlaying.shift()();
 	} else {
 		document.querySelector('div#pauseOverlay.pauseOverlay').innerHTML="3";
+		document.querySelector('div#pauseOverlay.pauseOverlay').classList.add('readyToResume');
 		setTimeout(() => {
 			document.querySelector('div#pauseOverlay.pauseOverlay').innerHTML="2";
 		}, 1000);
@@ -1291,6 +1291,7 @@ btnPause.addEventListener("click", function () {
 			<div id="restartBtn" onclick="replay()"></div>
 			<div id="resumeBtn" onclick="btnPause.click()"></div>
 			`;
+			document.querySelector('div#pauseOverlay.pauseOverlay').classList.remove('readyToResume');
 		},3000);
 	}
 });
@@ -1549,7 +1550,7 @@ function qwqdraw1(now) {
 		ctxos.font = `${lineScale * 1.32}px Mina`;
 		ctxos.fillText(stat.combo, wlen, lineScale * 1.375);
 		ctxos.globalAlpha = qwqIn.second < 0.67 ? tween[2](qwqIn.second * 1.5) : (1 - tween[2](qwqOut.second * 1.5));
-		ctxos.font = `${lineScale * 0.66}px Mina`;
+		ctxos.font = `${lineScale * 0.5}px Mina`;
 		ctxos.fillText(autoplay.checked ? "Autoplay" : "COMBO", wlen, lineScale * 2.05);
 	}
 	//绘制歌名和等级
