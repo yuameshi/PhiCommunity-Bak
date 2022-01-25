@@ -149,8 +149,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 	<div class="songName">${chartMetadata.name}</div>
 	<div class="judgeLine"></div>
 	<div class="detail">
-		Illustration designed by ${chartMetadata.chartDesigner} <br />
-		Level designed by ${chartMetadata.illustrator}
+		Illustration designed by ${chartMetadata.illustrator} <br />
+		Level designed by ${chartMetadata.chartDesigner}
 	</div>
 	<div style="display:flex;flex-direction:row;">点按以开始<div style="color:#6cf;" onclick="alert('移动端浏览器禁止了无手势自动播放音频，所以我们需要你的手势来开始播放音频并全屏网页')"> 为什么？ </div></div>
 	`
