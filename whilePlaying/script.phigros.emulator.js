@@ -1596,8 +1596,42 @@ function qwqdraw1(now) {
 }
 //	结束处理 
 function qwqdraw2() {
+	//	计算并保存B19
+	// historyRks=JSON.parse(localStorage.getItem('rksStorage'));	//	获取历史RKS
+	// currentLevel=new URLSearchParams(new URL(location.href).search).get('play');	//	获取当前难度
+	// if(historyRks[currentLevel]<getRks()){	
+	// 	historyRks[currentLevel]=getRks();	//保存当前RKS	
+	// }else{
+	// 	if(historyRks[currentLevel]==undefined){
+	// 		historyRks[currentLevel]=getRks();	//保存RKS
+	// 	}
+	// }
+	// var b19rks=new Array();
+	// for(let i=0;i<Object.keys(historyRks).length;i++){
+	// 	b19rks.push(Object.keys(historyRks)[i]);
+	// }
+	// while (b19rks.length > 19) {
+	// 	b19rks.splice(b19rks.indexOf(Math.min(...b19rks)),1);
+	// }
+	// //	判断是否收歌
+	// if (stat.scoreStr=='1000000') {
+	// 	if (window.localStorage.getItem('phiSongLevel')==null) {
+	// 		window.localStorage.setItem('phiSongLevel',chartMetadata[currentLevel.toLowerCase()+'Ranking']);
+	// 	}
+	// 	if (window.localStorage.getItem('phiSongLevel')<chartMetadata[currentLevel.toLowerCase()+'Ranking']) {
+	// 		window.localStorage.setItem('phiSongLevel',chartMetadata[currentLevel.toLowerCase()+'Ranking']);
+	// 	}
+	// }
+	// rks=eval(b19rks.join('+'));
+	// if (window.localStorage.getItem('phiSongLevel')!=null) {
+	// 	rks+=parseFloat(window.localStorage.getItem('phiSongLevel'));
+	// }
+	// rks=rks/20;
+	// console.log(rks);
+	// localStorage.setItem('rks',rks);
 	//	直接跳转到LevelOver
 	location.href=`../LevelOver/index.html?play=${new URLSearchParams(new URL(location.href).search).get('play')}&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.noteRank[5]+stat.noteRank[4]+stat.noteRank[1]}&g=${stat.noteRank[7]+stat.noteRank[3]}&b=${stat.noteRank[6]}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}&c=${new URLSearchParams(new URL(location.href).search).get('c')}`;
+	return;
 	fucktemp = true;
 	btnPause.click(); //isPaused = true;
 	while (stopPlaying.length) stopPlaying.shift()();

@@ -301,3 +301,11 @@ document.getElementById('btn-play').addEventListener("click", async function () 
 	// 		// location.href=`../levelOver/index.html?play=sample&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.perfect}&g=${stat.good}&b=${stat.bad}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}`;
 	// 	},(Renderer.bgMusic.duration-actx.currentTime)*1000+3500);
 });
+
+function getRks() {
+	if(stat.accNum>=0.7){
+		return (Math.pow(((stat.accNum*100-55)/45),2)*chartMetadata[new URLSearchParams(new URL(location.href).search).get('l').toLowerCase()+'Ranking']).toFixed(2);
+	}else{
+		return 0;
+	}
+}
