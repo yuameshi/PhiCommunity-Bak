@@ -1464,7 +1464,7 @@ function qwqdraw1(now) {
 		ctxos.fillStyle = i.color;
 		ctxos.globalAlpha = 1 - tick; //不透明度
 		const r3 = 30 * (((0.2078 * tick - 1.6524) * tick + 1.6399) * tick + 0.4988); //方块大小
-		if (window.localStorage.getItem('useOldUI'=='true')) {
+		if (window.localStorage.getItem('useOldUI')!='true') {
 			//	溅射效果
 			for (const j of i.rand) {
 				const ds = j[0] * (9 * tick / (8 * tick + 1)); //打击点距离
