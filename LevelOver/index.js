@@ -17,8 +17,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 		console.log('Setting player name: ', window.localStorage.getItem('playerName'));
 		document.querySelector('div#avatarBar').setAttribute('data-name',window.localStorage.getItem('playerName'));
 	}
-	// document.body.children[0].style.transform="scale("+window.innerHeight/480/window.devicePixelRatio+")";
-	// console.log('Resize:',document.body.children[0].style.transform);
+	resize('div.mainContent');
+	resize('body > div.extraInfo','skew(-15deg)');
 	const urlParams=new URL(location.href).search;
 	const parsedURLParams=new URLSearchParams(urlParams)
 	//	获取各种数据
@@ -70,14 +70,14 @@ window.addEventListener('DOMContentLoaded',()=>{
 	if (960000<=score&&score<=999999) {
 			console.log('Grade:V');
 			grade='V15V';
-			if (good==0&&bad==0&&miss==0) {
-				console.log("Grade: V wih Full Combo")
-				grade='V15FC'
-			}
 	}
 	if (1000000<=score) {
 			console.log('Grade:Phi');
 			grade='phi15phi';
+	}
+	if (bad==0&&miss==0) {
+		console.log("Grade: V wih Full Combo")
+		grade='V15FC'
 	}
 	// switch (score) {
 	// 	default:
@@ -138,8 +138,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 	console.log('ΔRKS:',deltaRKS);
 	console.log('ΔData(KB):',deltaData);
 });
-// window.onresize=function(){
-// 	//	自动缩放
-// 	document.body.children[0].style.transform="scale("+window.outerHeight/480+")";
-// 	console.log('Resize:',document.body.children[0].style.transform);
-// }
+window.onresize=function(){
+	//	自动缩放
+	resize('div.mainContent');
+	resize('body > div.extraInfo','skew(-15deg)');
+}
+function resize(selector,transformDefaultString) {
+	// document.body.querySelector(selector).style.transform="scale("+window.outerHeight/600+transformDefaultString+")";
+	// console.log('Resize:',document.body.querySelector(selector).style.transform);
+}
