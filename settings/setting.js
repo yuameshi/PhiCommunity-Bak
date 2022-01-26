@@ -108,6 +108,13 @@ export const settings = [
 	},
 	{
 		type: "button",
+		title: "观看教学",
+		onClick() {
+			location.href = "../whilePlaying/index.html?play=introduction&l=ez&c=single";
+		},
+	},
+	{
+		type: "button",
 		title: "关于我们",
 		onClick() {
 			location.href = "../aboutUs/index.html";
