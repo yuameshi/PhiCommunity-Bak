@@ -5,6 +5,15 @@ import { SliderItem, ToggleItem, ButtonItem} from './components/index.js';
 //	全局初始化鼠标滚轮/移动端滑动坐标
 var yCoord=0,previousTouchYCoord=0;
 window.addEventListener('DOMContentLoaded',()=>{
+	if (window.localStorage.length==0) {
+		document.querySelector('#backBtn').addEventListener('click',()=>{
+			location.href='../whilePlaying/index.html?play=introduction&l=ez&c=single';
+		});
+	}else{
+		document.querySelector('#backBtn').addEventListener('click',()=>{
+			location.href='../chapterSelect/index.html';
+		});
+	}
 	// loadSettings();
 	//	添加桌面端鼠标滚轮滚动
 	document.body.addEventListener("wheel", (e) => {
