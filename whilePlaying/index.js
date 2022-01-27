@@ -15,17 +15,13 @@ Renderer = { //存放谱面
 qwq=[];
 var chartLine,chartLineData;
 window.addEventListener('DOMContentLoaded',()=>{
+	loadPGREmulatorResources();
 	document.getElementById('backBtn').addEventListener('click',()=>{
 		document.querySelector('#tap2').play();
 		setTimeout(() => {
 			location.href=`../songSelect/index.html?c=${new URLSearchParams(new URL(location.href).search).get('c')}`
 		}, 500);
 	});
-	// var script = document.createElement('script'); 
-	// script.src="//cdn.jsdelivr.net/npm/eruda"; 
-	// document.body.appendChild(script); 
-	// script.onload = function () { eruda.init() };
-
 	//	获取游玩谱面和难度信息
 	const play  = new URLSearchParams(new URL(location.href).search).get('play');
 	var level  = new URLSearchParams(new URL(location.href).search).get('l');
@@ -42,7 +38,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 				LoadCompleteItems++;
 			}
 		}
-		if (LoadCompleteItems==12&&window.ResourcesLoad==200) {
+		if (LoadCompleteItems==12&&window.ResourcesLoad>=100) {
 			loadingEmbedFrame.remove();
 			clearInterval(loadCompleteDetectInterval);
 		}
@@ -161,7 +157,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 				LoadCompleteItems++;
 			}
 		}
-		if (LoadCompleteItems==12&&window.ResourcesLoad==200) {
+		if (LoadCompleteItems==12&&window.ResourcesLoad>=100) {
 			tapToStartFrame.remove();
 			if (localStorage.autoFullscreen=='true') {
 				full.toggle();	
@@ -214,6 +210,10 @@ window.addEventListener('DOMContentLoaded',()=>{
 		} catch (error) {
 			console.warn('Error occured when applying settings \''+key+'\':\n',error)
 		}
+	}
+	if (window.localStorage.getItem('useOldUI')=='true') {
+		document.body.setAttribute('style','background: #000 !important;');
+		document.querySelector("#select-global-alpha").children[0].selected=true;
 	}
 	document.body.appendChild(tapToStartFrame);
 });
@@ -307,3 +307,81 @@ function getRks() {
 		return 0;
 	}
 }
+
+async function loadPGREmulatorResources() {
+	const loadItems={
+		JudgeLine: "assets/JudgeLine.png",
+		ProgressBar: "assets/ProgressBar.png",
+		SongsNameBar: "assets/SongsNameBar.png",
+		Pause: "assets/Pause.png",
+		clickRaw: "assets/clickRaw.png",
+		Tap: "assets/Tap.png",
+		Tap2: "assets/Tap2.png",
+		TapHL: "assets/TapHL.png",
+		Drag: "assets/Drag.png",
+		DragHL: "assets/DragHL.png",
+		HoldHead: "assets/HoldHead.png",
+		HoldHeadHL: "assets/HoldHeadHL.png",
+		Hold: "assets/Hold.png",
+		HoldHL: "assets/HoldHL.png",
+		HoldEnd: "assets/HoldEnd.png",
+		Flick: "assets/Flick.png",
+		FlickHL: "assets/FlickHL.png",
+		LevelOver1: "assets/LevelOver1.png",
+		LevelOver3: "assets/LevelOver3.png",
+		LevelOver4: "assets/LevelOver4.png",
+		LevelOver5: "assets/LevelOver5.png",
+		Rank: "assets/Rank.png",
+		NoImage: "assets/0.png",
+		mute: "assets/mute.ogg",
+		HitSong0: "assets/HitSong0.ogg",
+		HitSong1: "assets/HitSong1.ogg",
+		HitSong2: "assets/HitSong2.ogg"
+	};
+	if (localStorage.getItem('useOldUI')=='true') {
+		loadItems.clickRaw="assets/oldui/clickRaw.png";
+		loadItems.Drag="assets/oldui/Drag.png";
+		loadItems.DragHL="assets/oldui/Drag2HL.png";
+		loadItems.Flick="assets/oldui/Flick.png";
+		loadItems.FlickHL="assets/oldui/Flick2HL.png";
+		loadItems.Hold="assets/oldui/HoldBody.png";
+		loadItems.HoldHL="assets/oldui/HoldBody.png";
+		loadItems.HoldHead="assets/oldui/Tap.png";
+		loadItems.HoldHeadHL="assets/oldui/Tap2HL.png";
+		loadItems.HoldEnd="assets/oldui/HoldEnd.png";
+		loadItems.Tap="assets/oldui/Tap.png";
+		loadItems.Tap2="assets/oldui/Tap2.png";
+		loadItems.TapHL="assets/oldui/Tap2HL.png";
+	}
+	let loadedNum = 0;
+	await Promise.all((obj => {
+		const arr = [];
+		for (const i in obj) arr.push([i, obj[i]]);
+		return arr;
+	})(loadItems).map(([name, src], _i, arr) => {
+		const xhr = new XMLHttpRequest();
+		xhr.open("get", src, true);
+		xhr.responseType = 'arraybuffer';
+		xhr.send();
+		return new Promise(resolve => {
+			xhr.onload = async () => {
+				if (/\.(mp3|wav|ogg)$/i.test(src)) res[name] = await actx.decodeAudioData(xhr.response);
+				else if (/\.(png|jpeg|jpg)$/i.test(src)) res[name] = await createImageBitmap(new Blob([xhr.response]));
+				window.ResourcesLoad=Math.floor(++loadedNum / arr.length * 100);
+				message.sendMessage(`加载资源：${window.ResourcesLoad}%`);
+				resolve();
+			};
+		});
+	}));
+	res["JudgeLineMP"] = await createImageBitmap(imgShader(res["JudgeLine"], "#feffa9"));
+	res["JudgeLineAP"] = await createImageBitmap(imgShader(res["JudgeLine"], "#a3ffac"));
+	res["JudgeLineFC"] = await createImageBitmap(imgShader(res["JudgeLine"], "#a2eeff"));
+	res["TapBad"] = await createImageBitmap(imgShader(res["Tap2"], "#6c4343"));
+	res["Clicks"] = {};
+	//res["Clicks"].default = await qwqImage(res["clickRaw"], "white");
+	res["Ranks"] = await qwqImage(res["Rank"], "white");
+	res["Clicks"]["rgba(255,236,160,0.8823529)"] = await qwqImage(res["clickRaw"], "rgba(255,236,160,0.8823529)"); //#fce491
+	res["Clicks"]["rgba(168,255,177,0.9016907)"] = await qwqImage(res["clickRaw"], "rgba(168,255,177,0.9016907)"); //#97f79d
+	res["Clicks"]["rgba(180,225,255,0.9215686)"] = await qwqImage(res["clickRaw"], "rgba(180,225,255,0.9215686)"); //#9ed5f3
+	message.sendMessage("等待上传文件...");
+};
