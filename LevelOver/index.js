@@ -71,13 +71,13 @@ window.addEventListener('DOMContentLoaded',()=>{
 			console.log('Grade:V');
 			grade='V15V';
 	}
-	if (1000000<=score) {
-			console.log('Grade:Phi');
-			grade='phi15phi';
-	}
 	if (bad==0&&miss==0) {
 		console.log("Grade: V wih Full Combo")
 		grade='V15FC'
+	}
+	if (1000000<=score) {
+			console.log('Grade:Phi');
+			grade='phi15phi';
 	}
 	// switch (score) {
 	// 	default:
