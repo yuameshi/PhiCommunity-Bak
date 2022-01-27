@@ -65,6 +65,7 @@ function SongList(defaultLevel = "ez") {
 
 	function switchLevel(newLevel) {
 		if (level === newLevel) return;
+		window.levelSelected=newLevel;
 		items.forEach(({ switchLevel }) => switchLevel(newLevel));
 		level = newLevel;
 	}
