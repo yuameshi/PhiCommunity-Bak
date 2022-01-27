@@ -380,8 +380,14 @@ async function loadPGREmulatorResources() {
 	res["Clicks"] = {};
 	//res["Clicks"].default = await qwqImage(res["clickRaw"], "white");
 	res["Ranks"] = await qwqImage(res["Rank"], "white");
-	res["Clicks"]["rgba(255,236,160,0.8823529)"] = await qwqImage(res["clickRaw"], "rgba(255,236,160,0.8823529)"); //#fce491
-	res["Clicks"]["rgba(168,255,177,0.9016907)"] = await qwqImage(res["clickRaw"], "rgba(168,255,177,0.9016907)"); //#97f79d
-	res["Clicks"]["rgba(180,225,255,0.9215686)"] = await qwqImage(res["clickRaw"], "rgba(180,225,255,0.9215686)"); //#9ed5f3
+	if (localStorage.getItem('useOldUI')=='true') {
+		res["Clicks"]["rgba(255,236,160,0.8823529)"] = await qwqImage(res["clickRaw"], "rgba(232, 148, 101,0.8823529)");	//#e89465e1
+		res["Clicks"]["rgba(168,255,177,0.9016907)"] = await qwqImage(res["clickRaw"], "rgba(123, 193, 253,0.9215686)");	//#7bc1fdeb
+		res["Clicks"]["rgba(180,225,255,0.9215686)"] = await qwqImage(res["clickRaw"], "rgba(123, 193, 253,0.9215686)");	//#7bc1fdeb
+	}else{
+		res["Clicks"]["rgba(255,236,160,0.8823529)"] = await qwqImage(res["clickRaw"], "rgba(255,236,160,0.8823529)"); //#fce491
+		res["Clicks"]["rgba(168,255,177,0.9016907)"] = await qwqImage(res["clickRaw"], "rgba(168,255,177,0.9016907)"); //#97f79d
+		res["Clicks"]["rgba(180,225,255,0.9215686)"] = await qwqImage(res["clickRaw"], "rgba(180,225,255,0.9215686)"); //#9ed5f3
+	}
 	message.sendMessage("等待上传文件...");
 };
