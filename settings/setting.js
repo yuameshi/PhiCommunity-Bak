@@ -38,6 +38,13 @@ export const settings = [
 		offset: 5,
 	},
 	{
+		type: "button",
+		title: "根据声音调整偏移率",
+		onClick() {
+			location.href = "./calibrate.html";
+		},
+	},
+	{
 		type: "slide",
 		title: "按键缩放",
 		codename: "select-scale-ratio",

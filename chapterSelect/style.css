@@ -31,18 +31,6 @@ html::before{
     filter: blur(10px);
     z-index: -1;
 }
-html::before {
-	content: "";
-	display: block;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	backdrop-filter: blur(15px);
-	-webkit-backdrop-filter: blur(15px);
-	z-index: -1;
-}
 div.chapterContainer {
 	display: flex;
 	position: relative;

@@ -7,10 +7,22 @@ body{
 	padding: 0;
 	overflow: hidden;
 }
-body{
+html{
 	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed ;
 	background-size: cover;
-	backdrop-filter: blur(100px);
+	backdrop-filter: blur(15px);
+}
+html::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
 }
 div.leftArea{
 	position: fixed;
@@ -21,7 +33,7 @@ div.leftArea{
 	height: 100%;
 	width: 40%;
 	min-width: 500px;
-	background-color: rgba(0, 0, 0, 0.103);
+	background: rgba(0, 0, 0, 0.5);
 	/* border: 1px #6cf solid; */
 	color: #FFF;
 	padding-top: 100px;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>校准 - Phigros</title>
+	<link rel="stylesheet" href="./calibrate.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="title">
+			偏移率设置
+		</div>
+		<div class="content">
+			<div class="description">
+				在每个第三拍点击按钮<br>
+				本结果仅供参考，实际效果可能会有所不同(触摸屏延迟可能需要手动调低)<br>
+				不同设备(键盘/鼠标/触摸)的结果可能会有所不同
+			</div>
+			<button id="clickBtn">点击</button>
+			<div class="results">
+				<div id="result1">-</div>
+				<div id="result2">-</div>
+				<div id="result3">-</div>
+				<div id="result4">-</div>
+			</div>
+		</div>
+		<div class="footer">
+			<button id="startBtn">开始</button>
+			<button id="cancelBtn">返回</button>
+		</div>
+	</div>
+	<audio src="./calibrate.ogg" id="audio"></audio>
+	<script src="./calibrate.js"></script>
+</body>
+
+</html>
