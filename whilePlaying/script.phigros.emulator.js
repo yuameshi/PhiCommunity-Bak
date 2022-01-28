@@ -290,7 +290,7 @@ const specialClick = {
 	}, () => {
 		replay()
 	}, () => void 0, () => {
-		full.toggle(canvas);
+		full.toggle(document.body);
 	}],
 	click(id) {
 		const now = Date.now();
