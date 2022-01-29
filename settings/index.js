@@ -7,7 +7,7 @@ var yCoord=0,previousTouchYCoord=0;
 window.addEventListener('DOMContentLoaded',()=>{
 	if (window.localStorage.length==0) {
 		document.querySelector('#backBtn').addEventListener('click',()=>{
-			location.href='../whilePlaying/index.html?play=introduction&l=ez&c=single';
+			location.href='../whilePlaying/index.html?play=introduction&l=ez&c=official';
 		});
 	}else{
 		document.querySelector('#backBtn').addEventListener('click',()=>{
