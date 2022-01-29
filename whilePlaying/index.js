@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	chartXHR.addEventListener('load',()=>{
 		window.chartString=chartXHR.responseText;
 		try {
-			window.Renderer.chart=JSON.parse(chartXHR.responseText);
+			window.Renderer.chart=chart123(JSON.parse(chartXHR.responseText));
 		} catch (error) {
 			//	JSON解析出错了就换PEC解析（
 			window.Renderer.chart=chart123(chartp23(chartXHR.responseText, undefined));
@@ -224,11 +224,9 @@ function replay() {
 		.classList.remove("visable");
 	btnPlay.click();
 	try {
-		window.Renderer.chart = JSON.parse(window.chartString);
+		window.Renderer.chart=chart123(JSON.parse(window.chartString));
 	} catch (e) {
-		window.Renderer.chart = chart123(
-			chartp23(window.chartString, undefined)
-		);
+		window.Renderer.chart=chart123(chartp23(window.chartString, undefined));
 	}
 	btnPlay.click();
 }
