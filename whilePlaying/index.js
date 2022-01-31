@@ -325,11 +325,11 @@ async function loadPGREmulatorResources() {
 		HoldEnd: "assets/HoldEnd.png",
 		Flick: "assets/Flick.png",
 		FlickHL: "assets/FlickHL.png",
-		LevelOver1: "assets/LevelOver1.png",
-		LevelOver3: "assets/LevelOver3.png",
-		LevelOver4: "assets/LevelOver4.png",
-		LevelOver5: "assets/LevelOver5.png",
-		Rank: "assets/Rank.png",
+		// LevelOver1: "assets/LevelOver1.png",
+		// LevelOver3: "assets/LevelOver3.png",
+		// LevelOver4: "assets/LevelOver4.png",
+		// LevelOver5: "assets/LevelOver5.png",
+		// Rank: "assets/Rank.png",
 		NoImage: "assets/0.png",
 		mute: "assets/mute.ogg",
 		HitSong0: "assets/HitSong0.ogg",
@@ -377,7 +377,7 @@ async function loadPGREmulatorResources() {
 	res["TapBad"] = await createImageBitmap(imgShader(res["Tap2"], "#6c4343"));
 	res["Clicks"] = {};
 	//res["Clicks"].default = await qwqImage(res["clickRaw"], "white");
-	res["Ranks"] = await qwqImage(res["Rank"], "white");
+	// res["Ranks"] = await qwqImage(res["Rank"], "white");
 	if (localStorage.getItem('useOldUI')=='true') {
 		res["Clicks"]["rgba(255,236,160,0.8823529)"] = await qwqImage(res["clickRaw"], "rgba(232, 148, 101,0.8823529)");	//#e89465e1
 		res["Clicks"]["rgba(168,255,177,0.9016907)"] = await qwqImage(res["clickRaw"], "rgba(123, 193, 253,0.9215686)");	//#7bc1fdeb

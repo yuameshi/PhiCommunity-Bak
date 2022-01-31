@@ -14,7 +14,7 @@ about: 如果您要申请收录您的谱面，请使用此ISSUE
 # 谱面信息
 
 - 名称
-- 代号（不能重复，已有代号请查看charts文件夹）
+- 代号（不能重复，已有代号前往[此仓库](https://github.com/HanHan233/phigros-charts-repo)查看）
 - 作曲家
 - 音乐文件名称
 - EZ/HD/IN/AT定数（只有一个定数则写单定数）
