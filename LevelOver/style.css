@@ -23,6 +23,18 @@ body{
 	background-size: cover !important;
 	backdrop-filter: blur(100px);
 }
+body::before{
+	content:"";
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0,.5);
+	z-index: -1;
+}
 div.retryBtn{
 	position: fixed;
 	left: -15px;
@@ -295,7 +307,7 @@ div.atAGlance{
 	justify-content: space-between;
 	padding-left: 7.5%;
 	padding-right: 7.5%;
-	background: rgba(0,0,0,.40);
+	background: rgba(0,0,0,.4);
 	/* margin-left: 5px; */
 	/* clip-path: polygon(12px 0, 100% 0, 355px 100%, 0 100%); */
 	animation: slideIn 1s linear ,
@@ -334,7 +346,7 @@ div.detailFrame{
 	justify-content: space-between;
 	padding-left: 7.5%;
 	padding-right: 7.5%;
-	background: rgba(0,0,0,.40);
+	background: rgba(0,0,0,.4);
 	/* margin-left: -15px; */
 	/* clip-path: polygon(12px 0, 100% 0, 355px 100%, 0 100%); */
 	animation: slideIn 1.4s linear,
@@ -388,7 +400,7 @@ div.extraInfo{
 	width: 200px;
 	padding: 10px 20px 10px 20px;
 	bottom: 30px;
-	background: rgba(0,0,0,.40);
+	background: rgba(0,0,0,.4);
 	border-right: 2.5px #FFF solid;
 	border-left: 2.5px #FFF solid;
 	transform: skew(-15deg);
