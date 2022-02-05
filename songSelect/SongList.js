@@ -42,9 +42,7 @@ function SongList(defaultLevel = "ez") {
 			const imgUrl = URL.createObjectURL(blob);
 			document.children[0].setAttribute(
 				"style",
-				`background: url(${imgUrl}); center center no-repeat fixed;
-				background-size: cover;
-			`
+				`--background: url(${imgUrl});`
 			);
 			document.querySelector("img.illustration").src = imgUrl;
 		})

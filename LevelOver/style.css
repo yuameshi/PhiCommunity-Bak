@@ -19,9 +19,21 @@ body{
 	align-items: center;
 	overflow: hidden;
 	color: #fff;
-	background: url(../assets/images/InitialBackground.png) center center no-repeat;
+	background: var(--background) center center no-repeat;
 	background-size: cover !important;
 	backdrop-filter: blur(100px);
+}
+body::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background) center center no-repeat fixed;
+    background-size: cover;
+    filter: blur(15px);
+    z-index: -2;
 }
 body::before{
 	content:"";
@@ -120,6 +132,7 @@ div.avatarBar.expand{
 div.avatarBar.expand::before{
 	content: attr(data-name);
 	width: fit-content;
+	width: -moz-fit-content;
 	color: #FFF;
 	font-size: 1.3rem;
 	transform: skew(15deg);

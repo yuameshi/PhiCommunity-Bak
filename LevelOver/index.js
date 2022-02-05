@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	//	操作DOM修改可见部分数据
 	document.querySelector("#levelOverAudio").setAttribute('src',"./LevelOver"+playLevel+".ogg");
 	document.querySelector("#levelOverAudio").play();
-	document.body.setAttribute('style',`background:url(https://charts.pgr.han-han.xyz/${playResult.play}/${playResult.songInfo.illustration}) center center no-repeat;`);
+	document.body.setAttribute('style',`--background:url(https://charts.pgr.han-han.xyz/${playResult.play}/${playResult.songInfo.illustration});`);
 	document.querySelector("#songImg").setAttribute("src","https://charts.pgr.han-han.xyz/"+play+"/"+playResult.songInfo.illustration.replaceAll('#',"%23"));
 	document.querySelector("#score").innerText=score.toString().padStart(7,'0');;
 	document.querySelector('#gradeImage').src='../assets/images/'+grade+'.png';
