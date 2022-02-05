@@ -6,7 +6,7 @@ html{
 	padding: 0;
 }
 body{
-	background: url(../assets/images/InitialBackground.png) center center no-repeat;
+	background: var(--background) center center no-repeat;
 	background-size: cover !important;
 	backdrop-filter: blur(15px) brightness(.6);
 	height: 100%;
@@ -24,6 +24,18 @@ body{
 	-ms-user-select:none;
 	user-select:none;
 	transition: all .3s linear;
+}
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background) center center no-repeat fixed;
+    background-size: cover;
+    filter: blur(15px);
+    z-index: -1;
 }
 canvas.canvas#canvas{
 	height: 100%;
@@ -52,6 +64,7 @@ div.tapToStartFrame{
 	justify-content: center;
 	align-items: center;
 	color: #FFF;
+	text-shadow: 0 0 5px #000;
 }
 div.tapToStartFrame>div.songName{
 	font-size: 2.3rem;

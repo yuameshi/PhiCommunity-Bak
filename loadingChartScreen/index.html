@@ -48,7 +48,7 @@
 		document.querySelector('#chartDesignerElem').innerText = songInfoObj.chartDesigner;
 		document.querySelector('#illustratorElem').innerText = songInfoObj.illustrator;
 		document.querySelector('#songImgElem').setAttribute('src', 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration);
-		document.body.setAttribute('style', 'background: url(' + 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration.replaceAll(' ','%20') + ') center center no-repeat fixed;')
+		document.body.setAttribute('style', '--background: url(' + 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration.replaceAll(' ','%20') + ');')
 		document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj[level+"Ranking"]));
 		document.querySelector('#levelInfoElem').classList.add(level);
 	</script>

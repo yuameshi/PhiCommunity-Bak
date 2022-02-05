@@ -8,13 +8,25 @@ body{
 	padding: 0;
 }
 body{
-	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
+	background: var(--background) center center no-repeat fixed;
 	background-size: cover !important;
 	backdrop-filter: blur(100px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: #fff;
+}
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background) center center no-repeat fixed;
+    background-size: cover;
+    filter: blur(15px);
+    z-index: -1;
 }
 div.tip::before{
 	content: 'Tip: ';

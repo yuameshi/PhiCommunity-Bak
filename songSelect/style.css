@@ -1,10 +1,22 @@
 @import url(../assets/fonts/fonts.css);
 html {
-	background: url(../assets/images/InitialBackground.png) center center
-		no-repeat fixed;
+	--background: url(../assets/images/InitialBackground.png);
+	background: var(--background) center center no-repeat fixed;
 	background-size: cover !important;
 	box-sizing: border-box;
 	transition: all 0.3s ease-in-out;
+}
+html::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background) center center no-repeat fixed;
+    background-size: cover;
+    filter: blur(15px);
+    z-index: -1;
 }
 html,
 body {
@@ -84,6 +96,7 @@ div.avatarBar{
 	justify-content: space-between;
 	align-items: center;
 	transition: all .3s ease-in-out;
+	z-index: 1;
 }
 div.avatarBar.expand{
 	padding-left: 20px;

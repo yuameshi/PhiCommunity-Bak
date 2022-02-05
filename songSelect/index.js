@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	document.querySelector("div.settingBtn").addEventListener("click", () => {
 		location.href = "../settings/index.html";
 	});
-	document.querySelector('#avatarBar').addEventListener("click",(e)=>{
+	document.querySelector('div#avatarBar').addEventListener("click",(e)=>{
 		var _element=e.target;
 		if (_element.classList.toString().match('avatarBar')==null) {
 			_element=e.target.parentElement;
