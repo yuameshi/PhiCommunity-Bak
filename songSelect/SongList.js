@@ -137,6 +137,7 @@ function SongLevel(songMeta, defaultLevel = "ez") {
 	return { element: songItemLevelElement, switchLevel };
 
 	function switchLevel(level) {
+		songItemLevelElement.classList.remove('ez','hd','in','at');
 		songItemLevelElement.classList.add(level);
 		songItemLevelElement.setAttribute(
 			"data-level",

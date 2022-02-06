@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0;" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0" />
 	<title>正在加载 - Phigros</title>
 	<link rel="stylesheet" href="style.css" />
 </head>
@@ -40,17 +40,19 @@
 		const chart = parsedURLParams.get('c');
 		const level = parsedURLParams.get('l').toLowerCase();
 		let songInfoXHR = new XMLHttpRequest();
-		songInfoXHR.open('GET', 'https://charts.pgr.han-han.xyz/' + chart + '/meta.json', false);
+		songInfoXHR.open('GET', 'https://charts.pgr.han-han.xyz/' + chart + '/meta.json', true);
+		songInfoXHR.addEventListener('load',()=>{
+			const songInfoObj = JSON.parse(songInfoXHR.responseText);
+			document.querySelector('#songNameElem').innerText = songInfoObj.name;
+			document.querySelector('#artistElem').innerText = songInfoObj.artist;
+			document.querySelector('#chartDesignerElem').innerText = songInfoObj.chartDesigner;
+			document.querySelector('#illustratorElem').innerText = songInfoObj.illustrator;
+			document.querySelector('#songImgElem').setAttribute('src', 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration);
+			document.body.setAttribute('style', '--background: url(' + 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration.replaceAll(' ','%20') + ');')
+			document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj[level+"Ranking"]));
+			document.querySelector('#levelInfoElem').classList.add(level);
+		})
 		songInfoXHR.send();
-		const songInfoObj = JSON.parse(songInfoXHR.responseText);
-		document.querySelector('#songNameElem').innerText = songInfoObj.name;
-		document.querySelector('#artistElem').innerText = songInfoObj.artist;
-		document.querySelector('#chartDesignerElem').innerText = songInfoObj.chartDesigner;
-		document.querySelector('#illustratorElem').innerText = songInfoObj.illustrator;
-		document.querySelector('#songImgElem').setAttribute('src', 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration);
-		document.body.setAttribute('style', '--background: url(' + 'https://charts.pgr.han-han.xyz/' + chart + '/' + songInfoObj.illustration.replaceAll(' ','%20') + ');')
-		document.querySelector('#levelInfoElem').setAttribute('data-level', Math.floor(songInfoObj[level+"Ranking"]));
-		document.querySelector('#levelInfoElem').classList.add(level);
 	</script>
 	<!-- <script src="../assets/autoScale.js"></script> -->
 </body>

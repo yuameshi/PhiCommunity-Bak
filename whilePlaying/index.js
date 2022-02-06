@@ -47,175 +47,195 @@ window.addEventListener('DOMContentLoaded',()=>{
 	//	获取元数据
 	console.log('Fetching MetaData:',play);
 	var chartMetaXHR=new XMLHttpRequest();
-	chartMetaXHR.open('GET','https://charts.pgr.han-han.xyz/'+play+'/meta.json',false);
-	chartMetaXHR.send();
-	window.chartMetadata=JSON.parse(chartMetaXHR.responseText);
-	document.getElementById("input-name").value=chartMetadata.name;	//歌名
-	document.getElementById("input-level").value=level.toUpperCase()+" Lv."+chartMetadata[ level.toLowerCase()+'Ranking'];	//难度
-	document.getElementById("input-designer").value=chartMetadata.chartDesigner;	//普师
-	document.getElementById("input-illustrator").value=chartMetadata.illustrator;	//曲绘
-
-	//	获取谱面
-	console.log('Fetching Chart:',play);
-	var chartXHR=new XMLHttpRequest();
-	chartXHR.open('GET','https://charts.pgr.han-han.xyz/'+play+"/"+chartMetadata["chart"+level.toUpperCase()],true);
-	chartXHR.send();
-	chartXHR.addEventListener('load',()=>{
-		window.chartString=chartXHR.responseText;
-		try {
-			window.Renderer.chart=chart123(JSON.parse(chartXHR.responseText));
-		} catch (error) {
-			//	JSON解析出错了就换PEC解析（
-			window.Renderer.chart=chart123(chartp23(chartXHR.responseText, undefined));
-		}
-		// prerenderChart(window.Renderer.chart);
+	chartMetaXHR.open('GET','https://charts.pgr.han-han.xyz/'+play+'/meta.json',true);
+	chartMetaXHR.addEventListener('error',()=>{
+		alert('谱面信息获取失败！');
 	});
-
-	//	获取曲绘
-	console.log('Fetching illustration:',chartMetadata["illustration"]);
-	document.body.setAttribute('style','--background: url('+'https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata['illustration']+')');
-	fetch('https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata["illustration"]).then(response => {
-		response.blob().then(blob => {
-			createImageBitmap(blob).then(img => {
-				window.Renderer.bgImage=img;
-				createImageBitmap(imgBlur(img)).then(imgBlur=>{
-						window.Renderer.bgImageBlur=imgBlur;
-					}
-				);
-			});
+	chartMetaXHR.addEventListener('load',()=>{
+		window.chartMetadata=JSON.parse(chartMetaXHR.responseText);
+		document.getElementById("input-name").value=chartMetadata.name;	//歌名
+		document.getElementById("input-level").value=level.toUpperCase()+" Lv."+chartMetadata[ level.toLowerCase()+'Ranking'];	//难度
+		document.getElementById("input-designer").value=chartMetadata.chartDesigner;	//普师
+		document.getElementById("input-illustrator").value=chartMetadata.illustrator;	//曲绘
+		//	获取谱面
+		console.log('Fetching Chart:',play);
+		var chartXHR=new XMLHttpRequest();
+		chartXHR.open('GET','https://charts.pgr.han-han.xyz/'+play+"/"+chartMetadata["chart"+level.toUpperCase()],true);
+		chartXHR.addEventListener('load',()=>{
+			window.chartString=chartXHR.responseText;
+			try {
+				window.Renderer.chart=chart123(JSON.parse(chartXHR.responseText));
+			} catch (error) {
+				//	JSON解析出错了就换PEC解析（
+				window.Renderer.chart=chart123(chartp23(chartXHR.responseText, undefined));
+			}
+			// prerenderChart(window.Renderer.chart);
 		});
-	});
-	//	判定线贴图
-	window.chartLine=[];
-	window.chartLineData=[];
-	window.chartLineTextureDecoded = new Array(window.chartLine.length);
-
-	if (chartMetadata.lineTexture) {
-		console.log("Line Texture Detected");
-		var chartLineDataXHR = new XMLHttpRequest();
-		chartLineDataXHR.open(
-			"GET",
-			"https://charts.pgr.han-han.xyz/" +
-				chartMetadata["codename"] +
-				"/" +
-				chartMetadata["lineTexture"],
-			false
-		);
-		chartLineDataXHR.send();
-		window.chartLineData = JSON.parse(chartLineDataXHR.responseText);
-		window.chartLine = JSON.parse(chartLineDataXHR.responseText);
-		window.chartLineTextureDecoded = new Array(window.chartLine.length);
-		for (let i = 0; i < window.chartLine.length; i++) {
-			console.log(
-				"Fetching chart line texture:",
-				"https://charts.pgr.han-han.xyz/" +
-					chartMetadata["codename"] +
-					"/" +
-					chartLine[i].Image.toString()
-			);
-			fetch(
-				"https://charts.pgr.han-han.xyz/" +
-					chartMetadata["codename"] +
-					"/" +
-					chartLine[i].Image.toString()
-			).then((response) => {
-				response.blob().then((blob) => {
-					createImageBitmap(blob).then((img) => {
-						window.chartLineTextureDecoded[i] = img;
-						window.bgs[chartLine[i].Image.toString()] = img;
-					});
+		chartXHR.addEventListener('error',()=>{
+			alert('谱面获取失败！');
+		});
+		chartXHR.send();
+	
+		//	获取曲绘
+		console.log('Fetching illustration:',chartMetadata["illustration"]);
+		document.body.setAttribute('style','--background: url('+'https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata['illustration']+')');
+		fetch('https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata["illustration"]).then(response => {
+			response.blob().then(blob => {
+				createImageBitmap(blob).then(img => {
+					window.Renderer.bgImage=img;
+					createImageBitmap(imgBlur(img)).then(imgBlur=>{
+							window.Renderer.bgImageBlur=imgBlur;
+						}
+					);
 				});
 			});
-		}
-	}
-	//	获取图片并写入对象bgs
-	window.bgs={};
-	//	获取歌曲
-	console.log('Fetching Audio:',chartMetadata["musicFile"]);
-	fetch('https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata["musicFile"]).then(response => {
-		response.arrayBuffer().then(arrayBuffer => {
-			actx.decodeAudioData(arrayBuffer).then(audioBuff=>{
-				window.Renderer.bgMusic=audioBuff;
-			});
+		})
+		.catch(error => {
+			alert('无法获取曲绘，原因是：\n'+error);
 		});
-	});
-	var tapToStartFrame=document.createElement('div');
-	tapToStartFrame.classList.add('tapToStartFrame');
-	tapToStartFrame.innerHTML=`
-	<div class="songName">${chartMetadata.name}</div>
-	<div class="judgeLine"></div>
-	<div class="detail">
-		Illustration designed by ${chartMetadata.illustrator} <br />
-		Level designed by ${chartMetadata.chartDesigner}
-	</div>
-	<div style="display:flex;flex-direction:row;">点按以开始<div style="color:#6cf;" onclick="alert('移动端浏览器禁止了无手势自动播放音频，所以我们需要你的手势来开始播放音频并全屏网页')"> 为什么？ </div></div>
-	`
-	tapToStartFrame.addEventListener('click',()=>{
-		var LoadCompleteItems=0;
-		for ( i in Renderer){
-			if(Renderer[i]!=undefined){
-				LoadCompleteItems++;
-			}
-		}
-		if (LoadCompleteItems==12&&window.ResourcesLoad>=100) {
-			tapToStartFrame.remove();
-			if (localStorage.autoFullscreen=='true') {
-				full.toggle();	
-			}
-			document.getElementById('btn-play').click();	
-		}else{
-			console.log("LoadNotComplete");
-		}
-	});
-	// 应用设置
-	for (let i = 0; i < Object.keys(localStorage).length; i++) {
-		const key=Object.keys(localStorage)[i];
-		const value = localStorage[Object.keys(localStorage)[i]];
-		if (key=='phi') {
-			continue;
-		}
-		if (key.match('eruda')) {
-			continue;
-		}
-		console.log('Applying settings:',key,value);
-		const elem=document.querySelector('#'+key);
-		try {
-			// console.log(elem.type);
-			if (elem.type=='checkbox') {
-				if (value=='true') {
-					elem.setAttribute('checked',value);
-				}else{
-					elem.removeAttribute('checked')
+		//	判定线贴图
+		window.chartLine=[];
+		window.chartLineData=[];
+		window.chartLineTextureDecoded = new Array(window.chartLine.length);
+	
+		if (chartMetadata.lineTexture) {
+			console.log("Line Texture Detected");
+			var chartLineDataXHR = new XMLHttpRequest();
+			chartLineDataXHR.open(
+				"GET",
+				"https://charts.pgr.han-han.xyz/" +
+					chartMetadata["codename"] +
+					"/" +
+					chartMetadata["lineTexture"],
+				true
+			);
+			chartLineDataXHR.addEventListener('error',()=>{
+				alert('判定线贴图获取失败！');
+			});
+			chartLineDataXHR.addEventListener('load',()=>{
+				window.chartLineData = JSON.parse(chartLineDataXHR.responseText);
+				window.chartLine = JSON.parse(chartLineDataXHR.responseText);
+				window.chartLineTextureDecoded = new Array(window.chartLine.length);
+				for (let i = 0; i < window.chartLine.length; i++) {
+					console.log(
+						"Fetching chart line texture:",
+						"https://charts.pgr.han-han.xyz/" +
+							chartMetadata["codename"] +
+							"/" +
+							chartLine[i].Image.toString()
+					);
+					fetch(
+						"https://charts.pgr.han-han.xyz/" +
+							chartMetadata["codename"] +
+							"/" +
+							chartLine[i].Image.toString()
+					).then((response) => {
+						response.blob().then((blob) => {
+							createImageBitmap(blob).then((img) => {
+								window.chartLineTextureDecoded[i] = img;
+								window.bgs[chartLine[i].Image.toString()] = img;
+							});
+						});
+					}).catch((error) => {
+						alert('无法获取判定线贴图#'+i.toString()+'，原因是：\n'+error);
+					});
 				}
+			});
+			chartLineDataXHR.send();
+		}
+		//	获取图片并写入对象bgs
+		window.bgs={};
+		//	获取歌曲
+		console.log('Fetching Audio:',chartMetadata["musicFile"]);
+		fetch('https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata["musicFile"]).then(response => {
+			response.arrayBuffer().then(arrayBuffer => {
+				actx.decodeAudioData(arrayBuffer).then(audioBuff=>{
+					window.Renderer.bgMusic=audioBuff;
+				});
+			});
+		})
+		.catch(error => {
+			alert('无法获取歌曲，原因是：\n'+error);
+		});
+		var tapToStartFrame=document.createElement('div');
+		tapToStartFrame.classList.add('tapToStartFrame');
+		tapToStartFrame.innerHTML=`
+		<div class="songName">${chartMetadata.name}</div>
+		<div class="judgeLine"></div>
+		<div class="detail">
+			Illustration designed by ${chartMetadata.illustrator} <br />
+			Level designed by ${chartMetadata.chartDesigner}
+		</div>
+		<div style="display:flex;flex-direction:row;">点按以开始<div style="color:#6cf;" onclick="alert('移动端浏览器禁止了无手势自动播放音频，所以我们需要你的手势来开始播放音频并全屏网页')"> 为什么？ </div></div>
+		`
+		tapToStartFrame.addEventListener('click',()=>{
+			var LoadCompleteItems=0;
+			for ( i in Renderer){
+				if(Renderer[i]!=undefined){
+					LoadCompleteItems++;
+				}
+			}
+			if (LoadCompleteItems==12&&window.ResourcesLoad>=100) {
+				tapToStartFrame.remove();
+				if (localStorage.autoFullscreen=='true') {
+					full.toggle();	
+				}
+				document.getElementById('btn-play').click();	
+			}else{
+				console.log("LoadNotComplete");
+			}
+		});
+		// 应用设置
+		for (let i = 0; i < Object.keys(localStorage).length; i++) {
+			const key=Object.keys(localStorage)[i];
+			const value = localStorage[Object.keys(localStorage)[i]];
+			if (key=='phi') {
 				continue;
 			}
-			if (elem.type=='text'||elem.type=='number') {
-				elem.setAttribute('value',value);
-				continue
+			if (key.match('eruda')) {
+				continue;
 			}
-			if (elem.type='select-one') {
-				for (let j = 0; j < elem.children.length; j++) {
-					// console.log(elem.children[j].getAttribute("selected"))
-					// 先遍历删掉原来的选项
-					if (elem.children[j].getAttribute("selected")!=null) {
-						elem.children[j].removeAttribute("selected")
+			console.log('Applying settings:',key,value);
+			const elem=document.querySelector('#'+key);
+			try {
+				// console.log(elem.type);
+				if (elem.type=='checkbox') {
+					if (value=='true') {
+						elem.setAttribute('checked',value);
+					}else{
+						elem.removeAttribute('checked')
 					}
-					
+					continue;
 				}
-				// console.log(elem)
-				// console.log(elem.children[parseFloat(value)-1])
-				elem.children[parseFloat(value)-1].setAttribute('selected','true');
-				continue;
+				if (elem.type=='text'||elem.type=='number') {
+					elem.setAttribute('value',value);
+					continue
+				}
+				if (elem.type='select-one') {
+					for (let j = 0; j < elem.children.length; j++) {
+						// console.log(elem.children[j].getAttribute("selected"))
+						// 先遍历删掉原来的选项
+						if (elem.children[j].getAttribute("selected")!=null) {
+							elem.children[j].removeAttribute("selected")
+						}
+						
+					}
+					// console.log(elem)
+					// console.log(elem.children[parseFloat(value)-1])
+					elem.children[parseFloat(value)-1].setAttribute('selected','true');
+					continue;
+				}
+			} catch (error) {
+				console.warn('Error occured when applying settings \''+key+'\':\n',error)
 			}
-		} catch (error) {
-			console.warn('Error occured when applying settings \''+key+'\':\n',error)
 		}
-	}
-	if (window.localStorage.getItem('useOldUI')=='true') {
-		document.body.setAttribute('style','background: #000 !important;');
-		document.querySelector("#select-global-alpha").children[0].selected=true;
-	}
-	document.body.appendChild(tapToStartFrame);
+		if (window.localStorage.getItem('useOldUI')=='true') {
+			document.body.setAttribute('style','background: #000 !important;');
+			document.querySelector("#select-global-alpha").children[0].selected=true;
+		}
+		document.body.appendChild(tapToStartFrame);
+	});
+	chartMetaXHR.send();
 });
 
 function replay() {
@@ -360,6 +380,9 @@ async function loadPGREmulatorResources() {
 		const xhr = new XMLHttpRequest();
 		xhr.open("get", src, true);
 		xhr.responseType = 'arraybuffer';
+		xhr.addEventListener('error',()=>{
+			alert('内部资源加载失败，请刷新页面重试');
+		});
 		xhr.send();
 		return new Promise(resolve => {
 			xhr.onload = async () => {
