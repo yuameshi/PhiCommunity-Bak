@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	
 		//	获取曲绘
 		console.log('Fetching illustration:',chartMetadata["illustration"]);
-		document.body.setAttribute('style','--background: url('+'https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata['illustration']+')');
+		document.body.setAttribute('style','--background: url('+'https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata['illustration'].replaceAll(' ','%20')+')');
 		fetch('https://charts.pgr.han-han.xyz/'+chartMetadata["codename"]+"/"+chartMetadata["illustration"]).then(response => {
 			response.blob().then(blob => {
 				createImageBitmap(blob).then(img => {
