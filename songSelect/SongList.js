@@ -53,9 +53,21 @@ function SongList(defaultLevel = "ez") {
 			songMeta["sliceAudioStart"];
 		document.querySelector("audio#slicedAudioElement").play();
 		window.sliceAudioInterval = setInterval(() => {
-			document.querySelector("audio#slicedAudioElement").currentTime =
-				songMeta["sliceAudioStart"];
-			document.querySelector("audio#slicedAudioElement").play();
+			for (let i = 0; i < 10; i++) {
+				setTimeout(() => {
+					document.querySelector("audio#slicedAudioElement").volume=(10-i)/10;
+				}, i*100);
+			}
+			setTimeout(() => {
+				document.querySelector("audio#slicedAudioElement").currentTime =
+					songMeta["sliceAudioStart"];
+				document.querySelector("audio#slicedAudioElement").play();
+			}, 1000);
+			for (let i = 0; i < 10; i++) {
+				setTimeout(() => {
+					document.querySelector("audio#slicedAudioElement").volume=(i)/10;
+				}, (i+10)*100);
+			}
 		}, 15000);
 
 		selected = id;
