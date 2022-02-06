@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded',()=>{
 				clickAudioElem.src="../assets/audio/Tap1.wav";
 				clickAudioElem.play();
 				document.querySelector('div.darkOverlay').classList.add('fadeIn');
+				const valumeDown=setInterval(()=>{
+					if (document.querySelector("#audio").volume==0) {
+						clearInterval(valumeDown);
+					}
+					document.querySelector("#audio").volume -=0.05;
+				},10);
 				setTimeout(() => {
 					location.href='../songSelect/index.html?c='+e.target.getAttribute('data-codename');
 				}, 400);
