@@ -55,7 +55,13 @@ window.addEventListener('DOMContentLoaded',()=>{
 		window.chartMetadata=JSON.parse(chartMetaXHR.responseText);
 		document.getElementById("input-name").value=chartMetadata.name;	//歌名
 		document.getElementById("input-level").value=level.toUpperCase()+" Lv."+chartMetadata[ level.toLowerCase()+'Ranking'];	//难度
-		document.getElementById("input-designer").value=chartMetadata.chartDesigner;	//普师
+		var chartDesigner;
+		if(chartMetadata.chartDesigner!=undefined){	//谱面设计者
+			chartDesigner=chartMetadata.chartDesigner;
+		}else{
+			chartDesigner=chartMetadata[level+"ChartDesigner"];
+		}
+		document.getElementById("input-designer").value=chartDesigner;
 		document.getElementById("input-illustrator").value=chartMetadata.illustrator;	//曲绘
 		//	获取谱面
 		console.log('Fetching Chart:',play);
@@ -164,7 +170,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		<div class="judgeLine"></div>
 		<div class="detail">
 			Illustration designed by ${chartMetadata.illustrator} <br />
-			Level designed by ${chartMetadata.chartDesigner}
+			Level designed by ${chartDesigner}
 		</div>
 		<div style="display:flex;flex-direction:row;">点按以开始<div style="color:#6cf;" onclick="alert('移动端浏览器禁止了无手势自动播放音频，所以我们需要你的手势来开始播放音频并全屏网页')"> 为什么？ </div></div>
 		`

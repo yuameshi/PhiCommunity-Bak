@@ -83,6 +83,20 @@ export const settings = [
 	},
 	//下面就是模拟器其他的功能了
 	{
+		type: "slide",
+		title: "界面宽高比",
+		codename: "select-aspect-ratio",
+		range: [1, 8],
+		defaultValue: 8,
+	},
+	{
+		type: "button",
+		title: "界面宽高比数值说明",
+		onClick() {
+			alert('1=>5:4     (1.25)\n2=>4:3     (1.333333)\n3=>10:7   (1.428571)\n4=>19:13 (1.461538)\n5=>8:5     (1.6)\n6=>5:3     (1.666667)\n7=>22:13 (1.692308)\n8=>16:9   (1.777778)');
+		},
+	},
+	{
 		type: "toggle",
 		title: "开启HyperMode",
 		codename: "hyperMode",
