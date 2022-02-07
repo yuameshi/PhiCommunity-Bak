@@ -202,6 +202,9 @@ div.sortMode::after {
 	background-image: url(../assets/images/sort.png);
 }
 div.songList {
+	display: flex;
+	position: absolute;
+	flex-flow: column;
 	margin-top: 100px;
 	margin-bottom: 100px;
 	overflow: hidden;
