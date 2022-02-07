@@ -1,13 +1,26 @@
 import { SongList } from "./SongList.js";
 import { gameLevels } from "../constants.js";
 
-//	全局初始化鼠标滚轮/移动端滑动坐标
 var yCoord = 0,
 	previousTouchYCoord = 0;
-
-const songList = SongList();
+const songList = SongList({ defaultLevel: "ez" });
 
 window.addEventListener("DOMContentLoaded", () => {
+	const sortMode = [
+			["default", "默认"],
+			["level", "难度"],
+			["name", "名称"],
+		],
+		defaultOrder = 0;
+	let currentOrder = defaultOrder;
+	document.querySelector("div.sortMode").innerText =
+		sortMode[defaultOrder][1];
+	document.querySelector("div.sortMode").addEventListener("click", (e) => {
+		currentOrder = (currentOrder + 1) % sortMode.length;
+		songList.setOrder(sortMode[currentOrder][0]);
+		e.target.innerText = sortMode[currentOrder][1];
+	});
+
 	document.querySelector("div.settingBtn").addEventListener("click", () => {
 		location.href = "../settings/index.html";
 	});
@@ -61,11 +74,9 @@ window.addEventListener("DOMContentLoaded", () => {
 			songList.createSong(i, songMetaList[i], songCodeNameList[i]);
 		}
 
-		//	设置默认难度
-		window.levelSelected = "ez";
-		songList.switchLevel(levelSelected);
 		//	强行切换成第一首歌
 		songList.switchSong(0);
+		// songList.setOrder(sortMode[currentOrder][0]);
 
 		//	调整宽度/缩放
 		document.querySelector("#rightArea").style.right =
@@ -96,52 +107,28 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		//	添加桌面端鼠标滚轮滚动
 		document.body.addEventListener("wheel", (e) => {
-			console.log("Scrolling", e.wheelDeltaY, yCoord);
-			let newYCoord = yCoord + e.wheelDeltaY / 8;
-			// 到顶不可再向上滚动
-			if (newYCoord <= 0 || e.wheelDeltaY < 0) {
-				document
-					.querySelector("#songList")
-					.setAttribute(
-						"style",
-						"position: absolute;top:" + newYCoord + "px"
-					);
-				yCoord = newYCoord;
-			}
+			console.log(
+				"Scrolling",
+				e.wheelDeltaY,
+				parseFloat(songList.element.style.top || 0)
+			);
+			let newYCoord =
+				parseFloat(songList.element.style.top || 0) + e.wheelDeltaY / 3;
+			if (newYCoord <= 0 || e.wheelDeltaY < 0)
+				songList.element.style.top = newYCoord + "px";
 		});
 
 		//	添加移动端触屏滑动
+		let pY, cY;
 		document.body.addEventListener("touchstart", (e) => {
-			//	console.log(1);
-			var touchYCoord = e.changedTouches["0"].clientY;
-			previousTouchYCoord = touchYCoord;
-			//	console.log('prev',previousTouchYCoord);
+			pY = e.changedTouches["0"].clientY;
 		});
+
 		document.body.addEventListener("touchmove", (e) => {
-			//	console.log(2)
-			var touchYCoord = e.changedTouches["0"].clientY;
-			window.touchYCoord = e.changedTouches["0"].clientY;
-			//	console.log((previousTouchYCoord- touchYCoord)*10);
-			//	console.log(yCoord)
-			let newYCoord =
-				-0.1 * (previousTouchYCoord - touchYCoord) + parseFloat(yCoord);
-			//	console.log((previousTouchYCoord- touchYCoord)*10+parseFloat(yCoord))
-			//	console.log(previousTouchYCoord- touchYCoord);
-			if (newYCoord <= 0 || e.wheelDeltaY < 0) {
-				document
-					.querySelector("#songList")
-					.setAttribute(
-						"style",
-						"position: absolute;top:" + newYCoord + "px"
-					);
-				yCoord = newYCoord;
-			}
-		});
-		document.body.addEventListener("touchend", (e) => {
-			//	console.log(3)
-			//	var touchYCoord=e.changedTouches["0"].clientY;
-			//	console.log(previousTouchYCoord - touchYCoord);
-			//	previousTouchYCoord=undefined;
+			cY = e.changedTouches["0"].clientY;
+			let nY =
+				parseFloat(songList.element.style.top || 0) - 0.1 * (pY - cY);
+			if (nY < 0) songList.element.style.top = nY + "px";
 		});
 	});
 	songListXHR.addEventListener("error", () => {

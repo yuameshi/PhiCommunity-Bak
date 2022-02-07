@@ -1,6 +1,6 @@
 import { gameLevels } from "../constants.js";
 
-function SongList(defaultLevel = "ez") {
+function SongList({ defaultLevel = "ez" }) {
 	const listElement = document.createElement("div");
 	listElement.id = "songList";
 	listElement.classList.add("songList");
@@ -9,7 +9,14 @@ function SongList(defaultLevel = "ez") {
 	let selected,
 		level = defaultLevel;
 
-	return { element: listElement, items, createSong, switchSong, switchLevel };
+	return {
+		element: listElement,
+		items,
+		createSong,
+		switchSong,
+		switchLevel,
+		setOrder,
+	};
 
 	function createSong(id, songMeta, codename) {
 		const container = new SongContainer(items.length, songMeta, codename, {
@@ -37,17 +44,24 @@ function SongList(defaultLevel = "ez") {
 		console.log("Song", id, "Selected");
 		const { songMeta, codename } = items[id];
 
-		fetch(`https://charts.pgr.han-han.xyz/${codename}/${songMeta['illustration']}`).then((response) => response.blob()).then((blob) => {
-			console.log(blob);
-			const imgUrl = URL.createObjectURL(blob);
-			document.children[0].setAttribute(
-				"style",
-				`--background: url(${imgUrl});`
-			);
-			document.querySelector("img.illustration").src = imgUrl;
-		})
+		fetch(
+			`https://charts.pgr.han-han.xyz/${codename}/${songMeta["illustration"]}`
+		)
+			.then((response) => response.blob())
+			.then((blob) => {
+				console.log(blob);
+				const imgUrl = URL.createObjectURL(blob);
+				document.children[0].setAttribute(
+					"style",
+					`--background: url(${imgUrl});`
+				);
+				document.querySelector("img.illustration").src = imgUrl;
+			});
 		document.querySelector("audio#slicedAudioElement").src =
-			"https://charts.pgr.han-han.xyz/" + codename + "/" + songMeta["musicFile"];
+			"https://charts.pgr.han-han.xyz/" +
+			codename +
+			"/" +
+			songMeta["musicFile"];
 		clearInterval(window.sliceAudioInterval);
 		document.querySelector("audio#slicedAudioElement").currentTime =
 			songMeta["sliceAudioStart"];
@@ -55,8 +69,9 @@ function SongList(defaultLevel = "ez") {
 		window.sliceAudioInterval = setInterval(() => {
 			for (let i = 0; i < 10; i++) {
 				setTimeout(() => {
-					document.querySelector("audio#slicedAudioElement").volume=(10-i)/10;
-				}, i*100);
+					document.querySelector("audio#slicedAudioElement").volume =
+						(10 - i) / 10;
+				}, i * 100);
 			}
 			setTimeout(() => {
 				document.querySelector("audio#slicedAudioElement").currentTime =
@@ -65,8 +80,9 @@ function SongList(defaultLevel = "ez") {
 			}, 1000);
 			for (let i = 0; i < 10; i++) {
 				setTimeout(() => {
-					document.querySelector("audio#slicedAudioElement").volume=(i)/10;
-				}, (i+10)*100);
+					document.querySelector("audio#slicedAudioElement").volume =
+						i / 10;
+				}, (i + 10) * 100);
 			}
 		}, 15000);
 
@@ -75,9 +91,43 @@ function SongList(defaultLevel = "ez") {
 
 	function switchLevel(newLevel) {
 		if (level === newLevel) return;
-		window.levelSelected=newLevel;
+		window.levelSelected = newLevel;
 		items.forEach(({ switchLevel }) => switchLevel(newLevel));
 		level = newLevel;
+	}
+
+	function sort(fn) {
+		[...items]
+			.sort((a, b) => fn(a, b))
+			.forEach(({ element }, idx) => (element.style.order = idx));
+	}
+
+	/**
+	 *
+	 * @param {'default'|'level'|'name'} order
+	 */
+	function setOrder(order) {
+		switch (order) {
+			case "level":
+				sort(
+					(a, b) =>
+						a.songMeta[`${level}Ranking`] <
+						b.songMeta[`${level}Ranking`]
+				);
+				break;
+			case "name":
+				sort((a, b) => a.songMeta.name < b.songMeta.name);
+				break;
+			default:
+				items.forEach(({ element }) => (element.style.order = ""));
+				break;
+		}
+		console.log(
+			parseFloat(getComputedStyle(listElement).marginTop) -
+				items[selected].element.offsetTop
+		);
+		listElement.style.top =
+			-items[selected].element.offsetTop + "px";
 	}
 }
 
@@ -98,7 +148,10 @@ function SongContainer(index, songMeta, codename, { level, onClick }) {
 		for (const level in gameLevels) {
 			document
 				.querySelector(`div.levelItem.${level}`)
-				.setAttribute("data-level", Math.floor(songMeta[`${level}Ranking`]));
+				.setAttribute(
+					"data-level",
+					Math.floor(songMeta[`${level}Ranking`])
+				);
 		}
 	};
 
