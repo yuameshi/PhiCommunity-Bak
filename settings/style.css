@@ -51,6 +51,7 @@ div.backBtn{
 	height: 50px;
 	transform: skew(-15deg);
 	z-index: 1;
+	cursor: pointer;
 }
 div.backBtn::before{
 	content: '';
