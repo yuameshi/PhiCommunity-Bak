@@ -77,6 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		//	强行切换成第一首歌
 		songList.switchSong(0);
+		songList.switchLevel('ez'.match('ez'));
 		// songList.setOrder(sortMode[currentOrder][0]);
 
 		//	调整宽度/缩放
