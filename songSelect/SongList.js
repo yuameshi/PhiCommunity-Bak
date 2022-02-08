@@ -29,7 +29,6 @@ function SongList({ defaultLevel = "ez" }) {
 
 	function switchSong(id) {
 		if (id === selected) return;
-		console.log(selected, id);
 		var changeSongAudioElem = document.createElement("audio");
 		changeSongAudioElem.src = "../assets/audio/Tap5.wav";
 		changeSongAudioElem.play();
@@ -49,42 +48,64 @@ function SongList({ defaultLevel = "ez" }) {
 		)
 			.then((response) => response.blob())
 			.then((blob) => {
-				console.log(blob);
 				const imgUrl = URL.createObjectURL(blob);
 				document.children[0].setAttribute(
 					"style",
 					`--background: url(${imgUrl});`
 				);
 				document.querySelector("img.illustration").src = imgUrl;
+			})
+			.catch((err) => {
+				console.err(
+					"获取曲绘失败!",
+					`url: https://charts.pgr.han-han.xyz/${codename}/${songMeta["illustration"]}`,
+					err
+				);
 			});
-		document.querySelector("audio#slicedAudioElement").src =
-			"https://charts.pgr.han-han.xyz/" +
-			codename +
-			"/" +
-			songMeta["musicFile"];
-		clearInterval(window.sliceAudioInterval);
-		document.querySelector("audio#slicedAudioElement").currentTime =
-			songMeta["sliceAudioStart"];
-		document.querySelector("audio#slicedAudioElement").play();
-		window.sliceAudioInterval = setInterval(() => {
-			for (let i = 0; i < 10; i++) {
-				setTimeout(() => {
-					document.querySelector("audio#slicedAudioElement").volume =
-						(10 - i) / 10;
-				}, i * 100);
-			}
-			setTimeout(() => {
+		fetch(
+			`https://charts.pgr.han-han.xyz/${codename}/${songMeta["musicFile"]}`
+		)
+			.then((response) => response.blob())
+			.then((blob) => {
+				const songUrl = URL.createObjectURL(blob);
+				document.querySelector("audio#slicedAudioElement").src =
+					songUrl;
+				clearInterval(window.sliceAudioInterval);
 				document.querySelector("audio#slicedAudioElement").currentTime =
 					songMeta["sliceAudioStart"];
 				document.querySelector("audio#slicedAudioElement").play();
-			}, 1000);
-			for (let i = 0; i < 10; i++) {
-				setTimeout(() => {
-					document.querySelector("audio#slicedAudioElement").volume =
-						i / 10;
-				}, (i + 10) * 100);
-			}
-		}, 15000);
+				window.sliceAudioInterval = setInterval(() => {
+					for (let i = 0; i < 10; i++) {
+						setTimeout(() => {
+							document.querySelector(
+								"audio#slicedAudioElement"
+							).volume = (10 - i) / 10;
+						}, i * 100);
+					}
+					setTimeout(() => {
+						document.querySelector(
+							"audio#slicedAudioElement"
+						).currentTime = songMeta["sliceAudioStart"];
+						document
+							.querySelector("audio#slicedAudioElement")
+							.play();
+					}, 1000);
+					for (let i = 0; i < 10; i++) {
+						setTimeout(() => {
+							document.querySelector(
+								"audio#slicedAudioElement"
+							).volume = i / 10;
+						}, (i + 10) * 100);
+					}
+				}, 15000);
+			})
+			.catch((err) => {
+				console.err(
+					"获取乐曲失败!",
+					`url: https://charts.pgr.han-han.xyz/${codename}/${songMeta["musicFile"]}`,
+					err
+				);
+			});
 
 		selected = id;
 	}
@@ -99,7 +120,10 @@ function SongList({ defaultLevel = "ez" }) {
 	function sort(fn) {
 		[...items]
 			.sort((a, b) => fn(a, b))
-			.forEach(({ element }, idx) => (element.style.order = idx));
+			.forEach(({ element }, idx) => {
+				// console.log(items, element.style.order, idx);
+				element.style.order = idx;
+			});
 	}
 
 	/**
@@ -109,25 +133,23 @@ function SongList({ defaultLevel = "ez" }) {
 	function setOrder(order) {
 		switch (order) {
 			case "level":
-				sort(
-					(a, b) =>
-						a.songMeta[`${level}Ranking`] <
-						b.songMeta[`${level}Ranking`]
+				sort((a, b) =>
+					a.songMeta[`${level}Ranking`] <
+					b.songMeta[`${level}Ranking`]
+						? 1
+						: -1
 				);
 				break;
 			case "name":
-				sort((a, b) => a.songMeta.name < b.songMeta.name);
+				sort((a, b) => {
+					return a.songMeta.name > b.songMeta.name ? 1 : -1;
+				});
 				break;
 			default:
 				items.forEach(({ element }) => (element.style.order = ""));
 				break;
 		}
-		console.log(
-			parseFloat(getComputedStyle(listElement).marginTop) -
-				items[selected].element.offsetTop
-		);
-		listElement.style.top =
-			-items[selected].element.offsetTop + "px";
+		listElement.style.top = -items[selected].element.offsetTop + "px";
 	}
 }
 

@@ -1,8 +1,6 @@
 import { SongList } from "./SongList.js";
 import { gameLevels } from "../constants.js";
 
-var yCoord = 0,
-	previousTouchYCoord = 0;
 const songList = SongList({ defaultLevel: "ez" });
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -11,15 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			["level", "难度"],
 			["name", "名称"],
 		],
-		defaultOrder = 0;
-	let currentOrder = defaultOrder;
-	document.querySelector("div.sortMode").innerText =
-		sortMode[defaultOrder][1];
-	document.querySelector("div.sortMode").addEventListener("click", (e) => {
-		currentOrder = (currentOrder + 1) % sortMode.length;
-		songList.setOrder(sortMode[currentOrder][0]);
-		e.target.innerText = sortMode[currentOrder][1];
-	});
+		defaultOrder = 2;
 
 	document.querySelector("div.settingBtn").addEventListener("click", () => {
 		location.href = "../settings/index.html";
@@ -74,6 +64,17 @@ window.addEventListener("DOMContentLoaded", () => {
 			songList.createSong(i, songMetaList[i], songCodeNameList[i]);
 		}
 
+		let currentOrder = defaultOrder;
+		document.querySelector("div.sortMode").innerText =
+			sortMode[defaultOrder][1];
+		document
+			.querySelector("div.sortMode")
+			.addEventListener("click", (e) => {
+				currentOrder = (currentOrder + 1) % sortMode.length;
+				songList.setOrder(sortMode[currentOrder][0]);
+				e.target.innerText = sortMode[currentOrder][1];
+			});
+
 		//	强行切换成第一首歌
 		songList.switchSong(0);
 		// songList.setOrder(sortMode[currentOrder][0]);
@@ -107,11 +108,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		//	添加桌面端鼠标滚轮滚动
 		document.body.addEventListener("wheel", (e) => {
-			console.log(
+			/* console.log(
 				"Scrolling",
 				e.wheelDeltaY,
 				parseFloat(songList.element.style.top || 0)
-			);
+			); */
 			let newYCoord =
 				parseFloat(songList.element.style.top || 0) + e.wheelDeltaY / 3;
 			if (newYCoord <= 0 || e.wheelDeltaY < 0)
@@ -183,7 +184,6 @@ function changeLevel(event) {
 		e.target.classList.add("selected");
 	}, 300);
 	const levelStr = e.target.classList.toString();
-	console.log(levelStr);
 
 	//	切换所有难度
 	songList.switchLevel(levelStr.match(/ez|hd|in|at/));
