@@ -1,14 +1,14 @@
-@import url(../assets/fonts/fonts.css);
-html{
+@import url(../assets/css/css.css);
+html {
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
-body{
+body {
 	background: var(--background) center center no-repeat;
 	background-size: cover !important;
-	backdrop-filter: blur(15px) brightness(.6);
+	backdrop-filter: blur(15px) contrast(0.6) brightness(0.6);
 	height: 100%;
 	width: 100%;
 	margin: 0;
@@ -18,31 +18,31 @@ body{
 	justify-content: center;
 	align-items: center;
 	-moz-user-select: none;
-	-o-user-select:none;
-	-khtml-user-select:none;
-	-user-select:none;
-	-ms-user-select:none;
-	user-select:none;
-	transition: all .3s linear;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: all 0.3s linear;
 }
-body::before{
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--background) center center no-repeat fixed;
-    background-size: cover;
-    filter: blur(15px);
-    z-index: -1;
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--background) center center no-repeat fixed;
+	background-size: cover;
+	filter: blur(15px) contrast(0.6) brightness(0.6);
+	z-index: -1;
 }
-canvas.canvas#canvas{
+canvas.canvas#canvas {
 	height: 100%;
 	width: calc(100vh * 1.778);
 	background-color: transparent;
 }
-.loadingEmbedFrame{
+.loadingEmbedFrame {
 	position: fixed;
 	height: 100%;
 	width: 100%;
@@ -52,7 +52,7 @@ canvas.canvas#canvas{
 	z-index: 999999999;
 	background: #999;
 }
-div.tapToStartFrame{
+div.tapToStartFrame {
 	position: fixed;
 	top: 0;
 	left: 50%;
@@ -63,34 +63,34 @@ div.tapToStartFrame{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	color: #FFF;
+	color: #fff;
 	text-shadow: 0 0 5px #000;
 }
-div.tapToStartFrame>div.songName{
+div.tapToStartFrame > div.songName {
 	font-size: 2.3rem;
 }
-div.tapToStartFrame>div.judgeLine{
+div.tapToStartFrame > div.judgeLine {
 	height: 0.7%;
 	width: 100%;
 	margin: 50px 0;
 	background-color: #fff;
 }
-div.tapToStartFrame>div.detail{
+div.tapToStartFrame > div.detail {
 	font-size: 1.2rem;
 	text-align: center;
 }
-.hide{
+.hide {
 	display: none;
 }
-div.pauseOverlay{
+div.pauseOverlay {
 	display: none;
 }
-div.pauseOverlay.visable{
+div.pauseOverlay.visable {
 	height: 100vh;
 	width: 100vw;
 	z-index: 999;
 	/* filter: contrast(.6)brightness(.6); */
-	backdrop-filter: contrast(.6)brightness(.6);
+	backdrop-filter: contrast(0.6) brightness(0.6);
 	display: flex;
 	position: fixed;
 	top: 0;
@@ -101,37 +101,37 @@ div.pauseOverlay.visable{
 	/* filter: blur(75px); */
 	backdrop-filter: blur(15px);
 	font-size: 3rem;
-	color: #FFF;
+	color: #fff;
 }
-div.pauseOverlay.visable.readyToResume{
+div.pauseOverlay.visable.readyToResume {
 	animation: pauseOverlayFadeOut 3s linear;
 }
 @keyframes pauseOverlayFadeOut {
-	0%{
+	0% {
 		backdrop-filter: blur(15px);
 	}
-	60%{
+	60% {
 		backdrop-filter: blur(0px);
 	}
-	100%{
+	100% {
 		backdrop-filter: blur(0px);
 	}
 }
-div#backBtn{
-	background: url(./assets/Back7918.png) center center no-repeat;
+div#backInPlayingBtn {
+	background: url(./assets/Back.svg) center center no-repeat;
 	background-size: 85%;
 }
-div#restartBtn{
-	background: url(./assets/Retry.png) center center no-repeat;
+div#restartBtn {
+	background: url(./assets/Restart.svg) center center no-repeat;
 	background-size: 85%;
 }
-div#resumeBtn{
-	background: url(./assets/Resume.png) center center no-repeat;
+div#resumeBtn {
+	background: url(../assets/Images/Resume.svg) center center no-repeat;
 	background-size: 85%;
 }
-div#backBtn,
+div#backInPlayingBtn,
 div#restartBtn,
-div#resumeBtn{
+div#resumeBtn {
 	height: 50px;
 	width: 50px;
 	margin: 25px;
@@ -140,17 +140,15 @@ div#resumeBtn{
 
 img.flick,
 img.tap,
-img.drag{
+img.drag {
 	width: 100px;
 	height: 20px;
 	border-radius: 999px;
 }
-.key2HL{
-	box-shadow: 
-		0 0 7.5px 3px #f0ed69,
-		inset 0 0 20px 5px #f0ed69;
+.key2HL {
+	box-shadow: 0 0 7.5px 3px #f0ed69, inset 0 0 20px 5px #f0ed69;
 }
-img.hitState{
+img.hitState {
 	border-right: 20px solid transparent;
 	height: 100px;
 	width: 100px;
@@ -159,23 +157,23 @@ img.hitState{
 	animation: splash 1s linear;
 }
 @keyframes splash {
-	0%{
+	0% {
 		object-position: center 0px;
 	}
-	25%{
+	25% {
 		object-position: center 256px;
 	}
-	75%{
+	75% {
 		object-position: center 512px;
 	}
-	100%{
+	100% {
 		/* object-position: center 0px; */
 	}
 }
-img.hitState.perfect{
+img.hitState.perfect {
 	filter: drop-shadow(#f0ed69 1px 1px);
 }
-img.hitState.good{
+img.hitState.good {
 	filter: drop-shadow(#0ac3ff 1px 1px);
 }
 /*

@@ -1,29 +1,58 @@
-@import url(../assets/fonts/fonts.css);
-body{
-	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
-	background-size: cover;
+@import url(../assets/css/css.css);
+html,
+body {
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
-div.tip::before{
+body {
+	background: url(../assets/images/ElementSqare.Half.Size.webp) center center
+		no-repeat fixed;
+	background-size: cover !important;
+	backdrop-filter: blur(1px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(../assets/image/ElementSqare.Half.Size.webp) center center
+		no-repeat fixed;
+	background-size: cover;
+	filter: blur(1px);
+	z-index: -1;
+}
+div.tip::before {
 	content: 'Tip: ';
 }
-div.tip{
+div.tip {
 	color: #fff;
 	position: fixed;
 	left: 2%;
 	bottom: 5%;
+	text-shadow: 0 0 5px #000;
 }
-div.loadingBar{
+div.loadingBar {
 	position: fixed;
 	right: 2%;
 	bottom: 5%;
 	overflow: hidden;
 }
-div.loadingBarTxT{
+div.loadingBarTxT {
 	color: #000;
 	z-index: 999;
 	animation: loadingBarTXTAnim 1s ease-in-out infinite;
+	text-shadow: 0 0 5px #000;
 }
-div.loadingBarBG{
+div.loadingBarBG {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -34,21 +63,21 @@ div.loadingBarBG{
 	animation: loadingBarBGAnim 1s ease-in-out infinite;
 }
 @keyframes loadingBarBGAnim {
-	0%{
+	0% {
 		left: -100%;
 	}
-	100%{
+	100% {
 		left: 200%;
 	}
 }
 @keyframes loadingBarTXTAnim {
-	0%{
+	0% {
 		color: #fff;
 	}
-	50%{
+	50% {
 		color: #000;
 	}
-	100%{
+	100% {
 		color: #fff;
 	}
 }

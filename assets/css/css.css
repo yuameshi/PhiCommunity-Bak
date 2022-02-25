@@ -1,0 +1,100 @@
+@import url(./fonts/fonts.css);
+div.backBtn {
+	position: fixed;
+	left: -15px;
+	top: 5px;
+	width: 100px;
+	height: 50px;
+	z-index: 1;
+	cursor: pointer;
+}
+div.backBtn::before {
+	content: '';
+	position: absolute;
+	left: -15px;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	z-index: 1;
+	filter: drop-shadow(#fff 5px 0);
+}
+div.backBtn::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: url(../images/Back.svg) no-repeat center center;
+	transform: scale(0.3);
+	z-index: 5;
+}
+div.avatarBar {
+	position: fixed;
+	right: -6px;
+	top: 0;
+	margin: 10px 0;
+	background-color: #000;
+	transform: skew(-15deg);
+	/* width: fit-content; */
+	height: 50px;
+	background: #000 no-repeat;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+	z-index: 1;
+}
+div.avatarBar.expand {
+	padding-left: 20px;
+}
+div.avatarBar.expand::before {
+	content: attr(data-name);
+	color: #fff;
+	width: fit-content;
+	font-size: 1.3rem;
+	transform: skew(15deg);
+	margin-right: 0.8em;
+}
+div.avatarBar::before {
+	content: attr(data-name);
+	width: 0;
+}
+div.avatarBar::after {
+	content: attr(data-rks);
+	width: 50px;
+	text-align: center;
+	font-size: 14px;
+	transform: translateX(-10px);
+	align-self: flex-end;
+	color: #000;
+	background: #fff;
+	z-index: 10;
+}
+div.avatarBar > div.avatar {
+	height: 100%;
+	width: 100px;
+	background: url(../images/Avatar.svg) no-repeat center center;
+	background-size: cover;
+	transform: skew(15deg);
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+div.avatarBar > div.avatar::before,
+div.avatarBar > div.avatar::after {
+	content: '';
+	height: 100%;
+	width: 20px;
+	display: block;
+	background: #000;
+	transform: skew(-15deg) translateX(-10px);
+	margin: 0;
+	padding: 0;
+}
+div.avatarBar > div.avatar::after {
+	transform: skew(-15deg) translateX(10px);
+}

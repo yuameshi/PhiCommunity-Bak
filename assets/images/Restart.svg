@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0 0L100 0L100 100L0 100L0 0Z" id="path_1" />
+    <rect width="100" height="100" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="Restart" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
+    <g id="Restart-icon">
+      <path d="M0 0L100 0L100 100L0 100L0 0Z" id="Background" fill="none" fill-rule="evenodd" stroke="none" />
+      <g clip-path="url(#mask_1)">
+        <path d="M15.4053 6.25L25.9522 16.7969C17.7246 24.2432 12.5 34.9365 12.5 46.875C12.5 69.2871 30.7129 87.5 53.125 87.5C75.5371 87.5 93.75 69.2871 93.75 46.875C93.75 24.4629 75.5371 6.25 53.125 6.25L50 6.25L50 12.5L53.125 12.5C72.1436 12.5 87.5 27.8564 87.5 46.875C87.5 65.8936 72.1436 81.25 53.125 81.25C34.1064 81.25 18.75 65.8936 18.75 46.875C18.75 36.6211 23.2666 27.5147 30.3711 21.2158L37.5 28.3447L37.5 6.25L15.4053 6.25Z" id="Shape" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

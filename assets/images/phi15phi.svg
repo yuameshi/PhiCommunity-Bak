@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_1">
+      <stop offset="0%" stop-color="#FFFE01" />
+      <stop offset="100%" stop-color="#FEFF81" />
+    </linearGradient>
+    <linearGradient x1="0" y1="0" x2="1" y2="1" id="gradient_2">
+      <stop offset="0%" stop-color="#FEFF01" />
+      <stop offset="100%" stop-color="#FEFF81" />
+    </linearGradient>
+    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dx="0" dy="0" />
+      <feGaussianBlur stdDeviation="2.5" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.99607843 0 0 0 0 1 0 0 0 0 0.5058824 0 0 0 1 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+    </filter>
+    <rect width="100" height="100" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="phi15phi" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
+    <g fill="url(#gradient_1)" stroke="none" id="φ" filter="url(#filter_1)" transform="translate(18 -24.2)">
+      <path d="M34.2188 91.4453Q33.5547 91.4453 32.8906 91.4453L32.8906 109.297L24.6875 109.297L24.6875 91.4453Q24.2188 91.4453 23.5938 91.4453Q14.3359 91.4453 8.82813 85.8203Q3.32031 80.1953 3.32031 70.5859Q3.32031 58.2813 10.8203 50.5078L20.7422 50.5078Q12.1875 58.8281 12.1875 70.4688Q12.1875 76.9531 15.3711 80.5859Q18.5547 84.2188 23.6719 84.2188L24.6875 84.2188L24.6875 64.6484Q24.6875 49.5703 37.1484 49.5703Q44.8437 49.5703 49.6484 55.3906Q54.4531 61.2109 54.4531 71.0547Q54.4531 80.1172 48.9258 85.7813Q43.3984 91.4453 34.2188 91.4453ZM32.8906 84.2188L34.0234 84.2188Q39.1016 84.2188 42.3242 80.5469Q45.5469 76.875 45.5469 70.5469Q45.5469 64.375 43.1445 60.5859Q40.7422 56.7969 37.3438 56.7969Q32.8906 56.7969 32.8906 61.25L32.8906 84.2188Z" />
+    </g>
+    <path d="M47.18 2.87323L93.142 48.8352L47.18 94.7971L1.21807 48.8352L47.18 2.87323Z" id="Rectangle" fill="none" fill-rule="evenodd" stroke="url(#gradient_2)" stroke-width="2" />
+  </g>
+</svg>

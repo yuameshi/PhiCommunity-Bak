@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0.10047277" y1="0.13191491" x2="0.66607565" y2="1" id="gradient_1">
+      <stop offset="0%" stop-color="#0173FF" />
+      <stop offset="100%" stop-color="#588DE4" />
+    </linearGradient>
+    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dx="0" dy="0" />
+      <feGaussianBlur stdDeviation="1" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.34509805 0 0 0 0 0.5529412 0 0 0 0 0.89411765 0 0 0 1 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+    </filter>
+    <rect width="100" height="100" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="V15FC" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
+    <g fill="url(#gradient_1)" stroke="none" id="V" filter="url(#filter_1)" transform="translate(19 -12)">
+      <path d="M1.44 28.9L12.96 28.9L30.72 82.852L30.912 82.852L48.672 28.9L60.192 28.9L36.384 96.1L25.248 96.1L1.44 28.9Z" />
+    </g>
+  </g>
+</svg>

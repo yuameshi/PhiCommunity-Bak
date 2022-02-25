@@ -1,161 +1,103 @@
-@import url(../assets/fonts/fonts.css);
-html{
+@import url(../assets/css/css.css);
+html {
+	background: url(../assets/images/ElementSqare.Half.Size.webp) no-repeat
+		center center fixed;
+	background-size: cover;
+}
+html,
+body {
+	/* display: flex;
+	align-items: center; */
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	/* transition: all 0.5s ease-out; */
+}
+#body {
+	--gamma: 0;
+	--translate-x: calc(-2px * var(--gamma) / 180 * 30);
+	transform: translateX(var(--translate-x));
+}
+div.blackBoard {
+	width: 100%;
+	height: 80%;
+	background: url(../assets/images/showgirl_half.png) no-repeat bottom left;
+	background-size: contain;
+	position: fixed;
+	transition: all 0.3s ease;
+	bottom: 0;
+	left: 10%;
+	z-index: 0;
+}
+div.mainActivityArea {
+	height: 80%;
+	width: 40%;
+	position: fixed;
+	right: 5%;
+	bottom: 10%;
 	margin: 0;
 	padding: 0;
-}
-body {
-	height: 100%;
-	min-width: 100%;
-	width: fit-content;
-	position: absolute;
-	margin: 0;
-	left: var(--left);
 	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	box-sizing: border-box;
-	overflow-y: hidden;
-	overflow-x: scroll;
-	transition: 0.1s all ease-in-out;
-	background: url(../assets/images/InitialBackground.webp) center center
-		no-repeat fixed;
-	background-size: cover;
-	backdrop-filter: blur(5px);
-	padding-left: 100px;
-}
-html::before{
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url(../assets/images/InitialBackground.webp) center center no-repeat fixed;
-    background-size: cover;
-    filter: blur(15px);
-    z-index: -1;
-}
-div.chapterContainer {
-	display: flex;
-	position: relative;
-	margin-left: 25px;
 	flex-direction: column;
 	justify-content: center;
-	color: #fff;
-	max-height: 450px;
-	height: 80%;
-	width: 85vh;
-	/* border: 3px #6cf solid; */
-	overflow: hidden;
-	flex-shrink: 0;
-	/* margin: 25px; */
-	transform: skew(-15deg);
-	box-shadow: #000 0 0 10px 0;
-}
-img.chapterImage {
-	height: 100%;
-	width: 150%;
-	object-fit: cover;
-	object-position: center center;
-	transform: skew(15deg) translateX(-20%);
-}
-div.chapterContainer::before {
-	position: absolute;
-	right: 0;
-	top: 0;
-	margin: 2.5% 5%;
-	content: attr(data-name);
+	align-items: center;
 	z-index: 1;
-	font-size: 1.2em;
-	transform: skew(15deg);
-	text-shadow: 0 0 5px #000;
 }
-div.chapterContainer::after {
-	content: "▷  P L A Y";
-	position: absolute;
-	color: #000;
-	background: linear-gradient(105deg, #00000000 15%, #fff 11%, #fff) no-repeat
-		center center;
-	right: 0;
-	bottom: 0;
-	margin: 2.5% 5%;
-	z-index: 1;
-	font-size: 1.3rem;
-	transform: translateX(18%) skew(15deg);
-	width: 45%;
-	height: 15%;
-	font-weight: bold;
+
+div.startToPlay {
+	width: 100%;
+	height: 60%;
+	background-size: contain;
+	font-size: 3rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 15px 0 0;
+	margin-bottom: 5% !important;
+	overflow: hidden;
+}
+div.startToPlay,
+div.buttomLayer > div {
+	border-radius: 10px;
 	cursor: pointer;
+	background: linear-gradient(to right, #0173ffd7, #588de4d7);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 0 10px 0 #0173fff7;
 }
-button.settingBtn{
-	border: none;
-	position:  sticky;
-	align-self: flex-end;
-	right: -25px;
-	bottom: 15px;
-	width: 100px;
-	height: 50px;
-	z-index: 1;
-}
-button.settingBtn::before{
-	content: '';
-	position: absolute;
-	left: -15px;
-	top: 0;
-	height: 100%;
+
+div.buttomLayer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	width: 100%;
-	background: #000;
-	z-index: 1;
-	transform: skew(-15deg);
-	filter: drop-shadow(#fff -5px 0);
+	height: 30%;
+	margin-top: 5%;
 }
-button.settingBtn::after{
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
+div.buttomLayer > div {
 	height: 100%;
-	width: 100%;
-	background: url(../assets/images/setting.png) no-repeat left center;
-	background-size: contain;
-	transform: scale(.5);
-	z-index: 5;
+	width: 45%;
+	font-size: 2rem;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-div.darkOverlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #000;
-	z-index: 0;
-	animation: fadeOut 1s ease-out;
-}
-div.darkOverlay.fadeIn {
-	animation: fadeIn 0.5s ease-out !important;
-}
-@keyframes fadeIn {
-	0% {
-		z-index: 999;
-		opacity: 0;
+@media screen and (max-width: 768px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		padding: 0;
 	}
-	100% {
-		z-index: 999;
-		opacity: 1;
+	div.blackBoard {
+		display: none;
 	}
-}
-@keyframes fadeOut {
-	0% {
-		z-index: 999;
-		opacity: 1;
-	}
-	100% {
-		z-index: 999;
-		opacity: 0;
+	div.mainActivityArea {
+		width: 95%;
+		margin: 0;
+		padding: 0;
+		position: unset;
 	}
 }

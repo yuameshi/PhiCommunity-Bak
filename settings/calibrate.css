@@ -1,6 +1,6 @@
-@import url(../assets/fonts/fonts.css);
+@import url(../assets/css/css.css);
 html,
-body{
+body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,26 +12,28 @@ body{
 	margin: 0;
 	padding: 0;
 }
-*{
+* {
 	outline: none;
 }
-html{
-    background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
-    background-size: cover;
+html {
+	background: url(../assets/images/ElementSqare.Half.Size.webp) center center
+		no-repeat fixed;
+	background-size: cover;
 }
-html::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
-    background-size: cover;
-    filter: blur(10px);
-    z-index: -1;
+html::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(../assets/images/ElementSqare.Half.Size.webp) center center
+		no-repeat fixed;
+	background-size: cover;
+	filter: blur(10px);
+	z-index: -1;
 }
-div.container{
+div.container {
 	height: 300px;
 	width: 500px;
 	background: #dddddf;
@@ -41,15 +43,15 @@ div.container{
 	align-items: center;
 	overflow: hidden;
 }
-div.container div.title{
+div.container div.title {
 	width: 100%;
 	padding: 10px;
-	background: linear-gradient(to right, #372c4a, #544257);
+	background: linear-gradient(to right, #0173ff, #588de4);
 	color: #fff;
 	text-align: center;
 	font-weight: bold;
 }
-div.container div.content{
+div.container div.content {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -57,24 +59,24 @@ div.container div.content{
 	width: 100%;
 	height: max-content;
 }
-div.container div.content div.description{
+div.container div.content div.description {
 	font-size: 12px;
 	padding: 10px;
 	text-align: center;
 }
-div.container div.content button#clickBtn{
+div.container div.content button#clickBtn {
 	width: 50px;
 	height: 50px;
 	margin: 10px;
 	background: #b7b6bb;
 	color: #000;
 	border: 1.5px solid #939394;
-	color: #FFF;
+	color: #fff;
 	text-shadow: 1px 1px 1px #9f9f9f;
 	font-weight: bold;
 	cursor: pointer;
 }
-div.container div.content div.results{
+div.container div.content div.results {
 	width: 60%;
 	display: flex;
 	flex-direction: row;
@@ -82,47 +84,47 @@ div.container div.content div.results{
 	color: #000;
 	text-align: center;
 }
-div.container div.content div.results div:first-child{
+div.container div.content div.results div:first-child {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border-left: 1.4px #9f9f9f solid;
 }
-div.container div.content div.results div:last-child{
+div.container div.content div.results div:last-child {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	border-right: 1.4px #9f9f9f solid;
 }
-div.container div.content div.results div{
+div.container div.content div.results div {
 	border: 1.2px #9f9f9f solid;
 	width: 25%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #FFF;
+	background: #fff;
 }
-div.container div.footer{
+div.container div.footer {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	justify-content: center;
 	align-items: center;
 }
-div.container div.footer button{
+div.container div.footer button {
 	width: 50%;
 	padding: 5px;
 	cursor: pointer;
 }
-div.container div.footer button#startBtn{
-	background: #484058;
+div.container div.footer button#startBtn {
+	background: #0173ff;
 	color: #fff;
 	font-size: 16px;
 	border: none;
-	border-right: 1px solid #FFF;
+	border-right: 1px solid #fff;
 }
-div.container div.footer button#cancelBtn{
-	background: #5f526b;
+div.container div.footer button#cancelBtn {
+	background: #588de4;
 	color: #fff;
 	font-size: 16px;
 	border: none;
-	border-left: 1px solid #FFF;
+	border-left: 1px solid #fff;
 }

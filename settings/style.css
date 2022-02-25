@@ -1,4 +1,4 @@
-@import url(../assets/fonts/fonts.css);
+@import url(../assets/css/css.css);
 html,
 body{
 	height: 100%;
@@ -8,7 +8,7 @@ body{
 	overflow: hidden;
 }
 html{
-	background: url(../assets/images/InitialBackground.png) center center no-repeat fixed ;
+	background: url(../assets/images/ElementSqare.Half.Size.webp) center center no-repeat fixed ;
 	background-size: cover;
 	backdrop-filter: blur(15px);
 }
@@ -19,7 +19,7 @@ html::before{
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(../assets/images/InitialBackground.png) center center no-repeat fixed;
+    background: url(../assets/images/ElementSqare.Half.Size.webp) center center no-repeat fixed;
     background-size: cover;
     filter: blur(10px);
     z-index: -1;
@@ -29,7 +29,6 @@ div.leftArea{
 	top: 0;
 	left: -20%;
 	padding-left: 20%;
-	transform: skew(-15deg);
 	height: 100%;
 	width: 40%;
 	min-width: 500px;
@@ -41,39 +40,6 @@ div.leftArea{
 
 #settingItems {
 	margin-left: 15%;
-  }
-
-div.backBtn{
-	position: fixed;
-	left: -15px;
-	top: 5px;
-	width: 100px;
-	height: 50px;
-	transform: skew(-15deg);
-	z-index: 1;
-	cursor: pointer;
-}
-div.backBtn::before{
-	content: '';
-	position: absolute;
-	left: -15px;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background: #000;
-	z-index: 1;
-	filter: drop-shadow(#fff 5px 0);
-}
-div.backBtn::after{
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background: url(../assets/images/back.png) no-repeat center center;
-	transform: skew(15deg) scale(.5);
-	z-index: 5;
 }
 div.item{
 	width: 100%;
@@ -97,7 +63,6 @@ div.title{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	transform: skew(15deg);
 }
 div.slider{
 	width: 95%;
@@ -120,7 +85,6 @@ div.slideBlock{
 	align-items: center;
 	background-color: #fff;
 	font-size: 1.4em;
-	text-transform: skew(15deg);
 	cursor: pointer;
 }
 div.slider::before{
@@ -168,7 +132,9 @@ div.toggle::before{
 	background-color: #fff;
 }
 div.toggle.checked::after{
-	content: '√';
+	content: ' ';
+	background: url(../assets/images/Tick.svg) no-repeat center center;
+	background-size: contain;
 	font-family: Arial, Helvetica, sans-serif;
 	order: 0;
 	display: flex;
@@ -194,6 +160,45 @@ button.button{
 	color: #FFF;
 	border: 2px #FFF solid;
 	background: transparent;
-	transform: skew(15deg);
 	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+button.button>img{
+	height: 20px;
+	width: auto;
+	margin-right: 20px;
+}
+div.aboutContainer{
+	position: fixed;
+	width: 50%;
+	right: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+div.aboutContainer>div.device{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+div.aboutContainer>div.device>span#device{
+	text-align: center;
+}
+@media screen and (max-width: 768px){
+	div.aboutContainer{
+		display: none;
+	}
+	div.leftArea{
+		width: 100%;
+	}
+	div.leftArea>div#settingItems{
+		margin-right: 15%;
+	}
 }
