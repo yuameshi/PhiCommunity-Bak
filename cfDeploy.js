@@ -38,7 +38,7 @@ function listFile(filePath) {
 										);
 										fs.writeFileSync(
 											filedir,
-											fileData.replaceAll(
+											fileData.toString().replaceAll(
 												'https://charts.phi.han-han.xyz/',
 												'https://cf.charts.phi.han-han.xyz/'
 											)
