@@ -89,7 +89,7 @@ function SongList({ defaultLevel = 'ez' }) {
 			currentLevelSelected = [nextLevel];
 		}
 		fetch(
-			`https://charts.phi.han-han.xyz//${codename}/${songMeta['illustration']}`
+			`https://charts.phi.han-han.xyz/${codename}/${songMeta['illustration']}`
 		)
 			.then((response) => response.blob())
 			.then((blob) => {
