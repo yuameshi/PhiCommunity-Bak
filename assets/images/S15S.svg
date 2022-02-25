@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dx="0" dy="0" />
+      <feGaussianBlur stdDeviation="2.5" />
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6117647 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+    </filter>
+    <rect width="100" height="100" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="S15S" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
+    <g id="S" fill="#FFFFFF" filter="url(#filter_1)" transform="translate(20 -12)">
+      <path d="M5.28 86.212L5.28 77.764L16.224 77.764L16.224 82.852L19.872 86.5L40.8 86.5L44.64 82.66L44.64 70.276L40.896 66.532L15.36 66.532L5.472 56.74L5.472 38.788L15.36 28.9L44.928 28.9L54.816 38.788L54.816 47.332L43.872 47.332L43.872 42.148L40.128 38.5L20.16 38.5L16.416 42.148L16.416 53.284L20.16 56.932L45.696 56.932L55.584 66.82L55.584 86.02L45.504 96.1L15.168 96.1L5.28 86.212Z" />
+    </g>
+  </g>
+</svg>

@@ -5,21 +5,17 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0" />
-	<title>点按以开始 - Phigros</title>
+	<title>点按以开始 - PhiCommunity</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<!-- <script>
-			 var script = document.createElement('script'); 
-			 script.src = "//cdn.jsdelivr.net/npm/eruda"; 
-			 document.body.appendChild(script); 
-			 script.onload = function () { eruda.init() } 
-	</script> -->
-	<img src="../assets/images/Phigros.png" alt="Phigros" class="phigrosLogo">
+	<img src="../assets/images/Title.svg" alt="PhiCommunity" class="title">
 	<div class="tapToStart">点 击 屏 幕 开 始</div>
-	<canvas id="bubbles"></canvas>
-	<audio autoplay="autoplay" loop="loop" id="audio" src="./TouchToStart0.ogg"></audio>
+	<div class="info">
+		<div class="ver">版本：<span id="ver">未获取/获取失败</span></div>
+		<div id="device" class="device">设备平台:未获取/获取失败</div>
+	</div>
 	<script src="./index.js"></script>
 </body>
 

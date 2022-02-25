@@ -1,130 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
-	<link rel="manifest" href="./manifest.webmanifest">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.redirect.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0" />
 	<title>Redirecting...</title>
-	<!-- <meta http-equiv="refresh" content="0; url=./tapToStart/index.html"> -->
 </head>
 <body>
-	<b>请注意，为避免网址乱传，我们采用了MPL-2协议，请不要四处传播地址</b><br>
-	<a href="../tapToStart/index.html">点击进入网页版Phigros(由于浏览器限制，我们无法在用户无操作的情况下自动播放音乐)</a><br>
-	在开始前，请先调整好设备音量，下方是一段测试音频，点击左侧的三角形以开始播放。<br>
-	顺带一提，由于本项目变更较为频繁，所以可能在某些时候可能需要您清除浏览器缓存来修复一些错误。<br>
-	<audio src="../tapToStart/TouchToStart0.ogg" controls></audio><br>
-	小提示，添加Phigros到桌面将缓存当前所有谱面和音乐文件到浏览器中，提高加载速度（下方按钮）（仅支持的浏览器才会显示）<br>
-	<button class="add-button">添加Phigros Web Edition到桌面</button><br>
-	<button id="add-cache-button">缓存Phigros Web Edition的资源文件（如果没有上面那个，点这个也可以缓存噢）</button><br>
-	<pre>
-更改日志（仅展示较为重要的更改）：
-<a href="https://github.com/HanHan233/phigros-html5/commits/main" target="_blank" rel="noopener noreferrer">点击此处查看所有提交</a>
-<img src="https://repobeats.axiom.co/api/embed/6e75cf0ba4b5463f2cfd6cb2fb6d8f85afa7ab42.svg" alt="Repobeats analytics image">
-2022/02/08
-修复不选难度时，重定向路径难度为undefined的Bug
-添加"排序方式"功能
-
-2022/02/07
-新增 调整宽高比
-改进 谱面meta格式，支持多难度多谱师（原有谱面不受影响）
-
-2022/02/06
-修复了打歌界面部分背景无法正常显示的问题
-将大部分请求改为异步
-修复了歌曲选择界面切换难度后列表仍显示最高难度的Bug（顺便格式化了下代码）
-修复了点按开始界面的音量渐弱
-新增章节选择界面的音量渐弱，歌曲选择界面的音量渐强和渐弱
-修改了Meta标签（禁止用户缩放），消除了一个Warning
-
-2022/02/05
-修复了FireFox上模糊的问题
-修复了FireFox上的头像栏显示的问题
-修复了歌曲选择界面点击头像栏不会变化的问题
-修复了FireFox上章节选择界面模糊效果会随鼠标滚动而移动的错误
-
-2022/02/01
-<h1>新年快乐！！</h1>
-调整了结算页面的背景亮度
-给结算页面添加了box-shadow和max-height/width
-
-2022/01/31
-删除了一些无用的资源，加快加载速度
-重置了缓存列表，更新了缓存路径
-
-2022/01/29
-优化了章节选择页面的视觉效果
-修复了加载谱面页面有时无法正常显示背景的Bug
-修复了格式化版本为1的谱面支持
-拆分为三个章节
-
-2022/01/28
-添加了 根据声音调整偏移率（测试版）
-优化了下全屏操作的体验
-
-2022/01/27
-修复了 切换难度未生效的问题
-改进了 老旧UI模式 下的表现
-尝试修复卡加载的问题（（
-
-2022/01/26
-加了FC判断
-修复了 溅射效果失效的问题
-添加了 新手教学（无字版）
-
-2022/01/25
-修复了 部分文字显示不正确的问题
-优化了 点按开始界面的性能
-新增了 老版本UI 开关
-修复官谱重开的Bug，优化暂停后恢复的体验，增加在选个界面点开始后暂停预览音频
-改了下文字
-画了个算RKS的饼
-加了个头像显示
-修复了 正在加载 页面的曲绘显示不正确的问题
-转移了谱面仓库
-
-2022/01/24
-删除重复的选项：开启触摸反馈
-index页面加了个统计，settings修了下全部都显示勾选的问题
-Merge pull request #19 from ZreXoc/main
-
-2022/01/20
-由于谱面作者自身原因暂时移除谱面terrasphere
-为避免低创视频出现，删除了Autoplay功能，并修改许可证为MPL-2.0，避免网址乱传
-改进缓存策略，修复结算页面部分浏览器分数框无背景
-添加 缓存机制，使用Service Worker自动缓存谱面等基本不会变更的资源
-修复结算页面统计
-
-2022/01/19
-修复音频裁切片段延迟播放的问题
-修复重开Bug
-给一堆页面加了禁止缩放
-修复：部分背景展示问题
-添加设置项：“游玩不自动全屏”
-添加A2HS
-添加曲目《Terrasphere》
-修复：谱面加载动画
-
-2022/01/18
-在章节选择页面加了设置按钮，修复rks计算，修复结算页面背景未全屏，改进歌曲选择界面返回按钮逻辑，修复章节选择，点按开始界面背景模糊
-合并Pull Requests：为按钮添加cursor样式/使用fetch以缓存图片/修复了谱面无法打开的bug
-
-2022/01/17
-合并Pull Requests：componentize the code;fix bug: 歌曲列表可无限上划
-
-2022/01/16
-修复RKS计算
-添加了加载动画
-修改了部分文字
-修复 结束页面点击返回黑屏，完善了谱面贡献教程
-添加曲目《ouroVoros》
-删除了 “展示过渡动画” 设置项
-删除了除了“单曲 精选集”以外的所有章节
-
-2022/01/14
-修复结算页面路径
-首次提交
-	</pre>
-	<script src="./index.js"></script>
+	<div class="main">
+		<h1>准备重定向</h1>
+		<h2>（游玩说明）</h2>
+		在开始前，请先调整好设备音量，下方是一段测试音频，点击左侧的三角形以开始播放。<br>
+		<audio src="./tapToStart/TapToStart.mp3" controls></audio>
+		<br>
+		顺带一提，由于本项目变更较为频繁，所以可能在某些时候可能需要您清除浏览器缓存来修复一些错误。<br><br>
+		<div class="btnsContainer">
+			<button id="go">开始游玩</button>
+			<button id="installPWA">添加到主屏幕</button>
+			<button id="gotoCFPages">前往位于CloudFlare的节点</button>
+			<button id="gotoGHPages">前往位于GitHub Pages的节点</button>
+			<br>
+			<button id="ghRepo">查看GitHub仓库</button>
+			<button id="changeLog">查看变更记录</button>
+			<button id="deviceReq">设备要求</button>
+		</div>
+		
+	</div>
+	<div class="popupOverlay" id="changeLogContainerPopupOverlay">
+		<div class="popupContent" id="changelogContainer">
+			<h2>变更记录(仅显示最近30次)</h2>
+			<a href="https://github.com/HanHan233/PhiCommunity/commits/main" class="title" target="_blank">点击此处查看所有提交</a>
+		</div>
+	</div>
+	<div class="popupOverlay" id="devRequirementPopupoverlay">
+		<div class="popupContent" id="devReq">
+			<h2>设备要求</h2>
+			<table>
+				<tr>
+					<td>Windows</td>
+					<td>Chromium内核为90以上</td>
+				</tr>
+				<tr>
+					<td>Android</td>
+					<td>Chromium内核为90以上，FireFox内核</td>
+				</tr>
+				<tr>
+					<td>iOS</td>
+					<td>iOS版本15以上，由于Apple系统限制，您无法通过安装其他浏览器解决问题</td>
+				</tr>
+				<tr>
+					<td>macOS</td>
+					<td>Safari版本15以上，或者安装其他浏览器，要求参见Windows部分</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script src="./index.redirect.js"></script>
 </body>
 </html>

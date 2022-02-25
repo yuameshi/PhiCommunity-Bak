@@ -1,22 +1,22 @@
-@import url(../assets/fonts/fonts.css);
+@import url(../assets/css/css.css);
 html {
-	--background: url(../assets/images/InitialBackground.png);
+	--background: url(../assets/images/ElementSqare.Half.Size.webp);
 	background: var(--background) center center no-repeat fixed;
 	background-size: cover !important;
 	box-sizing: border-box;
 	transition: all 0.3s ease-in-out;
 }
-html::before{
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--background) center center no-repeat fixed;
-    background-size: cover;
-    filter: blur(15px);
-    z-index: -1;
+html::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--background) center center no-repeat fixed;
+	background-size: cover;
+	filter: blur(15px);
+	z-index: -1;
 }
 html,
 body {
@@ -28,15 +28,12 @@ body {
 	box-sizing: border-box;
 	overflow: hidden;
 }
-div.darkOverlay {
-	position: fixed;
-	background-color: #000;
-	top: 0;
-	left: 0;
-	height: 0;
-	width: 0;
-	z-index: 999;
-	animation: fadeIn 0.5s linear;
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 50px;
 }
 @keyframes fadeIn {
 	0% {
@@ -50,110 +47,9 @@ div.darkOverlay {
 		opacity: 0;
 	}
 }
-div.backBtn {
-	position: fixed;
-	left: -15px;
-	top: 5px;
-	width: 100px;
-	height: 50px;
-	transform: skew(-15deg);
-	z-index: 1;
-	cursor: pointer;
-}
-div.backBtn::before {
-	content: "";
-	position: absolute;
-	left: -15px;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background: #000;
-	z-index: 1;
-	filter: drop-shadow(#fff 5px 0);
-}
-div.backBtn::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background: url(../assets/images/back.png) no-repeat center center;
-	transform: skew(15deg) scale(0.5);
-	z-index: 5;
-}
-div.avatarBar{
-	position: fixed;
-	right: -6px;
-	top: 0;
-	margin: 10px 0;
-	background-color: #000;
-	transform: skew(-15deg);
-	/* width: fit-content; */
-	height: 50px;
-	background:  #000  no-repeat;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	transition: all .3s ease-in-out;
-	z-index: 1;
-}
-div.avatarBar.expand{
-	padding-left: 20px;
-}
-div.avatarBar.expand::before{
-	content: attr(data-name);
-	color: #FFF;
-	width: fit-content;
-	font-size: 1.3rem;
-	transform: skew(15deg);
-	margin-right: 0.8em;
-}
-div.avatarBar::before{
-	content: attr(data-name);
-	width: 0;
-}
-div.avatarBar::after{
-	content: attr(data-rks);
-	width: 50px;
-	text-align: center;
-	font-size: 14px;
-	transform: translateX(-10px);
-	align-self: flex-end;
-	color: #000;
-	background: #FFF;
-	z-index: 10;
-}
-div.avatarBar>div.avatar{
-	height: 100%;
-	width: 100px;
-	background: url(../assets/images/Introduction.png) no-repeat center center;
-	background-size: cover;
-	transform: skew(15deg);
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-div.avatarBar>div.avatar::before,
-div.avatarBar>div.avatar::after{
-	content: '';
-	height: 100%;
-	width: 20px;
-	display: block;
-	background: #000;
-	transform: skew(-15deg) translateX(-10px);
-	margin: 0;
-	padding: 0;
-}
-div.avatarBar>div.avatar::after{
-	transform: skew(-15deg) translateX(10px);
-}
 div.leftArea {
-	transform: skew(-15deg);
-	position: fixed;
-	margin-left: 100px;
+	position: relative;
+	margin-left: 75px;
 	background-color: #00000050;
 	height: 100%;
 	width: 350px;
@@ -175,7 +71,7 @@ div.topLeftBar {
 	justify-content: space-between;
 }
 div.sortMode::before {
-	content: "排序方式\3000\3000\3000\3000";
+	content: '排序方式\3000\3000\3000\3000';
 	font-size: 12px;
 	transform: scale(0.8);
 }
@@ -184,7 +80,6 @@ div.sortMode {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transform: skew(15deg);
 	padding-left: 5px;
 	object-position: center center;
 	object-fit: contain;
@@ -192,14 +87,14 @@ div.sortMode {
 }
 div.settingBtn::after,
 div.sortMode::after {
-	content: "";
+	content: '';
 	height: 15px;
 	width: 15px;
 	background-position: center center;
 	background-size: cover;
 	display: block;
 	margin-left: 10px;
-	background-image: url(../assets/images/sort.png);
+	background-image: url(../assets/images/Sort.svg);
 }
 div.songList {
 	display: flex;
@@ -212,7 +107,7 @@ div.songList {
 	/* overflow-y: scroll; */
 }
 div.settingBtn::after {
-	background-image: url(../assets/images/setting.png) !important;
+	background-image: url(../assets/images/Settings.svg) !important;
 }
 div.songItemContainer {
 	background: transparent;
@@ -230,18 +125,15 @@ div.songItemContainer > div.songItem {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
-	transform: skew(15deg);
 }
 div.songItemContainer > div.level {
-	transform: skew(15deg);
 	width: fit-content;
 	width: -moz-fit-content;
 	display: flex;
 	align-items: center;
 }
 div.songItemContainer > div.level::before {
-	content: "";
-	/* display: block; */
+	content: '';
 	display: none;
 	width: 25px;
 	height: 25px;
@@ -259,7 +151,6 @@ div.playBtn {
 }
 div.songItemContainer > div.level::after {
 	content: attr(data-level);
-	width: 30px;
 	font-size: 28px;
 }
 div.songItemContainer.selected {
@@ -282,7 +173,6 @@ div.songItemContainer.selected {
 div.songItemContainer.selected > div.songItem.selected {
 	display: flex;
 	flex-direction: column;
-	transform: skew(15deg);
 	margin: 0 0 0 15px;
 	padding: 0;
 	max-width: calc(100% - 100px);
@@ -312,7 +202,6 @@ div.songItemContainer.selected > div.level::before {
 	background: none !important;
 	content: attr(data-level);
 	display: block;
-	transform: skew(15deg);
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -322,56 +211,54 @@ div.songItemContainer.selected > div.level::before {
 	align-items: center;
 }
 div.songItemContainer.selected > div.level::after {
-	content: "";
+	content: '';
 	display: block;
 	font-size: 16px;
-	transform: skew(15deg);
 	margin: 0;
 	padding: 0;
 }
 div.songItemContainer.selected > div.level.ez::after {
-	content: "EZ";
+	content: 'EZ';
 }
 div.songItemContainer.selected > div.level.hd::after {
-	content: "HD";
+	content: 'HD';
 }
 div.songItemContainer.selected > div.level.in::after {
-	content: "IN";
+	content: 'IN';
 }
 div.songItemContainer.selected > div.level.at::after {
-	content: "AT";
+	content: 'AT';
 }
 div.rightArea {
 	display: flex;
 	flex-direction: column;
-	position: fixed;
-	right: 15%;
+	position: relative;
+	right: 60px;
 	height: 100%;
-	width: 400px;
+	width: calc(100% - 350px - 200px);
+	/* width: 400px; */
 	justify-content: center;
 	align-items: center;
-	transform: skew(-15deg);
 	overflow: hidden;
+	padding-left: 15%;
+	/* --scale:1;
+	transform-origin: right;
+	transform: scale(var(--scale)); */
 }
 div.illustrationContainer {
-	width: 150%;
-	height: 245px;
+	width: 100%;
+	height: 60%;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	object-fit: cover;
-	/* width: 100%;
-	overflow: hidden; */
 	margin-bottom: 15px;
 }
 img.illustration {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-	margin-right: -50px;
-	transform: skew(15deg);
-	/* clip-path: polygon(75px 0, 100% 0, 400px 100%, 0 100%); */
 }
 div.detailBar {
 	display: flex;
@@ -406,6 +293,9 @@ div.levelChooser > div.levelItem {
 	margin: 0 5px 0 5px;
 	cursor: pointer;
 }
+div.levelChooser > div.levelItem.disabled {
+	display: none;
+}
 div.levelChooser > div.levelItem.ez {
 	margin-left: 0;
 }
@@ -434,7 +324,6 @@ div.levelChooser > div.levelItem.selected.at {
 }
 div.levelChooser > div.levelItem::before {
 	content: attr(data-level);
-	transform: skew(15deg);
 }
 div.levelChooser > div.levelItem.fadeOut {
 	animation: fade 0.3s ease-in;
@@ -450,22 +339,32 @@ div.levelChooser > div.levelItem.fadeIn {
 		opacity: 0;
 	}
 }
+.loadingEmbedFrame {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	object-fit: cover;
+	z-index: 999999999;
+	background: #999;
+}
 div.levelChooser > div.levelItem::after {
 	font-size: 12px;
 	line-height: 0;
-	transform: skew(15deg) scale(0.8);
+	transform: scale(0.8);
 }
 div.levelChooser > div.levelItem.ez::after {
-	content: "EZ";
+	content: 'EZ';
 }
 div.levelChooser > div.levelItem.hd::after {
-	content: "HD";
+	content: 'HD';
 }
 div.levelChooser > div.levelItem.in::after {
-	content: "IN";
+	content: 'IN';
 }
 div.levelChooser > div.levelItem.at::after {
-	content: "AT";
+	content: 'AT';
 }
 div.score {
 	width: 200px;
@@ -475,7 +374,6 @@ div.score {
 	justify-content: center;
 	align-items: center;
 	order: 0;
-	transform: skew(15deg);
 }
 div.score::before {
 	content: attr(data-acc);
@@ -489,7 +387,7 @@ div.score::before {
 	margin-bottom: -10px;
 }
 div.score.unplayed::after {
-	content: "NEW";
+	content: 'NEW';
 	font-size: 14px;
 	color: #999;
 	padding-bottom: 10px;
@@ -503,11 +401,20 @@ div.playBtn {
 	right: 0px;
 	bottom: 15px;
 	width: 100px;
-	height: 85px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	z-index: 1;
-	background: url(./play.png) no-repeat center center;
+	background: #fff no-repeat center center;
+	/* background: url(./play.png) no-repeat center center; */
 	background-size: cover;
 	cursor: pointer;
+}
+div.playBtn::before {
+	display: block;
+	content: '▷';
+	font-size: 2.5rem;
 }
 
 div.readyToLoadOverlay {
@@ -535,5 +442,71 @@ div.readyToLoadOverlay.go {
 	}
 	100% {
 		right: -100%;
+	}
+}
+@media screen and (max-width: 768px) {
+	body {
+		padding: 0;
+	}
+	div.rightArea {
+		position: fixed;
+		width: 95%;
+		height: fit-content;
+		height: -moz-fit-content;
+		left: 50%;
+		bottom: 15vh;
+		transform: translateX(-57.5%);
+	}
+	#rightArea > div.illustrationContainer {
+		display: none;
+	}
+	div.leftArea {
+		margin-top: 125px;
+		width: 100%;
+		margin-left: unset;
+	}
+}
+div.loadingBar.hidden {
+	display: none;
+}
+div.loadingBar {
+	position: fixed;
+	left: 2.5%;
+	bottom: 35px;
+	overflow: hidden;
+}
+div.loadingBarTxT {
+	color: #000;
+	z-index: 999;
+	animation: loadingBarTXTAnim 1s ease-in-out infinite;
+	text-shadow: 0 0 5px #000;
+}
+div.loadingBarBG {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background-color: #fff;
+	animation: loadingBarBGAnim 1s ease-in-out infinite;
+}
+@keyframes loadingBarBGAnim {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 200%;
+	}
+}
+@keyframes loadingBarTXTAnim {
+	0% {
+		color: #fff;
+	}
+	50% {
+		color: #000;
+	}
+	100% {
+		color: #fff;
 	}
 }

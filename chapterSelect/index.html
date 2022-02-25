@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0" />
-		<title>章节选择 - Phigros</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body style="left: 0;">
-		<div class="darkOverlay"></div>
-		<div class="chapterContainer" data-name="官方谱面 精选集" data-stas="[0,0,0,0]" data-codename="official">
-			<img src="../assets/images/InitialBackground.webp" class="chapterImage">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0" />
+	<title>章节选择 - PhiCommunity</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="body">
+	<div class="blackBoard"></div>
+	<div class="mainActivityArea">
+		<div class="startToPlay" id="startToPlayBtn">开始游玩</div>
+		<div class="buttomLayer">
+			<div class="settings" id="settingBtn">设置</div>
+			<div class="uploadCharts" id="uploadChartsBtn">上传谱面</div>
 		</div>
-		<div class="chapterContainer" data-name="官方SP谱面" data-stas="[0,0,0,0]" data-codename="special">
-			<img src="../assets/images/chapterImages/SpasmodicSP.webp" class="chapterImage">
-		</div>
-		<div class="chapterContainer" data-name="社区创作 精选集" data-stas="[0,0,0,0]" data-codename="fanmade">
-			<img src="../assets/images/chapterImages/ouroVoros.webp" class="chapterImage">
-		</div>
-		<button class="settingBtn" onclick="location.href='../settings/index.html'"></button>
-		<audio autoplay loop src="./ChapterSelect0.mp3" id="audio"></audio>
-		<script src="./index.js"></script>
-	</body>
+	</div>
+	<script src="./index.js"></script>
+</body>
+
 </html>

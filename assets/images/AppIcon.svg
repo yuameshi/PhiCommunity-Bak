@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="192px" height="192px" viewBox="0 0 192 192" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0.62845945" y1="0" x2="0.3042836" y2="1" id="gradient_1">
+      <stop offset="0%" stop-color="#0273FF" />
+      <stop offset="47.530865%" stop-color="#3287FF" />
+      <stop offset="100%" stop-color="#5998FF" />
+    </linearGradient>
+    <rect width="192" height="192" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="AppIcon" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
+    <path d="M12 96C12 49.6081 49.6081 12 96 12C142.392 12 180 49.6081 180 96C180 142.392 142.392 180 96 180C49.6081 180 12 142.392 12 96Z" id="Ellipse" fill="url(#gradient_1)" fill-rule="evenodd" stroke="none" />
+    <g id="φ" fill="#FEFE59" transform="translate(30 -55)">
+      <path d="M125.66 136.48Q125.66 151.1 119.37 162.235Q113.08 173.37 101.605 180.17Q90.13 186.97 74.49 188.5L74.49 227.77L55.96 227.77L55.96 188.5Q33.01 185.95 20.175 171.245Q7.34 156.54 7.34 132.57Q7.34 121.69 10.4 111.15Q13.46 100.61 18.56 93.13L39.81 93.13Q33.35 101.12 29.865 111.235Q26.38 121.35 26.38 133.08Q26.38 148.55 34.115 158.495Q41.85 168.44 55.96 170.82L55.96 140.56Q55.96 115.91 64.46 103.33Q72.96 90.75 89.28 90.75Q100.33 90.75 108.575 96.36Q116.82 101.97 121.24 112.255Q125.66 122.54 125.66 136.48ZM74.49 170.99Q89.28 168.61 97.95 159.26Q106.62 149.91 106.62 135.63Q106.62 123.05 101.945 115.655Q97.27 108.26 89.28 108.26Q74.49 108.26 74.49 137.33L74.49 170.99Z" />
+    </g>
+  </g>
+</svg>

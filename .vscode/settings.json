@@ -1,8 +1,13 @@
 {
-	"liveServer.settings.port": 7750,
+	"liveServer.settings.port": 62012,
 	"editor.tabSize": 4,
-	"prettier.useTabs": true,
-	"prettier.tabWidth": 4,
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": true,
+	"prettier.endOfLine": "crlf",
+	"prettier.embeddedLanguageFormatting": "auto",
+	"prettier.htmlWhitespaceSensitivity": "css",
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
 }

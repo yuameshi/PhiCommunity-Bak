@@ -12,13 +12,13 @@ export function SliderItem({
 }) {
 	let currentValue = defaultValue;
 
-	const container = document.createElement("div");
-	container.className = "item";
+	const container = document.createElement('div');
+	container.className = 'item';
 
-	const titleElement = document.createElement("div");
-	titleElement.className = "title";
-	titleElement.dataset["name"] = title;
-	titleElement.dataset["value"] = currentValue;
+	const titleElement = document.createElement('div');
+	titleElement.className = 'title';
+	titleElement.dataset['name'] = title;
+	titleElement.dataset['value'] = currentValue;
 
 	const slider = Slider({ range, defaultValue, offset, onValueChange });
 
@@ -28,7 +28,7 @@ export function SliderItem({
 	return { element: container, getValue: () => currentValue };
 
 	function onValueChange(value) {
-		titleElement.dataset["value"] = value;
+		titleElement.dataset['value'] = value;
 		window.localStorage.setItem(codename, value);
 		currentValue = value;
 	}
@@ -46,14 +46,14 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 	let currentValue;
 	const total = range[1] - range[0];
 
-	const container = document.createElement("div");
-	container.className = "slider";
+	const container = document.createElement('div');
+	container.className = 'slider';
 
-	const slideBlock = document.createElement("div");
-	slideBlock.className = "slideBlock";
+	const slideBlock = document.createElement('div');
+	slideBlock.className = 'slideBlock';
 	container.appendChild(slideBlock);
 
-	container.addEventListener("click", (e) => {
+	container.addEventListener('click', (e) => {
 		if (e.offsetX > container.offsetWidth - 35) {
 			add(offset);
 		}
@@ -77,17 +77,17 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 			)
 		);
 	};
-	slideBlock.addEventListener("mousedown", () => {
+	slideBlock.addEventListener('mousedown', () => {
 		isDragStart = true;
-		window.addEventListener("mousemove", onMouseDrag);
+		window.addEventListener('mousemove', onMouseDrag);
 	});
-	window.addEventListener("mouseup", () => {
+	window.addEventListener('mouseup', () => {
 		if (!isDragStart) return;
 		isDragStart = false;
-		window.removeEventListener("mousemove", onMouseDrag);
+		window.removeEventListener('mousemove', onMouseDrag);
 	});
 
-	/** 
+	/**
 	 * 移动端
 	 * @param {TouchEvent} e
 	 */
@@ -100,18 +100,17 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 						total
 			)
 		);
-
 	};
 
-	slideBlock.addEventListener("touchstart", (e) => {
+	slideBlock.addEventListener('touchstart', () => {
 		isDragStart = true;
-		window.addEventListener("touchmove", onTouchDrag);
+		window.addEventListener('touchmove', onTouchDrag);
 	});
 
-	window.addEventListener("touchend", () => {
+	window.addEventListener('touchend', () => {
 		if (!isDragStart) return;
 		isDragStart = false;
-		window.removeEventListener("touchmove", onTouchDrag);
+		window.removeEventListener('touchmove', onTouchDrag);
 	});
 
 	set(defaultValue);
@@ -127,7 +126,7 @@ function Slider({ range, defaultValue = range[0], offset = 1, onValueChange }) {
 
 		slideBlock.style.marginLeft =
 			((newValue - (range[0] + range[1]) / 2) / total) * 2 * marginRange +
-			"%";
+			'%';
 
 		onValueChange(newValue);
 

@@ -1,21 +1,16 @@
 {
 	"background_color": "#ada5dc",
-	"description": "A Web edition of Phigros",
+	"description": "A community driven project to make a game like phigros.",
 	"display": "fullscreen",
 	"icons": [
-	  {
-		"src": "assets/images/app_icon.png",
-		"sizes": "192x192",
-		"type": "image/png"
-	  },
-	  {
-		  "src": "assets/images/app_icon_576x576.png",
-		  "sizes": "512x512",
-		  "type": "image/png"
-	  }
+		{
+			"src": "assets/images/AppIcon.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
 	],
-	"name": "Phigros HTML5 Edition",
-	"short_name": "Phigros",
+	"name": "PhiCommunity",
+	"short_name": "Phi",
 	"start_url": "/tapToStart/index.html",
 	"orientation": "landscape"
-  }
+}

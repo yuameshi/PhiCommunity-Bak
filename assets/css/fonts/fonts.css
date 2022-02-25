@@ -1,0 +1,14 @@
+@font-face {
+	font-family: Phi;
+	src: url(./Exo-Regular.otf);
+	src: url(./Source\ Han\ Sans\ &\ Saira\ Hybrid-Regular.ttf);
+}
+@font-face {
+	font-family: Mina;
+	src: url(./Exo-Regular.otf);
+	src: url(./Source\ Han\ Sans\ &\ Saira\ Hybrid-Regular.ttf);
+}
+
+* {
+	font-family: Phi;
+}
