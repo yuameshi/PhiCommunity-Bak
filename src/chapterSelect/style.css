@@ -1,0 +1,103 @@
+@import url(assets/css/css.css);
+html {
+	background: url(assets/images/ElementSqare.Half.Size.webp) no-repeat center
+		center fixed;
+	background-size: cover;
+}
+html,
+body {
+	/* display: flex;
+	align-items: center; */
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	/* transition: all 0.5s ease-out; */
+}
+#body {
+	--gamma: 0;
+	--translate-x: calc(-2px * var(--gamma) / 180 * 30);
+	transform: translateX(var(--translate-x));
+}
+div.blackBoard {
+	width: 100%;
+	height: 80%;
+	background: url(assets/images/showgirl_Half.png) no-repeat bottom left;
+	background-size: contain;
+	position: fixed;
+	transition: all 0.3s ease;
+	bottom: 0;
+	left: 10%;
+	z-index: 0;
+}
+div.mainActivityArea {
+	height: 80%;
+	width: 40%;
+	position: fixed;
+	right: 5%;
+	bottom: 10%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+div.startToPlay {
+	width: 100%;
+	height: 60%;
+	background-size: contain;
+	font-size: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5% !important;
+	overflow: hidden;
+}
+div.startToPlay,
+div.buttomLayer > div {
+	border-radius: 10px;
+	cursor: pointer;
+	background: linear-gradient(to right, #0173ffd7, #588de4d7);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 0 10px 0 #0173fff7;
+}
+
+div.buttomLayer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 30%;
+	margin-top: 5%;
+}
+div.buttomLayer > div {
+	height: 100%;
+	width: 45%;
+	font-size: 2rem;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media screen and (max-width: 768px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+	}
+	div.blackBoard {
+		display: none;
+	}
+	div.mainActivityArea {
+		width: 95%;
+		margin: 0;
+		padding: 0;
+		position: unset;
+	}
+}

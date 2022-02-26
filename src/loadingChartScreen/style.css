@@ -1,0 +1,212 @@
+@import url(assets/css/css.css);
+html,
+body {
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: var(--background) center center no-repeat fixed;
+	background-size: cover !important;
+	backdrop-filter: blur(100px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--background) center center no-repeat fixed;
+	background-size: cover;
+	filter: blur(15px);
+	z-index: -1;
+}
+div.tip::before {
+	content: 'Tip: ';
+}
+div.tip {
+	color: #fff;
+	position: fixed;
+	left: 2%;
+	bottom: 5%;
+	max-width: 85%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+div.loadingBar {
+	position: fixed;
+	right: 2%;
+	bottom: 5%;
+	overflow: hidden;
+}
+div.loadingBarTxT {
+	color: #000;
+	z-index: 999;
+	animation: loadingBarTXTAnim 1s ease-in-out infinite;
+}
+div.loadingBarBG {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background-color: #fff;
+	animation: loadingBarBGAnim 1s ease-in-out infinite;
+}
+@keyframes loadingBarBGAnim {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 200%;
+	}
+}
+@keyframes loadingBarTXTAnim {
+	0% {
+		color: #fff;
+	}
+	50% {
+		color: #000;
+	}
+	100% {
+		color: #fff;
+	}
+}
+div.mainContent {
+	height: 70%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	padding: 0 10%;
+	/* border: 1px #000 solid; */
+}
+div.textInfo {
+	transform: skew(-15deg);
+}
+div.textInfo > * {
+	transform: skew(15deg);
+}
+div.songInfoFrame {
+	display: flex;
+	height: 75px;
+	width: 350px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	transform: skew(0deg);
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 10px 10px 10px 20px;
+	margin: 25px;
+}
+div.songInfoFrame > * {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: skew(15deg);
+}
+div.songName {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 32px;
+}
+div.level::before {
+	content: attr(data-level);
+	display: block;
+	color: #000;
+	font-size: 42px;
+	transform: skew(15deg);
+}
+div.level {
+	height: calc(100% + 35px);
+	width: 90px;
+	min-width: 90px;
+	background-color: #fff;
+	transform: skew(0deg);
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+div.level::after {
+	display: block;
+	color: #000;
+	transform: skew(15deg);
+}
+div.level.ez::after {
+	content: 'EZ';
+}
+div.level.hd::after {
+	content: 'HD';
+}
+div.level.in::after {
+	content: 'IN';
+}
+div.level.at::after {
+	content: 'AT';
+}
+div.chartDesigner::before {
+	content: 'Chart';
+	font-size: 12px;
+}
+div.illustrator::before {
+	content: 'Illustration';
+	font-size: 12px;
+}
+div.illustrator,
+div.chartDesigner {
+	display: flex;
+	flex-direction: column;
+	font-size: 18px;
+	margin: 10px 0 10px 80px;
+	animation: slideAndFadeIn 0.8s ease-out;
+}
+div.illustrator {
+	animation: slideAndFadeIn 1s ease-out;
+}
+@keyframes slideAndFadeIn {
+	0% {
+		opacity: 0;
+		margin: 10px 0 10px 150px;
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		margin: 10px 0 10px 80px;
+	}
+}
+div.songImage {
+	transform: skew(-15deg);
+	height: 80%;
+	width: 50%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	object-fit: cover;
+}
+img.illustration {
+	height: 100%;
+	width: 150%;
+	margin: -15%;
+	object-fit: cover;
+	margin-right: -50px;
+	transform: skew(15deg);
+	/* clip-path: polygon(75px 0, 100% 0, 400px 100%, 0 100%); */
+}

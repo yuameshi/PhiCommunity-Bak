@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="manifest" href="./manifest.webmanifest">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0" />
+	<title>Redirecting...</title>
+</head>
+
+<body>
+	<div class="main">
+		<h1>准备重定向</h1>
+		在开始前，请先调整好设备音量，下方是一段测试音频，点击左侧的三角形以开始播放。<br>
+		<audio class="test-audio" controls></audio>
+		<br>
+		顺带一提，由于本项目变更较为频繁，所以可能在某些时候可能需要您清除浏览器缓存来修复一些错误。<br><br>
+		<div class="btnsContainer">
+			<button id="go">开始游玩</button>
+			<button id="installPWA">添加到主屏幕</button>
+			<button id="gotoCFPages">前往位于CloudFlare的节点</button>
+			<button id="gotoGHPages">前往位于GitHub Pages的节点</button>
+			<br>
+			<button id="ghRepo">查看GitHub仓库</button>
+			<button id="changeLog">查看变更记录</button>
+			<button id="deviceReq">设备要求</button>
+		</div>
+	</div>
+	<div class="popupOverlay" id="changeLogContainerPopupOverlay">
+		<div class="popupContent" id="changelogContainer">
+			<h2>变更记录(仅显示最近30次)</h2>
+			<a href="https://github.com/HanHan233/PhiCommunity/commits/main" class="title"
+				target="_blank">点击此处查看所有提交</a>
+			<img src="https://repobeats.axiom.co/api/embed/8d2203c93b7bb141dff3abc99bd0d0b3a58d85f9.svg" alt="变更情况总览">
+			<br><br>
+		</div>
+	</div>
+	<div class="popupOverlay" id="devRequirementPopupoverlay">
+		<div class="popupContent" id="devReq">
+			<h2>设备要求</h2>
+			<table>
+				<tr>
+					<td>Windows</td>
+					<td>Chromium内核为90以上(经测试测试MSEdge 98无问题)，FireFox内核90+(经测试测试FireFox98(Iceraven 1.15)无问题)</td>
+				</tr>
+				<tr>
+					<td>Android</td>
+					<td>Chromium内核为90以上(经测试测试MSEdge 97无问题)，FireFox内核90+(经测试测试FireFox98无问题)</td>
+				</tr>
+				<tr>
+					<td>iOS</td>
+					<td>iOS版本15以上，由于Apple系统限制，您无法通过安装其他浏览器解决问题</td>
+				</tr>
+				<tr>
+					<td>macOS</td>
+					<td>Safari版本15以上，或者安装其他浏览器，要求参见Windows部分</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
