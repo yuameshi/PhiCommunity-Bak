@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			mode: mode,
 		};
 		console.log(window.playResult);
-		//	操作DOM修改可见部分数据		
+		//	操作DOM修改可见部分数据
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', './LevelOver.mp3', true);
 		xhr.responseType = 'arraybuffer';
@@ -178,13 +178,12 @@ window.addEventListener('DOMContentLoaded', () => {
 			.querySelector('#songImg')
 			.setAttribute(
 				'src',
-				'https://charts.phi.han-han.xyz/' +
-					play +
-					'/' +
-					window.playResult.songInfo.illustration.replaceAll(
-						'#',
-						'%23'
-					)
+				encodeURI(
+					'https://charts.phi.han-han.xyz/' +
+						play +
+						'/' +
+						window.playResult.songInfo.illustration
+				)
 			);
 		document.querySelector('#score').innerText = score
 			.toString()
