@@ -6,7 +6,7 @@
 document.body.addEventListener('click', () => {
 	document.querySelector('div.trigger').classList.add('fadeout');
 	setTimeout(() => {
-		document.querySelector('div.trigger').remove();
+		// document.querySelector('div.trigger').remove();
 	}, 1000);
 	// document.querySelector('div#main').classList.add('actived');
 	// document.body.classList.add('actived');
@@ -30,7 +30,7 @@ function autoScroll() {
 		});
 	};
 	xhr.send();
-	var topSize = -0;
+	var topSize=window.innerHeight;
 	document
 		.querySelector('#main')
 		.style.setProperty('--topSize', topSize + 'px');
@@ -58,12 +58,9 @@ function autoScroll() {
 			clearTimeout(bactToMinScreenTimeOut);
 		}, 5000);
 	});
-	// var topSize=window.innerHeight;
 	const autoScrollInterval = setInterval(() => {
-		if (
-			(document.querySelector('#main').getBoundingClientRect().bottom -
-				window.innerHeight <
-			-100)==true
+		if ((document.querySelector('#main').offsetTop <
+				window.innerHeight*-2.25)==true
 		) {
 			console.log('The END!');
 			clearInterval(autoScrollInterval);

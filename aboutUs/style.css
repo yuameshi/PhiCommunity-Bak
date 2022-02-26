@@ -31,7 +31,7 @@ div.trigger {
 	justify-content: center;
 	align-items: center;
 	background: #000;
-	z-index: 1;
+	/* z-index: 1; */
 }
 div.trigger > img.title {
 	height: 20%;
@@ -41,7 +41,7 @@ div.trigger > img.title {
 }
 div.trigger.fadeout {
 	animation: fadeOut 0.8s ease-in-out;
-	opacity: 0 !important;
+	opacity: 0;
 }
 @keyframes fadeOut {
 	0% {
@@ -71,17 +71,13 @@ div#main {
 	height: 100%;
 	width: 100%;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	scrollbar-width: none;
-	overflow-y: scroll;
-	overflow-x: hidden;
 	position: fixed;
 	top: 0;
 	left: 0;
-	padding-top: 175vh;
-	padding-bottom: 75vh;
+	--topSize: 100vh;
 	margin-top: var(--topSize);
 }
 ::-webkit-scrollbar {
