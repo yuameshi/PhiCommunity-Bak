@@ -344,7 +344,7 @@ function getRks() {
 		return 0;
 	}
 }
-
+document.addEventListener('visibilitychange', () => document.visibilityState == 'hidden' && btnPause.value == '暂停' && btnPause.click());
 async function loadPhiCommunityResources() {
 	const loadItems={
 		JudgeLine: 'assets/JudgeLine.png',
