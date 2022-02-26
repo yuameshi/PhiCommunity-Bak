@@ -59,8 +59,8 @@ div.main {
 	}
 }
 audio {
-    width: 300px !important;
-    height: 100px !important;
+	width: 300px !important;
+	height: 100px !important;
 }
 div.btnsContainer {
 	text-align: center;
@@ -110,6 +110,10 @@ div.popupContent {
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+div.popupContent>img{
+	width: 100%;
+	height: auto;
+}
 div.popupContent > a.title {
 	margin: 50px 0;
 	border-bottom: dotted 1px #999;
@@ -141,4 +145,16 @@ div#changelogContainer > a.item {
 	cursor: pointer;
 	color: #000;
 	text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+	div.btnsContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	div.btnsContainer > br {
+		display: none;
+	}
 }
