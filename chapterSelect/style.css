@@ -60,6 +60,7 @@ div.startToPlay,
 div.buttomLayer > div {
 	border-radius: 10px;
 	cursor: pointer;
+	color: #FFF;
 	background: linear-gradient(to right, #0173ffd7, #588de4d7);
 	backdrop-filter: blur(10px);
 	box-shadow: 0 0 10px 0 #0173fff7;
