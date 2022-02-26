@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	addBtn.style.display = 'none';
 	window.addEventListener('beforeinstallprompt', (e) => {
 		e.preventDefault();
-		addBtn.style.display = 'block';
+		addBtn.style.display = 'unset';
 		addBtn.addEventListener('click', () => {
 			e.prompt();
 			e.userChoice.then((choiceResult) => {
@@ -65,7 +65,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
-// Register service worker to control making site work offline
 
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker.register('sw.js').then(function () {
