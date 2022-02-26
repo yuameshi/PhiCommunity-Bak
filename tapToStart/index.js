@@ -43,12 +43,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		var fadeInElem = document.createElement('div');
 		fadeInElem.classList.add('fadeIn');
 		document.body.appendChild(fadeInElem);
-		const valumeDown = setInterval(() => {
-			if (document.querySelector('#audio').volume == 0) {
-				clearInterval(valumeDown);
-			}
-			document.querySelector('#audio').volume -= 0.1;
-		}, 10);
 		setTimeout(() => {
 			if (window.localStorage.length == 0) {
 				location.href = '../settings/index.html';
