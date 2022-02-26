@@ -1577,12 +1577,21 @@ function qwqdraw1(now) {
 	ctxos.fillText(stat.scoreStr, canvasos.width - lineScale * 0.65, lineScale * 1.375);
 	if (!qwq[0]) ctxos.drawImage(res['Pause'], lineScale * 0.6, lineScale * 0.7, lineScale * 0.63, lineScale * 0.7);
 	if (stat.combo > 2) {
+		if (lineColor.checked==true) {
+			if (stat.lineStatus==1||stat.lineStatus==2) {
+				ctxos.fillStyle='#fce491';
+			}
+			if (stat.lineStatus==3) {
+				ctxos.fillStyle='#9ed5f3';
+			}
+		}
 		ctxos.textAlign = 'center';
 		ctxos.font = `${lineScale * 1.32}px Mina`;
 		ctxos.fillText(stat.combo, wlen, lineScale * 1.375);
 		ctxos.globalAlpha = qwqIn.second < 0.67 ? tween[2](qwqIn.second * 1.5) : (1 - tween[2](qwqOut.second * 1.5));
 		ctxos.font = `${lineScale * 0.5}px Mina`;
 		ctxos.fillText(autoplay.checked ? 'AUTOPLAY' : 'COMBO', wlen, lineScale * 2.05);
+		ctxos.fillStyle='#fff';
 	}
 	//绘制歌名和等级
 	ctxos.globalAlpha = 1;
@@ -1670,7 +1679,7 @@ function qwqdraw2() {
 	if(hyperMode.checked==true && mode!='auto'){
 		mode='hyper';
 	}
-	location.href=`../LevelOver/index.html?play=${new URLSearchParams(new URL(location.href).search).get('play')}&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.noteRank[5]+stat.noteRank[4]+stat.noteRank[1]}&g=${stat.noteRank[7]+stat.noteRank[3]}&b=${stat.noteRank[6]}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}&c=${new URLSearchParams(new URL(location.href).search).get('c')}&mode=${mode}`;
+	location.href=`../LevelOver/index.html?play=${new URLSearchParams(new URL(location.href).search).get('play')}&l=${new URLSearchParams(new URL(location.href).search).get('l')}&score=${stat.scoreStr}&mc=${stat.maxcombo}&p=${stat.noteRank[5]+stat.noteRank[4]+stat.noteRank[1]}&g=${stat.noteRank[7]+stat.noteRank[3]}&b=${stat.noteRank[6]}&e=${stat.noteRank[7]}&m=${stat.noteRank[2]}&mode=${mode}`;
 	return;
 	// fucktemp = true;
 	// btnPause.click(); //isPaused = true;

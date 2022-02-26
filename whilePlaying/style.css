@@ -130,7 +130,7 @@ div#restartBtn {
 	background-size: 85%;
 }
 div#resumeBtn {
-	background: url(../assets/Images/Resume.svg) center center no-repeat;
+	background: url(./assets/Resume.svg) center center no-repeat;
 	background-size: 85%;
 }
 div#backInPlayingBtn,
