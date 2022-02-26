@@ -44,7 +44,6 @@ const cacheFileList = [
 	'/whilePlaying/assets/oldui/Tap.png',
 	'/whilePlaying/assets/oldui/Tap2.png',
 	'/whilePlaying/assets/oldui/Tap2HL.png',
-	'/whilePlaying/assets/playerFirendlyNote',
 	'/whilePlaying/assets/playerFirendlyNote/FlickHL.png',
 	'/whilePlaying/assets/playerFirendlyNote/HoldHeadHL.png',
 	'/whilePlaying/assets/playerFirendlyNote/HoldHL.png',
