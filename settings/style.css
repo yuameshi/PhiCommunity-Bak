@@ -157,6 +157,7 @@ button.button{
 	margin-left: 10%;
 	align-self: flex-start;
 	font-size: 16px;
+	outline: none;
 	color: #FFF;
 	border: 2px #FFF solid;
 	background: transparent;

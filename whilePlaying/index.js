@@ -351,7 +351,7 @@ async function loadPhiCommunityResources() {
 		ProgressBar: 'assets/ProgressBar.png',
 		SongsNameBar: 'assets/SongNameBar.png',
 		Pause: 'assets/Pause.png',
-		// clickRaw: "assets/clickRaw.png",
+		clickRaw: 'assets/clickRaw.png',
 		Tap: 'assets/Tap.png',
 		Tap2: 'assets/Tap2.png',
 		TapHL: 'assets/TapHL.png',
@@ -364,8 +364,6 @@ async function loadPhiCommunityResources() {
 		HoldEnd: 'assets/HoldEnd.png',
 		Flick: 'assets/Flick.png',
 		FlickHL: 'assets/FlickHL.png',
-		hitPerfect: 'assets/hitPerfect.png',
-		hitGood: 'assets/hitGood.png',
 		NoImage: 'assets/0.png',
 		mute: 'assets/mute.ogg',
 		HitSong0: 'assets/Tap.ogg',
@@ -409,7 +407,7 @@ async function loadPhiCommunityResources() {
 		return new Promise(resolve => {
 			xhr.onload = async () => {
 				if (/\.(mp3|wav|ogg)$/i.test(src)) res[name] = await actx.decodeAudioData(xhr.response);
-				else if (/\.(png|jpeg|jpg)$/i.test(src)) res[name] = await createImageBitmap(new Blob([xhr.response]));
+				else if (/\.(png|jpeg|jpg)$|data:image\//i.test(src)) res[name] = await createImageBitmap(new Blob([xhr.response]));
 				window.ResourcesLoad=Math.floor(++loadedNum / arr.length * 100);
 				message.sendMessage(`加载资源：${window.ResourcesLoad}%`);
 				resolve();
@@ -428,9 +426,9 @@ async function loadPhiCommunityResources() {
 		res['Clicks']['rgba(168,255,177,0.9016907)'] = await qwqImage(res['clickRaw'], 'rgba(123, 193, 253,0.9215686)');	//#7bc1fdeb
 		res['Clicks']['rgba(180,225,255,0.9215686)'] = await qwqImage(res['clickRaw'], 'rgba(123, 193, 253,0.9215686)');	//#7bc1fdeb
 	}else{
-		res['Clicks']['rgba(255,236,160,0.8823529)'] = await qwqImage(res['hitPerfect'], 'rgba(255,236,160,0.8823529)'); //#fce491
-		res['Clicks']['rgba(168,255,177,0.9016907)'] = await qwqImage(res['hitGood'], 'rgba(168,255,177,0.9016907)'); //#97f79d
-		res['Clicks']['rgba(180,225,255,0.9215686)'] = await qwqImage(res['hitGood'], 'rgba(180,225,255,0.9215686)'); //#9ed5f3
+		res['Clicks']['rgba(255,236,160,0.8823529)'] = await qwqImage(res['clickRaw'], 'rgba(255,236,160,0.8823529)'); //#fce491
+		res['Clicks']['rgba(168,255,177,0.9016907)'] = await qwqImage(res['clickRaw'], 'rgba(168,255,177,0.9016907)'); //#97f79d
+		res['Clicks']['rgba(180,225,255,0.9215686)'] = await qwqImage(res['clickRaw'], 'rgba(180,225,255,0.9215686)'); //#9ed5f3
 	}
 	message.sendMessage('核心资源加载完成!');
 }

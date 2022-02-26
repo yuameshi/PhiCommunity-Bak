@@ -84,6 +84,7 @@ self.addEventListener('fetch', function (e) {
 	);
 });
 self.addEventListener('install', function (e) {
+	self.skipWaiting();
 	console.log('[Service Worker] Install');
 	e.waitUntil(
 		caches.open('phi-static-cache').then(function (cache) {
