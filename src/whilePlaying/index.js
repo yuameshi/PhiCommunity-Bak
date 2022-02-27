@@ -1005,7 +1005,6 @@ const actx =
 const stopPlaying = [];
 const gain = actx.createGain();
 const playSound = (res, loop, isOut, offset) => {
-	console.log(res);
 	const bufferSource = actx.createBufferSource();
 	bufferSource.buffer = res;
 	bufferSource.loop = loop; //循环播放
@@ -1307,15 +1306,15 @@ class Timer {
 		return this.time / 1e3;
 	}
 }
-var curTime = 0;
-var curTimestamp = 0;
-var timeBgm = 0;
-var timeChart = 0;
-var duration = 0;
-var isInEnd = false; //开头过渡动画
-var isOutStart = false; //结尾过渡动画
-var isOutEnd = false; //临时变量
-var isPaused = true; //暂停
+let curTime = 0;
+let curTimestamp = 0;
+let timeBgm = 0;
+let timeChart = 0;
+let duration = 0;
+let isInEnd = false; //开头过渡动画
+let isOutStart = false; //结尾过渡动画
+let isOutEnd = false; //临时变量
+let isPaused = true; //暂停
 //加载文件
 const loadFile = function (file) {
 	qwq[1] = true;
@@ -1771,7 +1770,7 @@ btnPause.addEventListener('click', function () {
 		if (showTransition.checked && isOutStart) qwqOut.pause();
 		isPaused = true;
 		this.value = '继续';
-		curTime = window.timeBgm;
+		curTime = timeBgm;
 		while (stopPlaying.length) stopPlaying.shift()();
 	} else {
 		document.querySelector('div#pauseOverlay.pauseOverlay').innerHTML = '3';
@@ -2405,7 +2404,7 @@ function qwqdraw2() {
 	}&m=${stat.noteRank[2]}&c=${new URLSearchParams(
 		new URL(location.href).search
 	).get('c')}&mode=${mode}`;
-	return;
+	// return;
 	// fucktemp = true;
 	// btnPause.click(); //isPaused = true;
 	// while (stopPlaying.length) stopPlaying.shift()();
@@ -3607,15 +3606,13 @@ function csv2array(data, isObject) {
 	}
 	return qwq;
 }
-
 //###############################
-/* 
-const actx = new (window.AudioContext ||
+/* const actx = new (window.AudioContext ||
 	window.webkitAudioContext ||
 	window.mozAudioContext ||
 	window.msAudioContext)(); */
-
 window.addEventListener('DOMContentLoaded', () => {
+	// loadPhiCommunityResources();
 	document
 		.getElementById('backInPlayingBtn')
 		.addEventListener('click', () => {
@@ -3709,7 +3706,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					chartp23(chartXHR.responseText, undefined)
 				);
 			}
-			// prerenderChart(Renderer.chart);
+			// prerenderChart(window.Renderer.chart);
 		});
 		chartXHR.addEventListener('error', () => {
 			alert('谱面获取失败！');
@@ -3933,7 +3930,7 @@ function replay() {
 document
 	.getElementById('btn-play')
 	.addEventListener('click', async function () {
-		// Renderer = Renderer;
+		// Renderer = window.Renderer;
 		btnPause.value = '暂停';
 		if (this.value == '播放') {
 			stopPlaying.push(playSound(res['mute'], true, false, 0)); //播放空音频(防止音画不同步)
@@ -4002,7 +3999,7 @@ document
 			qwqEnd.reset();
 			curTime = 0;
 			curTimestamp = 0;
-			window.duration = 0;
+			duration = 0;
 			this.value = '播放';
 		}
 	});
@@ -4021,6 +4018,5 @@ function getRks() {
 		return 0;
 	}
 }
-export {imgShader, qwqImage}
-// export { chart123, chartp23, imgBlur, imgShader, qwqImage,qwqOut,qwqEnd,playSound,loop,prerenderChart,resizeCanvas,Renderer,stat,full ,qwqIn,btnPause,stopPlaying,res};
-// export {duration,isInEnd,	isOutStart,	isOutEnd,	isPaused,	timeBgm}
+
+export { imgShader, qwqImage };

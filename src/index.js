@@ -1,7 +1,7 @@
 import './style.redirect.css';
 import TapToStart_mp3 from './tapToStart/TapToStart.mp3';
 
-document.getElementsByClassName('test-audio').src = TapToStart_mp3;
+document.getElementsByClassName('test-audio')[0].src = TapToStart_mp3;
 
 window.addEventListener('DOMContentLoaded', () => {
 	fetch('https://api.github.com/repos/HanHan233/PhiCommunity/commits').then(
@@ -90,8 +90,20 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 });
 
-if ('serviceWorker' in navigator) {
+/* if ('serviceWorker' in navigator) {
 	navigator.serviceWorker.register('sw.js').then(function () {
 		console.log('Service Worker Registered');
+	});
+} */
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker
+			.register('/service-worker.js')
+			.then((registration) => {
+				console.log('SW registered: ', registration);
+			})
+			.catch((registrationError) => {
+				console.log('SW registration failed: ', registrationError);
+			});
 	});
 }
