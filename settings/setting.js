@@ -148,6 +148,14 @@ export const settings = [
 	// },
 	{
 		type: 'button',
+		title: '修改玩家昵称',
+		onClick() {
+			const name = prompt('输入昵称', 'GUEST');
+			localStorage.setItem('playerName', name);
+		},
+	},
+	{
+		type: 'button',
 		title: '关于我们',
 		onClick() {
 			location.href = '../aboutUs/index.html';
