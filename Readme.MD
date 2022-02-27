@@ -64,7 +64,7 @@ GNU 通用公共许可证 v3.0
 
 `pnpm start`
 
-最后`EditCode->Commit->Upload->Open Pull Requests`
+修改代码，最后`Commit->Upload->Open Pull Requests`
 
 不要忘记写下您修改的内容和改进的内容！
 
