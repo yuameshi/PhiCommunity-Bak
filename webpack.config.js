@@ -1,13 +1,36 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const WriteFilePlugin = require('write-file-webpack-plugin');
+
+const { GenerateSW } = require('workbox-webpack-plugin');
 const path = require('path');
 const pages = require('./webpack.pages.config');
+
+const prod = process.env.NODE_ENV === 'production';
 
 const entry = {};
 
 pages.forEach(({ name, path }) => (entry[name] = `${path}/index.js`));
+
+const plugins = [
+	new CleanWebpackPlugin(),
+	...pages.map(
+		({ name, path: pathname, output }) =>
+			new HtmlWebpackPlugin({
+				template: path.join(pathname, 'index.html'),
+				filename: output + '/index.html',
+				chunks: [name],
+			})
+	),
+	new CopyWebpackPlugin({
+		patterns: [path.join(__dirname, 'public')],
+	}),
+	new GenerateSW({
+		clientsClaim: true,
+		skipWaiting: true,
+		maximumFileSizeToCacheInBytes: 16 * 1024 * 1024,
+	}),
+];
 
 module.exports = {
 	entry,
@@ -22,29 +45,8 @@ module.exports = {
 		},
 	},
 	devtool: 'inline-source-map',
-	plugins: [
-		new CleanWebpackPlugin(),
-		...pages.map(
-			({ name, path: pathname, output }) =>
-				new HtmlWebpackPlugin({
-					template: path.join(pathname, 'index.html'),
-					filename: output + '/index.html',
-					chunks: [name],
-				})
-		),
-		new CopyWebpackPlugin({
-			patterns: [
-				path.join(__dirname, 'public'),
-				/* 				{
-					from: path.join(__dirname, 'src/whilePlaying'),
-					to: 'whilePlaying',
-				}, */
-			],
-		}),
-		// new WriteFilePlugin(),
-	],
+	plugins,
 	module: {
-		// noParse: path.join(__dirname, 'src/whilePlaying'),
 		rules: [
 			{
 				test: /\.css$/,
