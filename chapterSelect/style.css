@@ -45,7 +45,8 @@ div.mainActivityArea {
 	z-index: 1;
 }
 
-div.startToPlay {
+div#startToPlayBtn,
+div#cacheControl {
 	width: 100%;
 	height: 60%;
 	background-size: contain;
@@ -56,11 +57,12 @@ div.startToPlay {
 	margin-bottom: 5% !important;
 	overflow: hidden;
 }
-div.startToPlay,
+div#startToPlayBtn,
+div#cacheControl,
 div.buttomLayer > div {
 	border-radius: 10px;
 	cursor: pointer;
-	color: #FFF;
+	color: #fff;
 	background: linear-gradient(to right, #0173ffd7, #588de4d7);
 	backdrop-filter: blur(10px);
 	box-shadow: 0 0 10px 0 #0173fff7;
@@ -72,8 +74,7 @@ div.buttomLayer {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	height: 30%;
-	margin-top: 5%;
+	height: 35%;
 }
 div.buttomLayer > div {
 	height: 100%;

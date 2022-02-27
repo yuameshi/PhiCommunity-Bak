@@ -78,9 +78,26 @@ const cacheFileList = [
 	'/whilePlaying/assets/TapHL.png',
 ];
 self.addEventListener('fetch', function (e) {
-	e.respondWith(
-		caches.match(e.request).then((response) => response || fetch(e.request))
-	);
+	if(e.request.url.match('charts.phi')){
+		console.log('Fetching charts data event detected, trying to response from cache.');
+		e.respondWith(
+			caches.open('phi-charts-cache').then((cache) => {
+				return cache.match(e.request.url).then((response) => {
+					return (
+						response ||
+						fetch(e.request.url).then((response) => {
+							cache.put(e.request.url, response.clone());
+							return response;
+						})
+					);
+				});
+			})
+		);
+	}else{
+		e.respondWith(
+			caches.match(e.request).then((response) => response || fetch(e.request))
+		);
+	}
 });
 self.addEventListener('install', function (e) {
 	self.skipWaiting();
