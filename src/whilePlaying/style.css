@@ -1,4 +1,4 @@
-@import url(../assets/css/css.css);
+@import url(assets/css/css.css);
 html {
 	height: 100%;
 	width: 100%;
@@ -118,15 +118,15 @@ div.pauseOverlay.visable.readyToResume {
 	}
 }
 div#backInPlayingBtn {
-	background: url(./assets/Back.svg) center center no-repeat;
+	background: url(assets/whilePlaying/Back.svg) center center no-repeat;
 	background-size: 85%;
 }
 div#restartBtn {
-	background: url(./assets/Restart.svg) center center no-repeat;
+	background: url(assets/whilePlaying/Restart.svg) center center no-repeat;
 	background-size: 85%;
 }
 div#resumeBtn {
-	background: url(../assets/Images/Resume.svg) center center no-repeat;
+	background: url(assets/images/Resume.svg) center center no-repeat;
 	background-size: 85%;
 }
 div#backInPlayingBtn,

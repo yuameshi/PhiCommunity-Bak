@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const WriteFilePlugin = require('write-file-webpack-plugin');
 const path = require('path');
-const pages = require('./webpack.pages');
+const pages = require('./webpack.pages.config');
 
 const entry = {};
 
@@ -35,15 +35,16 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				path.join(__dirname, 'public'),
-				{
+				/* 				{
 					from: path.join(__dirname, 'src/whilePlaying'),
 					to: 'whilePlaying',
-				},
+				}, */
 			],
 		}),
 		// new WriteFilePlugin(),
 	],
 	module: {
+		// noParse: path.join(__dirname, 'src/whilePlaying'),
 		rules: [
 			{
 				test: /\.css$/,
@@ -58,20 +59,6 @@ module.exports = {
 			},
 			{
 				test: /\.(mp3|wav|ogg|png|jpg)$/,
-				/* use: [
-					{
-						loader: "file-loader",
-						options: {
-							name: "[path][name].[ext]",
-						},
-					},
-					{
-						loader: "url-loader",
-						options: {
-							name: "[path][name].[ext]",
-						},
-					},
-				], */
 				type: 'asset/resource',
 			},
 			{

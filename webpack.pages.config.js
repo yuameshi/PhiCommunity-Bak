@@ -16,7 +16,7 @@ const pages = [
 	{ name: 'loadingScreen' },
 	{ name: 'songSelect' },
 	{ name: 'tapToStart' },
-	// { name: 'whilePlaying' },
+	{ name: 'whilePlaying' },
 	{ name: 'settings' },
 	{
 		name: 'calibrate',

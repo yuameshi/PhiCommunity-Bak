@@ -6,12 +6,19 @@ specifiers:
   css-loader: ^6.6.0
   file-loader: ^6.2.0
   html-webpack-plugin: ^5.5.0
+  oggmented: ^1.0.1
+  stackblur-canvas: ^2.5.0
   style-loader: ^3.3.1
   url-loader: ^4.1.1
   webpack: ^5.69.1
   webpack-cli: ^4.9.2
+  webpack-dev-middleware: ^5.3.1
   webpack-dev-server: ^4.7.4
   write-file-webpack-plugin: ^4.5.1
+
+dependencies:
+  oggmented: registry.npmmirror.com/oggmented/1.0.1
+  stackblur-canvas: registry.npmmirror.com/stackblur-canvas/2.5.0
 
 devDependencies:
   clean-webpack-plugin: registry.npmmirror.com/clean-webpack-plugin/4.0.0_webpack@5.69.1
@@ -23,6 +30,7 @@ devDependencies:
   url-loader: registry.npmmirror.com/url-loader/4.1.1_file-loader@6.2.0+webpack@5.69.1
   webpack: registry.npmmirror.com/webpack/5.69.1_webpack-cli@4.9.2
   webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_56d34dfb5427e6df45a27ae34f9e2cba
+  webpack-dev-middleware: registry.npmmirror.com/webpack-dev-middleware/5.3.1_webpack@5.69.1
   webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.7.4_webpack-cli@4.9.2+webpack@5.69.1
   write-file-webpack-plugin: registry.npmmirror.com/write-file-webpack-plugin/4.5.1
 
@@ -2463,6 +2471,14 @@ packages:
     version: 1.1.2
     dev: true
 
+  registry.npmmirror.com/oggmented/1.0.1:
+    resolution: {integrity: sha512-LnDj0WFe3K9euABkmQlQH/kAmjQj0xpWM4SVTZ+zWqyB2qegMKjGE0quHHBBmEVoI+mENDu/QG2UIROupmpjBg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/oggmented/-/oggmented-1.0.1.tgz}
+    name: oggmented
+    version: 1.0.1
+    dependencies:
+      setimmediate: registry.npmmirror.com/setimmediate/1.0.5
+    dev: false
+
   registry.npmmirror.com/on-finished/2.3.0:
     resolution: {integrity: sha512-ikqdkGAAyf/X/gPhXGvfgAytDZtDbr+bkNUJ0N9h5MI/dmdgCs3l6hoHrcUv41sRKew3jIwrp4qQDXiK99Utww==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/on-finished/-/on-finished-2.3.0.tgz}
     name: on-finished
@@ -3118,6 +3134,12 @@ packages:
       send: registry.npmmirror.com/send/0.17.2
     dev: true
 
+  registry.npmmirror.com/setimmediate/1.0.5:
+    resolution: {integrity: sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/setimmediate/-/setimmediate-1.0.5.tgz}
+    name: setimmediate
+    version: 1.0.5
+    dev: false
+
   registry.npmmirror.com/setprototypeof/1.1.0:
     resolution: {integrity: sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/setprototypeof/-/setprototypeof-1.1.0.tgz}
     name: setprototypeof
@@ -3244,6 +3266,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  registry.npmmirror.com/stackblur-canvas/2.5.0:
+    resolution: {integrity: sha512-EeNzTVfj+1In7aSLPKDD03F/ly4RxEuF/EX0YcOG0cKoPXs+SLZxDawQbexQDBzwROs4VKLWTOaZQlZkGBFEIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/stackblur-canvas/-/stackblur-canvas-2.5.0.tgz}
+    name: stackblur-canvas
+    version: 2.5.0
+    engines: {node: '>=0.1.14'}
+    dev: false
 
   registry.npmmirror.com/statuses/1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/statuses/-/statuses-1.5.0.tgz}

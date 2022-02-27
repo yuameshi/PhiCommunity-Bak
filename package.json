@@ -13,6 +13,7 @@
 		"url-loader": "^4.1.1",
 		"webpack": "^5.69.1",
 		"webpack-cli": "^4.9.2",
+		"webpack-dev-middleware": "^5.3.1",
 		"webpack-dev-server": "^4.7.4",
 		"write-file-webpack-plugin": "^4.5.1"
 	},
@@ -31,5 +32,9 @@
 	"bugs": {
 		"url": "https://github.com/ZreXoc/PhiCommunity/issues"
 	},
-	"homepage": "https://github.com/ZreXoc/PhiCommunity#readme"
+	"homepage": "https://github.com/ZreXoc/PhiCommunity#readme",
+	"dependencies": {
+		"oggmented": "^1.0.1",
+		"stackblur-canvas": "^2.5.0"
+	}
 }
