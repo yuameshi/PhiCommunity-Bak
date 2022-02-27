@@ -4,6 +4,11 @@ window.addEventListener('DOMContentLoaded', () => {
 		.addEventListener('click', () => {
 			location.href = '../songSelect/index.html';
 		});
+	document
+		.querySelector('div#cacheControl')
+		.addEventListener('click', () => {
+			location.href = '../cacheControl/index.html';
+		});
 	document.querySelector('div#settingBtn').addEventListener('click', () => {
 		location.href = '../settings/index.html';
 	});

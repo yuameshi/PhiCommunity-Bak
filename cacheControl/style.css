@@ -1,0 +1,70 @@
+@import url(../assets/css/css.css);
+html {
+	background: url(../assets/images/ElementSqare.Half.Size.webp) center center
+		no-repeat fixed;
+	background-size: cover;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	backdrop-filter: blur(15px) brightness(0.5) contrast(0.5);
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+html::before {
+	content: '';
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: url(../assets/images/ElementSqare.Half.Size.webp) no-repeat
+		center center fixed;
+	background-size: cover;
+	filter: blur(10px) brightness(0.5);
+	z-index: -1;
+}
+div.main {
+	height: 70vh;
+	width: 85vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: scroll;
+	z-index: 0;
+	background: #fff;
+	min-width: 320px;
+	min-height: 480px;
+}
+div#container {
+	width: 80%;
+}
+div#container > div.item::before {
+	order: 0;
+	content: attr(data-file-name);
+	margin-right: 0 50px;
+}
+div#container > div.item::after {
+	order: 1;
+	content: attr(data-url);
+	margin: 0 50px;
+}
+div#container > div.item > .deleteBtn {
+	order: 2;
+	outline: none;
+	cursor: pointer;
+}
+div#container > div.item {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: #000;
+	text-decoration: none;
+	margin: 5px 0;
+}
