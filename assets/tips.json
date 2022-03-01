@@ -82,10 +82,13 @@
 	"玛卡巴卡",
 	" U R B B R  G R O U N ",
 	"toggle = true;",
-	"adb shell am start -n me.PhiCommunity.device/.ui.DevicePlaysMusicGamesByItself",
+	"adb shell am start -n me.PhiCommunity.device/.ui.DevicePlaysMusicGamesByItselfUI",
 	"你一定在看tips吧！",
 	"你的双手是给你一生服务的，而不是音游哦~注意休息哦",
 	"Nyanyanyanyanyanyanya!",
 	"啊~啊~啊~啊~啊~啊~啊~啊↑啊↓！我没有点外卖！！！",
-	"遇到bug请去PhiCommunity Github项目中提交issue哦！记得提供完整信息以及bug复现方式！"
+	"遇到bug请去PhiCommunity Github项目中提交issue哦！记得提供完整信息以及bug复现方式！",
+	"github.com 花了太长时间响应",
+	"不要改成绩哦~造假行为这是不好的！",
+	"？这视频怎么转载来转载去还转载回来了？"
 ]
