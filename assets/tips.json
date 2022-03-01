@@ -83,5 +83,6 @@
 	" U R B B R  G R O U N ",
 	"toggle = true;",
 	"adb shell am start -n me.PhiCommunity.device/.ui.DevicePlaysMusicGamesByItself",
-	"你一定在看tips吧！"
+	"你一定在看tips吧！",
+	"你的手是给你一生服务的，而不是音游哦~注意休息哦"
 ]
