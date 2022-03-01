@@ -79,6 +79,9 @@
 	"⚡HIU↗~—~—~—BOOM⚡",
 	"两只老虎爱跳舞，小兔子乖乖拔萝卜",
 	"你爱我，我爱你，Tips冰城甜蜜蜜",
-	"玛卡巴卡"
-	"𝕌 ℝ 𝔹 𝔹 ℝ 𝔾 ℝ 𝕆 𝕌 ℕ"
+	"玛卡巴卡",
+	" U R B B R  G R O U N ",
+	"toggle = true;",
+	"adb shell am start -n me.PhiCommunity.device/.ui.DevicePlaysMusicGamesByItself",
+	"你一定在看tips吧！"
 ]
