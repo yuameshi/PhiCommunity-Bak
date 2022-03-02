@@ -3,7 +3,7 @@
 
 # 许可证
 
-源代码(不包括多媒体资源，除非另有说明)在[GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)许可下分发。
+源代码(不包括多媒体资源，除非另有说明)在[GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)许可下分发
 
 <details>
 <summary>简要概述GPL-3.0协议内容</summary>
