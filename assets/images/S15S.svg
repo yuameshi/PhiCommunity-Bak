@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<svg width="54px" height="77px" viewBox="0 0 54 77" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
   <defs>
-    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
-      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-      <feOffset dx="0" dy="0" />
-      <feGaussianBlur stdDeviation="2.5" />
-      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6117647 0" />
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
-      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
-    </filter>
-    <rect width="100" height="100" id="artboard_1" />
-    <clipPath id="clip_1">
-      <use xlink:href="#artboard_1" clip-rule="evenodd" />
-    </clipPath>
+    <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_1">
+      <stop offset="0" stop-color="#2CD8D5" />
+      <stop offset="0.5" stop-color="#6B8DD6" />
+      <stop offset="1" stop-color="#8E37D7" />
+    </linearGradient>
   </defs>
-  <g id="S15S" clip-path="url(#clip_1)">
-    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
-    <g id="S" fill="#FFFFFF" filter="url(#filter_1)" transform="translate(20 -12)">
-      <path d="M5.28 86.212L5.28 77.764L16.224 77.764L16.224 82.852L19.872 86.5L40.8 86.5L44.64 82.66L44.64 70.276L40.896 66.532L15.36 66.532L5.472 56.74L5.472 38.788L15.36 28.9L44.928 28.9L54.816 38.788L54.816 47.332L43.872 47.332L43.872 42.148L40.128 38.5L20.16 38.5L16.416 42.148L16.416 53.284L20.16 56.932L45.696 56.932L55.584 66.82L55.584 86.02L45.504 96.1L15.168 96.1L5.28 86.212Z" />
+  <g id="S15S">
+    <g id="S">
+      <path d="M27.552 76.896C21.472 76.896 16.032 75.488 11.232 72.672C6.432 69.856 2.688 65.952 0 60.96L9.408 55.872C11.264 59.456 13.76 62.176 16.896 64.032C20.032 65.888 23.616 66.816 27.648 66.816C32.064 66.816 35.68 65.808 38.496 63.792C41.312 61.776 42.72 59.168 42.72 55.968C42.72 53.856 42.16 52.048 41.04 50.544C39.92 49.04 38.16 47.712 35.76 46.56C33.36 45.408 30.016 44.224 25.728 43.008C20.8 41.6 16.752 40.192 13.584 38.784C10.416 37.376 7.712 35.264 5.472 32.448C3.232 29.632 2.112 25.92 2.112 21.312C2.112 17.216 3.216 13.552 5.424 10.32C7.632 7.088 10.704 4.56 14.64 2.736C18.576 0.912 23.04 0 28.032 0C39.488 0 47.968 4.832 53.472 14.496L44.544 19.872C42.56 16.736 40.144 14.32 37.296 12.624C34.448 10.928 31.296 10.08 27.84 10.08C25.152 10.08 22.688 10.544 20.448 11.472C18.208 12.4 16.432 13.664 15.12 15.264C13.808 16.864 13.152 18.624 13.152 20.544C13.152 23.104 13.856 25.184 15.264 26.784C16.672 28.384 18.528 29.648 20.832 30.576C23.136 31.504 26.304 32.512 30.336 33.6C35.072 34.88 39.072 36.288 42.336 37.824C45.6 39.36 48.336 41.568 50.544 44.448C52.752 47.328 53.856 51.008 53.856 55.488C53.856 59.84 52.768 63.632 50.592 66.864C48.416 70.096 45.344 72.576 41.376 74.304C37.408 76.032 32.8 76.896 27.552 76.896L27.552 76.896Z" id="Shape" fill="url(#gradient_1)" stroke="none" />
     </g>
   </g>
 </svg>

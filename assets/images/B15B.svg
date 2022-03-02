@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<svg width="54px" height="75px" viewBox="0 0 54 75" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
   <defs>
-    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
-      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-      <feOffset dx="0" dy="0" />
-      <feGaussianBlur stdDeviation="2.5" />
-      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6117647 0" />
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
-      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
-    </filter>
-    <rect width="100" height="100" id="artboard_1" />
-    <clipPath id="clip_1">
-      <use xlink:href="#artboard_1" clip-rule="evenodd" />
-    </clipPath>
+    <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_1">
+      <stop offset="0" stop-color="#16A068" />
+      <stop offset="1" stop-color="#F4E83F" />
+    </linearGradient>
   </defs>
-  <g id="B15B" clip-path="url(#clip_1)">
-    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
-    <g id="B" fill="#FFFFFF" filter="url(#filter_1)" transform="translate(18 -12)">
-      <path d="M6.72 28.9L47.424 28.9L56.736 38.212L56.736 57.028L52.608 61.156L59.712 68.26L59.712 86.02L49.632 96.1L6.72 96.1L6.72 28.9ZM41.856 57.796L45.792 53.86L45.792 42.148L41.952 38.308L17.568 38.308L17.568 57.796L41.856 57.796ZM44.16 86.692L48.768 82.084L48.768 71.332L44.16 66.82L17.568 66.82L17.568 86.692L44.16 86.692Z" />
+  <g id="B15B">
+    <g id="B">
+      <path d="M49.536 41.376Q45.216 36.864 37.248 35.808L37.248 35.232C41.408 34.08 44.624 32.112 46.896 29.328C49.168 26.544 50.304 23.104 50.304 19.008Q50.304 9.888 43.392 4.944Q36.48 0 23.712 0L0 0L0 74.208L24 74.208Q38.4 74.208 46.128 68.688Q53.856 63.168 53.856 52.896Q53.856 45.888 49.536 41.376ZM10.848 10.08L10.848 30.72L22.464 30.72Q30.336 30.72 34.656 27.84C37.536 25.92 38.976 23.264 38.976 19.872Q38.976 15.168 34.656 12.624Q30.336 10.08 22.368 10.08L10.848 10.08ZM37.488 60.96C34.064 63.072 29.12 64.128 22.656 64.128L10.848 64.128L10.848 40.8L22.752 40.8C29.152 40.8 34.064 41.76 37.488 43.68Q42.624 46.56 42.624 51.936C42.624 55.84 40.912 58.848 37.488 60.96Z" id="Shape" fill="url(#gradient_1)" fill-rule="evenodd" stroke="none" />
     </g>
   </g>
 </svg>
