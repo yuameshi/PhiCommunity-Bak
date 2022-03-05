@@ -1,3 +1,5 @@
+# 此仓库将封存，请[点此](https://github.com/HanHan233/PhiCommunity)前往最新仓库
+
 # 这是什么？
 这是一款名为`PhiCommunity`的节奏游戏，它仿照`Phigros`制作。
 
