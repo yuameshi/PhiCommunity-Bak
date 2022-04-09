@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	var songListXHR = new XMLHttpRequest();
 	songListXHR.open(
 		'GET',
-		'https://api.github.com/repos/HanHan233/PhiCommunity-Charts-Repo/contents',
+		'https://api.github.com/repos/Yuameshi/PhiCommunity-Charts-Repo/contents',
 		// "https://charts.pgr.han-han.xyz/" + chapterName + ".json",
 		true
 	);

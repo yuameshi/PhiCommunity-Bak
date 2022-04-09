@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		.querySelector('div#uploadChartsBtn')
 		.addEventListener('click', () => {
 			location.href =
-				'https://github.com/HanHan233/PhiCommunity-Charts-Repo';
+				'https://github.com/Yuameshi/PhiCommunity-Charts-Repo';
 		});
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', './ChapterSelect0.mp3', true);

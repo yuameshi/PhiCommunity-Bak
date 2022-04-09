@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-	fetch('https://api.github.com/repos/HanHan233/PhiCommunity/commits?per_page=1').then(
+	fetch('https://api.github.com/repos/Yuameshi/PhiCommunity/commits?per_page=1').then(
 		(response) => {
 			response.json().then((data) => {
 				document.querySelector('#ver').innerText = data[0].sha.slice(

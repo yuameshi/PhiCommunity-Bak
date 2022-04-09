@@ -1,4 +1,4 @@
-# 此仓库将封存，请[点此](https://github.com/HanHan233/PhiCommunity)前往最新仓库
+# 此仓库将封存，请[点此](https://github.com/Yuameshi/PhiCommunity)前往最新仓库
 
 # 这是什么？
 这是一款名为`PhiCommunity`的节奏游戏，它仿照`Phigros`制作。
@@ -45,7 +45,7 @@ GNU Affero 通用公共许可证 v3.0
 如您所见，游戏还没有完成，具体体现在“谱面少”和“性能差”。
 ## 为`谱面`做贡献
 
-如需提交谱面文件，请前往[此仓库](https://github.com/HanHan233/PhiCommunity-Charts-Repo)。
+如需提交谱面文件，请前往[此仓库](https://github.com/Yuameshi/PhiCommunity-Charts-Repo)。
 
 ## 贡献代码
 
